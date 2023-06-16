@@ -2,3 +2,24 @@ h1 {
     font-size: 60px;
 }
 
+.parent_div {
+    width: 100px;
+    height: 100px;
+    background: aqua;
+}
+.string_first_div {
+    width: 30px;
+    height: 30px;
+    margin-left: 2px;
+}
+.string_second_div {
+    width: 30px;
+    height: 30px;
+    margin-left: 2px;
+}
+.string_third_div {
+    width: 30px;
+    height: 30px;
+    margin-left: 2px;
+}
+
