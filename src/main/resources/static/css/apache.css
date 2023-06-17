@@ -1,0 +1,77 @@
+@font-face {
+    font-family: OverpassMedium;
+    src: url("../fonts/Overpass-Medium.ttf");
+}
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #EAE6CA;
+}
+
+
+.title_div h1 {
+    text-align: center;
+    font-family: OverpassMedium;
+    font-size: 32px;
+}
+
+.warning_div {
+    width: 430px;
+    margin: 0 auto;
+    background: rgba(255, 197, 49, 0.39);
+    padding: 15px;
+    border:2px solid rgb(203, 135, 40);
+    border-radius: 10px;
+}
+
+.warning_div p {
+    width: 400px;
+    font-size: 14px;
+    font-family: OverpassMedium;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form_input {
+    padding: 15px;
+}
+
+.form_input p {
+    font-size: 14px;
+    font-family: OverpassMedium;
+}
+
+.infoconc {
+    position: relative;
+    cursor: pointer;
+}
+.infoconc::before {
+    cursor: pointer;
+    content: url("../img/img_question.png");
+    font-family: OverpassMedium;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #000;
+    font-size: 18px;
+    margin: 0 0.5em;
+    z-index: 1;
+}
+.infoconc::after {
+    font-size: 12px;
+    content: "" attr(data) "";
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 300px;
+    background: rgba(1,1,1,0.8);
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0px 0px 4px #222;
+    z-index: 999;
+    text-align: center;
+}

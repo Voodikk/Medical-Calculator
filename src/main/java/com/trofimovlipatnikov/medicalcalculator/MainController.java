@@ -9,6 +9,11 @@ public class MainController {
 
     @GetMapping("/")
     public String getMain() {
-        return "main";
+        return "apache";
+    }
+
+    @GetMapping("/apache")
+    public String getApacheCalc() {
+        return "apache";
     }
 }
