@@ -34,12 +34,29 @@ body {
     margin-left: auto;
 }
 
-.form_input {
-    padding: 15px;
+#form {
+    width: 900px;
+    background: #fafafa;
+    border-radius: 20px;
+    margin: 15px auto ;
 }
 
-.form_input p {
-    font-size: 14px;
+.form_input {
+    width: 430px;
+    padding: 20px;
+}
+
+.form_input1_p {
+    margin: 0 0 15px 0;
+    width: 300px;
+    font-size: 16px;
+    font-family: OverpassMedium;
+    display: inline-block;
+}
+
+.pochka_text {
+    margin: 0 0 15px 0;
+    font-size: 16px;
     font-family: OverpassMedium;
 }
 
@@ -50,28 +67,68 @@ body {
 .infoconc::before {
     cursor: pointer;
     content: url("../img/img_question.png");
-    font-family: OverpassMedium;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    color: #000;
-    font-size: 18px;
-    margin: 0 0.5em;
-    z-index: 1;
 }
-.infoconc::after {
+.infoconc:hover:after {
     font-size: 12px;
-    content: "" attr(data) "";
-    display: none;
-    position: absolute;
-    top: 20px;
-    left: 20px;
     width: 300px;
-    background: rgba(1,1,1,0.8);
-    padding: 10px;
-    border-radius: 5px;
-    color: #fff;
-    box-shadow: 0px 0px 4px #222;
+    font-family: OverpassMedium;
+    content:attr(data);
+    position: absolute;
+    left: 20px; bottom: 10px;
     z-index: 999;
-    text-align: center;
+    background: rgba(255,255,230,0.9);
+    padding: 5px 10px;
+    border: 1px solid #333;
+}
+
+.form_input label {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 25px;
+}
+
+.switch_input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.switch_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #c2c2c2;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+}
+
+.switch_slider:before {
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    left: 3px;
+    bottom: 3px;
+    height: 19px;
+    width: 19px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+}
+
+.switch_input:focus + .switch_slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+.switch_input:checked + .switch_slider {
+    background-color: #2196f3;
+}
+
+.switch_input:checked + .switch_slider:before {
+    transform: translateX(25px);
+    -webkit-transform: translateX(25px);
+    -ms-transform: translateX(25px);
 }

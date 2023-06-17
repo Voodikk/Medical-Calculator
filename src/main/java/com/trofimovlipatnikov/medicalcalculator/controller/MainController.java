@@ -9,7 +9,7 @@ public class MainController {
 
     @GetMapping("/")
     public String getMain() {
-        return "apache";
+        return "main";
     }
 
     @GetMapping("/apache")
