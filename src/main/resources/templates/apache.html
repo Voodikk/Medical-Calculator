@@ -19,8 +19,9 @@
             <div class="form_input">
                 <p class="form_input1_p">Тяжелая органная дисфункция или иммуносупрессия в анамнезе</p>
                 <span class="infoconc" data="Сердечная недостаточность IV ФК по NYHA, цирроз, хроническое заболевание легких, диализ"></span>
-                <div>
-                    <select>
+                <div class="select_div">
+                    <select name="first_select" class="first_select">
+                        <option selected disabled>Выберите</option>
                         <option>Нет</option>
                         <option>Да</option>
                         <option>Да + плановый послеоперационный</option>
@@ -35,7 +36,30 @@
                     <span class="switch_slider"></span>
                 </label>
             </div>
-
+            <div class="form_input">
+                <label style="width: 400px;">
+                    <p class="form_input1_p">Ваш возраст, (в годах)</p>
+                    <input type="number" id="age" class="input_number" min="18" max="200">
+                </label>
+            </div>
+            <div class="form_input">
+                <label style="width: 400px;">
+                    <p class="form_input1_p">Ректальная температура, (в °C)</p>
+                    <input type="number" id="popa_temp" class="input_number" min="0" max="50" step="0.1">
+                </label>
+            </div>
+            <div class="form_input">
+                <label style="width: 400px;">
+                    <p class="form_input1_p">Среднее артериальное давление, (в мм Hg)</p>
+                    <input type="number" id="abp" class="input_number" min="0" max="500" placeholder="Норма: 70 - 100">
+                </label>
+            </div>
+            <div class="form_input">
+                <label style="width: 400px;">
+                    <p class="form_input1_p">ЧСС, (в уд/мин)</p>
+                    <input type="number" id="bpm" class="input_number" min="0" max="500" placeholder="Норма 60 - 100">
+                </label>
+            </div>
         </form>
     </div>
 </div>
