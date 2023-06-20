@@ -20,7 +20,7 @@ $(document).ready(function (){
     $('#myCheckbox').change(function(){
         if(this.checked){
 // Если чекбокс выбран
-            $('#myDiv').html('');
+            $('#myDiv').html('Чекбокс выбран!');
         }else{
 // Если чекбокс не выбран
             $('#myDiv').html('Чекбокс не выбран!');
