@@ -2,6 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="css/apache.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <meta charset="UTF-8">
     <title>Шкала APACHE II</title>
 </head>
@@ -15,54 +18,91 @@
             <p>Данные должны быть собраны в течение 24 часов после поступления пациента в ОРИТ.</p>
             <p>Следует использовать наихудшие значения.</p>
         </div>
-        <form name="form" id="form">
+        <form name="form" id="form" onsubmit="return sendForm();" method="post">
             <div class="form_input">
                 <p class="form_input1_p">Тяжелая органная дисфункция или иммуносупрессия в анамнезе</p>
                 <span class="infoconc" data="Сердечная недостаточность IV ФК по NYHA, цирроз, хроническое заболевание легких, диализ"></span>
                 <div class="select_div">
-                    <select name="first_select" class="first_select">
+                    <select name="value" class="first_select">
                         <option selected disabled>Выберите</option>
-                        <option>Нет</option>
-                        <option>Да</option>
-                        <option>Да + плановый послеоперационный</option>
-                        <option>Да + экстренный послеоперационный</option>
+                        <option value="0">Нет</option>
+                        <option value="5">Да</option>
+                        <option value="2">Да + плановый послеоперационный</option>
+                        <option value="5">Да + экстренный послеоперационный</option>
                     </select>
                 </div>
             </div>
             <div class="form_input">
                 <p class="pochka_text">Острая почечная недостаточность</p>
                 <label>
-                    <input type="checkbox" class="switch_input">
+                    <input type="checkbox" class="switch_input" name="isRenalFailure" id="isRenalFailure">
                     <span class="switch_slider"></span>
                 </label>
             </div>
             <div class="form_input">
                 <label style="width: 400px;">
                     <p class="form_input1_p">Ваш возраст, (в годах)</p>
-                    <input type="number" id="age" class="input_number" min="18" max="200" required>
+                    <input type="number" id="age" name="age" class="input_number" min="18" max="200" required>
                 </label>
             </div>
             <div class="form_input">
                 <label style="width: 400px;">
                     <p class="form_input1_p">Ректальная температура, (в °C)</p>
-                    <input type="number" id="popa_temp" class="input_number" min="0" max="50" step="0.1" required>
+                    <input type="number" id="popa_temp" name="rectalTemper" class="input_number" min="0" max="50" step="0.1" required>
                 </label>
             </div>
             <div class="form_input">
                 <label style="width: 400px;">
                     <p class="form_input1_p">Среднее артериальное давление, (в мм Hg)</p>
-                    <input type="number" id="abp" class="input_number" min="0" max="500" placeholder="Норма: 70 - 100" required>
+                    <input type="number" id="abp" name="avgBloodPressure" class="input_number" min="0" max="500" placeholder="Норма: 70 - 100" required>
                 </label>
             </div>
             <div class="form_input">
                 <label style="width: 400px;">
                     <p class="form_input1_p">ЧСС, (в уд/мин)</p>
-                    <input type="number" id="bpm" class="input_number" min="0" max="500" placeholder="Норма 60 - 100" required>
+                    <input type="number" id="bpm" name="heartRate" class="input_number" min="0" max="500" placeholder="Норма 60 - 100" required>
+                </label>
+            </div>
+            <div class="form_input">
+                <label style="width: 400px;">
+                    <input type="submit" value="Рассчитать!">
                 </label>
             </div>
         </form>
     </div>
 </div>
-
+<input type="button" id="testbutton" value="КНОПКА НАХУЙ ЕБАТЬ"> <br/>
+<input type="checkbox" id="myCheckbox" name="myCheckbox">
+<div id="myDiv">Нажмите на чекбокс</div>
 </body>
+
+<script>
+    function sendForm() {
+        let form = $("#form");
+        let data = {
+            "value": form.find("select[name='value']").val(),
+            "isRenalFailure": document.getElementById("isRenalFailure").checked,
+            "age": form.find("input[name='age']").val(),
+            "rectalTemper": form.find("input[name='rectalTemper']").val(),
+            "avgBloodPressure": form.find("input[name='avgBloodPressure']").val(),
+            "heartRate": form.find("input[name='heartRate']").val()
+        };
+
+        $.ajax({
+            url: "/apache/result",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function(data) {
+                // обработка успешной отправки формы
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                // обработка ошибки отправки формы
+            }
+        });
+
+        return false; // отмена действия по умолчанию
+    }
+</script>
+
 </html>

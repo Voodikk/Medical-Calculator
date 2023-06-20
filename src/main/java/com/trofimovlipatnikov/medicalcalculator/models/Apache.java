@@ -219,4 +219,29 @@ public class Apache {
     public void setSerumBicarbonate(int serumBicarbonate) {
         this.serumBicarbonate = serumBicarbonate;
     }
+
+    @Override
+    public String toString() {
+        return "Apache{" +
+                "value=" + value +
+                ", isRenalFailure=" + isRenalFailure +
+                ", age=" + age +
+                ", rectalTemper=" + rectalTemper +
+                ", avgBloodPressure=" + avgBloodPressure +
+                ", heartRate=" + heartRate +
+                ", respiratoryRate=" + respiratoryRate +
+                ", serumSodium=" + serumSodium +
+                ", serumPotassium=" + serumPotassium +
+                ", serumCreatinine=" + serumCreatinine +
+                ", hematocrit=" + hematocrit +
+                ", whiteBloodCells=" + whiteBloodCells +
+                ", ratingGlasgowComa=" + ratingGlasgowComa +
+                ", isAssessmentBloodGas=" + isAssessmentBloodGas +
+                ", arterialBloodAcidity=" + arterialBloodAcidity +
+                ", isLowerFiO2=" + isLowerFiO2 +
+                ", mmPaO2=" + mmPaO2 +
+                ", gradientAA=" + gradientAA +
+                ", serumBicarbonate=" + serumBicarbonate +
+                '}';
+    }
 }
