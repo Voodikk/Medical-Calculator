@@ -190,5 +190,18 @@ select {
 }
 
 .input_number {
+    font-family: OverpassMedium;
+    font-size: 18px;
+    padding: 8px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #eeeeee;
+}
 
+.input_number:focus {
+    border-color: #2196f3;
+    outline: 0;
+    box-shadow: 0 0 0 1px #2196f3;
 }
