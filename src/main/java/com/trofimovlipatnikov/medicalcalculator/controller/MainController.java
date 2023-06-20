@@ -13,8 +13,8 @@ public class MainController {
     }
 
 
-    @GetMapping("/apache")
-    public String getApache() {
-        return "apache";
-    }
+//    @GetMapping("/apache")
+//    public String getApache() {
+//        return "apache";
+//    }
 }
