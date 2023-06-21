@@ -2,7 +2,7 @@ package com.trofimovlipatnikov.medicalcalculator.models;
 
 public class Apache {
     private int value;
-    private boolean isRenalFailure;
+    private boolean renalFailure;
     private int age;
     private double rectalTemper;
     private int avgBloodPressure;
@@ -11,62 +11,17 @@ public class Apache {
     private int serumSodium;
     private double serumPotassium;
     private int serumCreatinine;
-    private int hematocrit;
-    private int whiteBloodCells;
-    private int ratingGlasgowComa;
-    private boolean isAssessmentBloodGas;
-
-    private double arterialBloodAcidity;
-    private boolean isLowerFiO2;
-    private int mmPaO2;
+    private int percHematocrit;
+    private double wbc;
+    private int gcs;
+    private boolean availableABGC;
+    private double phArterialBlood;
+    private boolean lowerFiO2;
+    private int PaO2;
     private int gradientAA;
-
     private int serumBicarbonate;
 
-    public Apache(){}
-    public Apache(int value, boolean isRenalFailure, int age, double rectalTemper, int avgBloodPressure, int heartRate, int respiratoryRate, int serumSodium, double serumPotassium, int serumCreatinine, int hematocrit, int whiteBloodCells, int ratingGlasgowComa, boolean isAssessmentBloodGas, double arterialBloodAcidity, boolean isLowerFiO2, int mmHg) {
-        this.value = value;
-        this.isRenalFailure = isRenalFailure;
-        this.age = age;
-        this.rectalTemper = rectalTemper;
-        this.avgBloodPressure = avgBloodPressure;
-        this.heartRate = heartRate;
-        this.respiratoryRate = respiratoryRate;
-        this.serumSodium = serumSodium;
-        this.serumPotassium = serumPotassium;
-        this.serumCreatinine = serumCreatinine;
-        this.hematocrit = hematocrit;
-        this.whiteBloodCells = whiteBloodCells;
-        this.ratingGlasgowComa = ratingGlasgowComa;
-        this.isAssessmentBloodGas = isAssessmentBloodGas;
-        this.arterialBloodAcidity = arterialBloodAcidity;
-        this.isLowerFiO2 = isLowerFiO2;
-        if(isLowerFiO2) {
-            this.mmPaO2 = mmHg;
-        }
-        else {
-            this.gradientAA = mmHg;
-        }
-    }
-
-    public Apache(int value, boolean isRenalFailure, int age, double rectalTemper, int avgBloodPressure, int heartRate, int respiratoryRate, int serumSodium, double serumPotassium, int serumCreatinine, int hematocrit, int whiteBloodCells, int ratingGlasgowComa, boolean isAssessmentBloodGas, int serumBicarbonate) {
-        this.value = value;
-        this.isRenalFailure = isRenalFailure;
-        this.age = age;
-        this.rectalTemper = rectalTemper;
-        this.avgBloodPressure = avgBloodPressure;
-        this.heartRate = heartRate;
-        this.respiratoryRate = respiratoryRate;
-        this.serumSodium = serumSodium;
-        this.serumPotassium = serumPotassium;
-        this.serumCreatinine = serumCreatinine;
-        this.hematocrit = hematocrit;
-        this.whiteBloodCells = whiteBloodCells;
-        this.ratingGlasgowComa = ratingGlasgowComa;
-        this.isAssessmentBloodGas = isAssessmentBloodGas;
-        this.serumBicarbonate = serumBicarbonate;
-    }
-
+    public Apache() {}
 
     public int getValue() {
         return value;
@@ -77,11 +32,11 @@ public class Apache {
     }
 
     public boolean isRenalFailure() {
-        return isRenalFailure;
+        return renalFailure;
     }
 
     public void setRenalFailure(boolean renalFailure) {
-        isRenalFailure = renalFailure;
+        this.renalFailure = renalFailure;
     }
 
     public int getAge() {
@@ -148,60 +103,60 @@ public class Apache {
         this.serumCreatinine = serumCreatinine;
     }
 
-    public int getHematocrit() {
-        return hematocrit;
+    public int getPercHematocrit() {
+        return percHematocrit;
     }
 
-    public void setHematocrit(int hematocrit) {
-        this.hematocrit = hematocrit;
+    public void setPercHematocrit(int percHematocrit) {
+        this.percHematocrit = percHematocrit;
     }
 
-    public int getWhiteBloodCells() {
-        return whiteBloodCells;
+    public double getWbc() {
+        return wbc;
     }
 
-    public void setWhiteBloodCells(int whiteBloodCells) {
-        this.whiteBloodCells = whiteBloodCells;
+    public void setWbc(double wbc) {
+        this.wbc = wbc;
     }
 
-    public int getRatingGlasgowComa() {
-        return ratingGlasgowComa;
+    public int getGcs() {
+        return gcs;
     }
 
-    public void setRatingGlasgowComa(int ratingGlasgowComa) {
-        this.ratingGlasgowComa = ratingGlasgowComa;
+    public void setGcs(int gcs) {
+        this.gcs = gcs;
     }
 
-    public boolean isAssessmentBloodGas() {
-        return isAssessmentBloodGas;
+    public boolean isAvailableABGC() {
+        return availableABGC;
     }
 
-    public void setAssessmentBloodGas(boolean assessmentBloodGas) {
-        isAssessmentBloodGas = assessmentBloodGas;
+    public void setAvailableABGC(boolean availableABGC) {
+        this.availableABGC = availableABGC;
     }
 
-    public double getArterialBloodAcidity() {
-        return arterialBloodAcidity;
+    public double getPhArterialBlood() {
+        return phArterialBlood;
     }
 
-    public void setArterialBloodAcidity(double arterialBloodAcidity) {
-        this.arterialBloodAcidity = arterialBloodAcidity;
+    public void setPhArterialBlood(double phArterialBlood) {
+        this.phArterialBlood = phArterialBlood;
     }
 
     public boolean isLowerFiO2() {
-        return isLowerFiO2;
+        return lowerFiO2;
     }
 
     public void setLowerFiO2(boolean lowerFiO2) {
-        isLowerFiO2 = lowerFiO2;
+        this.lowerFiO2 = lowerFiO2;
     }
 
-    public int getMmPaO2() {
-        return mmPaO2;
+    public int getPaO2() {
+        return PaO2;
     }
 
-    public void setMmPaO2(int mmPaO2) {
-        this.mmPaO2 = mmPaO2;
+    public void setPaO2(int paO2) {
+        PaO2 = paO2;
     }
 
     public int getGradientAA() {
@@ -224,7 +179,7 @@ public class Apache {
     public String toString() {
         return "Apache{" +
                 "value=" + value +
-                ", isRenalFailure=" + isRenalFailure +
+                ", renalFailure=" + renalFailure +
                 ", age=" + age +
                 ", rectalTemper=" + rectalTemper +
                 ", avgBloodPressure=" + avgBloodPressure +
@@ -233,13 +188,13 @@ public class Apache {
                 ", serumSodium=" + serumSodium +
                 ", serumPotassium=" + serumPotassium +
                 ", serumCreatinine=" + serumCreatinine +
-                ", hematocrit=" + hematocrit +
-                ", whiteBloodCells=" + whiteBloodCells +
-                ", ratingGlasgowComa=" + ratingGlasgowComa +
-                ", isAssessmentBloodGas=" + isAssessmentBloodGas +
-                ", arterialBloodAcidity=" + arterialBloodAcidity +
-                ", isLowerFiO2=" + isLowerFiO2 +
-                ", mmPaO2=" + mmPaO2 +
+                ", percHematocrit=" + percHematocrit +
+                ", wbc=" + wbc +
+                ", gcs=" + gcs +
+                ", availableABGC=" + availableABGC +
+                ", phArterialBlood=" + phArterialBlood +
+                ", lowerFiO2=" + lowerFiO2 +
+                ", PaO2=" + PaO2 +
                 ", gradientAA=" + gradientAA +
                 ", serumBicarbonate=" + serumBicarbonate +
                 '}';

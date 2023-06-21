@@ -5,54 +5,172 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/apache")
 public class ApacheController {
     @GetMapping()
-    public String getApache (Model model) {
-        model.addAttribute("apacheres", new Apache());
+    public String getApache () {
         return "apache";
     }
     @GetMapping("/info")
     public ResponseEntity<?> getApacheInfo() {
-        TestClass testClass = new TestClass("Pridurok", "frik");
-        return new ResponseEntity<>(testClass, HttpStatus.OK);
+        Information information = new Information();
+        return new ResponseEntity<>(information, HttpStatus.OK);
     }
     @PostMapping("/result")
     public ResponseEntity<?> sendApacheResult (@RequestBody Apache apache) {
         System.out.println(apache);
         return new ResponseEntity<>(apache, HttpStatus.OK);
     }
-    public class TestClass {
-        private String username;
-        private String password;
+    public static class Information {
+        private String infor = "Прогноз летальности у пациентов в ОРИТ по шкале APACHE II (шкала оценки острых физиологических расстройств и хронических нарушений состояния II)\n" +
+                "Формула\n" +
+                "Сумма баллов по следующим критериям:\n" +
+                "\n" +
+                "Критерий\tКоличество баллов\n" +
+                "Возраст, лет\n" +
+                "<=44\t0\n" +
+                "45-54\t2\n" +
+                "55-64\t3\n" +
+                "65-74\t5\n" +
+                ">74\t6\n" +
+                "Тяжелая органная дисфункция или иммуносупрессия в анамнезе\n" +
+                "Нет\t0\n" +
+                "Да, планово оперированные пациенты\t2\n" +
+                "Да, неоперированные пациенты, оперированные по экстренным показаниям\t5\n" +
+                "Ректальная температура, °C\n" +
+                ">40.9\t4\n" +
+                "39-40.9\t3\n" +
+                "38.5-38.9\t1\n" +
+                "36-38.4\t0\n" +
+                "34-35.9\t1\n" +
+                "32-33.9\t2\n" +
+                "30-31.9\t3\n" +
+                "<30\t4\n" +
+                "Среднее артериальное давление, мм Hg\n" +
+                ">159\t4\n" +
+                "130-159\t3\n" +
+                "110-129\t2\n" +
+                "70-109\t0\n" +
+                "50-69\t2\n" +
+                "<50\t4\n" +
+                "Частота сердечных сокращений, уд/мин\n" +
+                ">179\t4\n" +
+                "140-179\t3\n" +
+                "110-139\t2\n" +
+                "70-109\t0\n" +
+                "55-69\t2\n" +
+                "40-54\t3\n" +
+                "<40\t4\n" +
+                "Частота дыхания, дых/мин\n" +
+                ">49\t4\n" +
+                "35-49\t3\n" +
+                "25-34\t1\n" +
+                "12-24\t0\n" +
+                "10-11\t1\n" +
+                "6-9\t2\n" +
+                "<6\t4\n" +
+                "Оксигенация (если FiO2 < 0.5 - используется PaO2, мм Hg; если >= 0.5 - A-a - градиент, мм Hg)\n" +
+                "A-a - градиент >499\t4\n" +
+                "A-a - градиент 350-499\t3\n" +
+                "A-a - градиент 200-349\t2\n" +
+                "A-a - градиент <200 (если FiO2 > 0.49) или PaO2 >70 (если FiO2 < 0.5)\t0\n" +
+                "PaO2 61-70\t1\n" +
+                "PaO2 55-60\t3\n" +
+                "PaO2 <55\t4\n" +
+                "pH артериальной крови\n" +
+                ">7.69\t4\n" +
+                "7.60-7.69\t3\n" +
+                "7.50-7.59\t1\n" +
+                "7.33-7.49\t0\n" +
+                "7.25-7.32\t2\n" +
+                "7.15-7.24\t3\n" +
+                "<7.15\t4\n" +
+                "Натрий сыворотки, ммоль/л\n" +
+                ">179\t4\n" +
+                "160-179\t3\n" +
+                "155-159\t2\n" +
+                "150-154\t1\n" +
+                "130-149\t0\n" +
+                "120-129\t2\n" +
+                "111-119\t3\n" +
+                "<111\t4\n" +
+                "Калий сыворотки, ммоль/л\n" +
+                ">6.9\t4\n" +
+                "6-6.9\t3\n" +
+                "5.5-5.9\t1\n" +
+                "3.5-5.4\t0\n" +
+                "3-3.4\t1\n" +
+                "2.5-2.9\t2\n" +
+                "<2.5\t4\n" +
+                "Креатинин сыворотки, мкмоль/л\n" +
+                ">300.56 и ОПН\t8\n" +
+                "176.8-300.56 и ОПН\t6\n" +
+                ">300.56 и ХПН\t4\n" +
+                "132.6-176.7 и ОПН\t4\n" +
+                "176.8-300.56 и ХПН\t3\n" +
+                "132.6-176.7 и ХПН\t2\n" +
+                "53.04-132.5\t0\n" +
+                "<53.04\t2\n" +
+                "Гематокрит, %\n" +
+                ">59.9\t4\n" +
+                "50-59.9\t2\n" +
+                "46-49.9\t1\n" +
+                "30-45.9\t0\n" +
+                "20-29.9\t2\n" +
+                "<20\t4\n" +
+                "Лейкоциты, *109/л\n" +
+                ">39.9\t4\n" +
+                "20-39.9\t2\n" +
+                "15-19.9\t1\n" +
+                "3.0-14.9\t0\n" +
+                "1.0-2.9\t2\n" +
+                "<1.0\t4\n" +
+                "Шкала комы Глазго\t15 - оценка комы по Глазго\n" +
+                "Бикарбонат, ммоль/л. Применяется, когда невозможно оценить газовый состав крови у пациентов с нормальной оксигенацией.\n" +
+                ">52\t4\n" +
+                "41-52\t3\n" +
+                "32-40.9\t1\n" +
+                "22-31.9\t0\n" +
+                "18-21.9\t2\n" +
+                "15-17.9\t3\n" +
+                "<15\t4\n" +
+                "Тяжелая органная дисфункция подразумевает под собой (анамнестически, до текущей госпитализации):\n" +
+                "\n" +
+                "Печень\n" +
+                "\n" +
+                "Цирроз, подтвержденный биопсией\n" +
+                "Подтвержденная портальная гипертензия (ПГ)\n" +
+                "ЖК-кровотечение, ассоциированное с ПГ\n" +
+                "Печеночная энцефалопатия, кома\n" +
+                "Сердце и сосуды\n" +
+                "\n" +
+                "Сердечная недостаточность NYHA IV\n" +
+                "Дыхательная система\n" +
+                "\n" +
+                "Хроническое рестриктивное, обструктивное или васкулярное заболевание, приведшеое к значительному ограничению физической активности, - неспособности подняться по лестнице или неспособности вести домашнее хозяйство.\n" +
+                "Задокументированная хроническая гипоксия, гиперкапния, вторичная полицитемия, тяжелая легочная гипертензия (>40 мм Hg), зависимость от респиратора.\n" +
+                "Почки\n" +
+                "\n" +
+                "Программный гемодиализ\n" +
+                "Иммуносупрессия\n" +
+                "\n" +
+                "Пациент получал иммуносупрессиную терапию, снизившую его сопротивляемость к инфекции: химиотерапия, облучение, высокие дозы стероидов. Заболевания, снижающие сопротивляемость к инфекции: лейкемия, лимфома, ВИЧ и проч.";
 
-        TestClass() {}
+        Information() {}
 
-        public TestClass(String username, String password) {
-            this.username = username;
-            this.password = password;
+        public Information(String infor) {
+            this.infor = infor;
         }
 
-        public String getUsername() {
-            return username;
+        public String getInfor() {
+            return infor;
         }
 
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
+        public void setInfor(String infor) {
+            this.infor = infor;
         }
     }
 }

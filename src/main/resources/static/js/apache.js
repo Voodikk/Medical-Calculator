@@ -5,12 +5,15 @@ $(document).ready(function (){
                 url: '/apache/info',
                 type: 'GET',
                 success: function(data) {
-                    alert(data.username + data.password);
+                    alert(data.infor);
                     resolve(true);
                 },
                 error: function(jqXHR) {
                     if (jqXHR.status === 403) {
-                        alert("Ошибка нахуй");
+                        alert("Ошибка");
+                    }
+                    else {
+                        alert("Другая ошибка");
                     }
                     resolve(false);
                 }
