@@ -1,5 +1,5 @@
 $(document).ready(function (){
-    $('#testbutton').on('click', function (){
+    $('#InformationButton').on('click', function (){
         return new Promise((resolve, reject) => {
             $.ajax({
                 url: '/apache/info',
@@ -20,13 +20,26 @@ $(document).ready(function (){
             });
         });
     })
-    $('#myCheckbox').change(function(){
+    $('#lowerFiO2').change(function(){
         if(this.checked){
 // Если чекбокс выбран
-            $('#myDiv').html('Чекбокс выбран!');
+            $('#paO2').css("display", "block");
+            $('#gradientAA').css("display", "none");
         }else{
 // Если чекбокс не выбран
-            $('#myDiv').html('Чекбокс не выбран!');
+            $('#paO2').css("display", "none");
+            $('#gradientAA').css("display", "block");
+        }
+    });
+    $('#availableABGC').change(function(){
+        if(this.checked){
+// Если чекбокс выбран
+            $('#hiddenABGCcheck').css("display", "block");
+            $('#serumBicarbonate').css("display", "none");
+        }else{
+// Если чекбокс не выбран
+            $('#hiddenABGCcheck').css("display", "none");
+            $('#serumBicarbonate').css("display", "block");
         }
     });
 })

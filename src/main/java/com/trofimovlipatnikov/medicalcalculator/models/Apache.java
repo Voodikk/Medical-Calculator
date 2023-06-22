@@ -17,7 +17,7 @@ public class Apache {
     private boolean availableABGC;
     private double phArterialBlood;
     private boolean lowerFiO2;
-    private int PaO2;
+    private int paO2;
     private int gradientAA;
     private int serumBicarbonate;
 
@@ -152,11 +152,11 @@ public class Apache {
     }
 
     public int getPaO2() {
-        return PaO2;
+        return paO2;
     }
 
     public void setPaO2(int paO2) {
-        PaO2 = paO2;
+        this.paO2 = paO2;
     }
 
     public int getGradientAA() {
@@ -194,7 +194,7 @@ public class Apache {
                 ", availableABGC=" + availableABGC +
                 ", phArterialBlood=" + phArterialBlood +
                 ", lowerFiO2=" + lowerFiO2 +
-                ", PaO2=" + PaO2 +
+                ", paO2=" + paO2 +
                 ", gradientAA=" + gradientAA +
                 ", serumBicarbonate=" + serumBicarbonate +
                 '}';

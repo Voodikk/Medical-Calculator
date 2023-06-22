@@ -109,8 +109,41 @@
             <div class="form_input">
                 <p class="pochka_text">Оценка газового состава доступна?</p>
                 <label>
-                    <input type="checkbox" class="switch_input" name="availableABGC" id="availableABGC">
+                    <input type="checkbox" class="switch_input" name="availableABGC" id="availableABGC" checked>
                     <span class="switch_slider"></span>
+                </label>
+            </div>
+            <div id="hiddenABGCcheck">
+                <div class="form_input">
+                    <label style="width: 400px;">
+                        <p class="form_input1_p">pH артериальной крови</p>
+                        <input type="number" name="phArterialBlood" class="input_number" placeholder="Норма: 7.38 - 7.44" step="0.01" min="6" max="10" required>
+                    </label>
+                </div>
+                <div class="form_input">
+                    <p class="pochka_text">Значение FiO<sub>2</sub> меньше 0.5?</p>
+                    <label>
+                        <input type="checkbox" class="switch_input" name="lowerFiO2" id="lowerFiO2" checked>
+                        <span class="switch_slider"></span>
+                    </label>
+                </div>
+                <div class="form_input" id="paO2">
+                    <label style="width: 400px;">
+                        <p class="form_input1_p">PaO<sub>2</sub>, (в mm Hg)</p>
+                        <input type="number" name="paO2" class="input_number" placeholder="Норма: 75 - 100"  min="0" max="300" required>
+                    </label>
+                </div>
+                <div class="form_input" id="gradientAA" style="display: none">
+                    <label style="width: 400px;">
+                        <p class="form_input1_p">A-a - градиент, (в mm Hg)</p>
+                        <input type="number" name="gradientAA" class="input_number" placeholder="Норма: 5 - 25"  min="0" max="1500" required>
+                    </label>
+                </div>
+            </div>
+            <div class="form_input" id="serumBicarbonate" style="display: none">
+                <label style="width: 400px;">
+                    <p class="form_input1_p">Бикарбонат сыворотки, (в ммоль/л)</p>
+                    <input type="number" name="serumBicarbonate" class="input_number" placeholder="Норма: 22 - 32"  min="0" max="500" required>
                 </label>
             </div>
             <div class="form_input">
@@ -119,13 +152,12 @@
                 </label>
             </div>
         </form>
+        <div class="form_input">
+            <input type="button" id="InformationButton" value="Информация о калькуляторе">
+        </div>
     </div>
 </div>
-<input type="button" id="testbutton" value="КНОПКА"> <br/>
-<input type="checkbox" id="myCheckbox" name="myCheckbox">
-<div id="myDiv">Нажмите на чекбокс</div>
 </body>
-
 <script>
     function sendForm() {
         let form = $("#form");
@@ -143,7 +175,12 @@
             percHematocrit: form.find("input[name='percHematocrit']").val(),
             wbc: form.find("input[name='wbc']").val(),
             gcs: form.find("input[name='gcs']").val(),
-            availableABGC: $('#availableABGC').is(":checked")
+            availableABGC: $('#availableABGC').is(":checked"),
+            phArterialBlood:form.find("input[name='phArterialBlood']").val(),
+            lowerFiO2:$('#lowerFiO2').is(":checked"),
+            paO2: form.find("input[name='paO2']").val(),
+            gradientAA: form.find("input[name='gradientAA']").val(),
+            serumBicarbonate: form.find("input[name='serumBicarbonate']").val()
         };
         console.log(data.renalFailure);
         $.ajax({
