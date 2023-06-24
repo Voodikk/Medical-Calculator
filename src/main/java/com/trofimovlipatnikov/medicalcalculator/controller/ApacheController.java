@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 @RequestMapping("/apache")
 public class ApacheController {
@@ -21,7 +24,9 @@ public class ApacheController {
     }
     @PostMapping("/result")
     public ResponseEntity<?> sendApacheResult (@RequestBody Apache apache) {
-        System.out.println(apache);
+        apache.setResult();
+        apache.setPercLetal();
+        System.out.println(apache.getResult() + " " + apache.getPercLetal());
         return new ResponseEntity<>(apache, HttpStatus.OK);
     }
     public static class Information {

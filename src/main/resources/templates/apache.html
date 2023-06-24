@@ -117,7 +117,7 @@
                 <div class="form_input">
                     <label style="width: 400px;">
                         <p class="form_input1_p">pH артериальной крови</p>
-                        <input type="number" name="phArterialBlood" class="input_number" placeholder="Норма: 7.38 - 7.44" step="0.01" min="6" max="10" required>
+                        <input type="number" name="phArterialBlood" id="phArterialBlood" class="input_number" placeholder="Норма: 7.38 - 7.44" step="0.01" min="6" max="10" required>
                     </label>
                 </div>
                 <div class="form_input">
@@ -127,23 +127,23 @@
                         <span class="switch_slider"></span>
                     </label>
                 </div>
-                <div class="form_input" id="paO2">
+                <div class="form_input" id="paO2d">
                     <label style="width: 400px;">
                         <p class="form_input1_p">PaO<sub>2</sub>, (в mm Hg)</p>
-                        <input type="number" name="paO2" class="input_number" placeholder="Норма: 75 - 100"  min="0" max="300" required>
+                        <input type="number" name="paO2" id="paO2" class="input_number" placeholder="Норма: 75 - 100"  min="0" max="300" required>
                     </label>
                 </div>
-                <div class="form_input" id="gradientAA" style="display: none">
+                <div class="form_input" id="gradientAAd" style="display: none">
                     <label style="width: 400px;">
                         <p class="form_input1_p">A-a - градиент, (в mm Hg)</p>
-                        <input type="number" name="gradientAA" class="input_number" placeholder="Норма: 5 - 25"  min="0" max="1500" required>
+                        <input type="number" name="gradientAA" id="gradientAA" class="input_number" placeholder="Норма: 5 - 25"  min="0" max="1500">
                     </label>
                 </div>
             </div>
-            <div class="form_input" id="serumBicarbonate" style="display: none">
+            <div class="form_input" id="serumBicarbonated" style="display: none">
                 <label style="width: 400px;">
                     <p class="form_input1_p">Бикарбонат сыворотки, (в ммоль/л)</p>
-                    <input type="number" name="serumBicarbonate" class="input_number" placeholder="Норма: 22 - 32"  min="0" max="500" required>
+                    <input type="number" name="serumBicarbonate" id="serumBicarbonate" class="input_number" placeholder="Норма: 22 - 32"  min="0" max="500">
                 </label>
             </div>
             <div class="form_input">
@@ -176,20 +176,19 @@
             wbc: form.find("input[name='wbc']").val(),
             gcs: form.find("input[name='gcs']").val(),
             availableABGC: $('#availableABGC').is(":checked"),
-            phArterialBlood:form.find("input[name='phArterialBlood']").val(),
+            phArterialBlood:form.find("input[name='phArterialBlood']").val() == null ? 0 : form.find("input[name='phArterialBlood']").val(),
             lowerFiO2:$('#lowerFiO2').is(":checked"),
-            paO2: form.find("input[name='paO2']").val(),
-            gradientAA: form.find("input[name='gradientAA']").val(),
-            serumBicarbonate: form.find("input[name='serumBicarbonate']").val()
+            paO2: form.find("input[name='paO2']").val() == null ? 0 : form.find("input[name='paO2']").val(),
+            gradientAA: form.find("input[name='gradientAA']").val() == null ? 0 : form.find("input[name='gradientAA']").val(),
+            serumBicarbonate: form.find("input[name='serumBicarbonate']").val() == null ? 0 : form.find("input[name='serumBicarbonate']").val()
         };
-        console.log(data.renalFailure);
         $.ajax({
             url: "http://localhost:8080/apache/result",
             type: "POST",
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data),
-            success: function(result) {
-                // обработка успешной отправки формы
+            success: function(information) {
+                console.log(information.result, information.percLetal);
             },
             error: function(request,msg,error) {
                 // обработка ошибки отправки формы

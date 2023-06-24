@@ -22,24 +22,40 @@ $(document).ready(function (){
     })
     $('#lowerFiO2').change(function(){
         if(this.checked){
-// Если чекбокс выбран
-            $('#paO2').css("display", "block");
-            $('#gradientAA').css("display", "none");
-        }else{
-// Если чекбокс не выбран
-            $('#paO2').css("display", "none");
-            $('#gradientAA').css("display", "block");
+            $('#paO2d').css("display", "block");
+            $('#gradientAAd').css("display", "none");
+            document.getElementById('paO2').setAttribute('required', '');
+            $('#gradientAA').removeAttr('required');
+        }
+        else{
+            $('#paO2d').css("display", "none");
+            $('#gradientAAd').css("display", "block");
+            $('#paO2').removeAttr('required');
+            document.getElementById('gradientAA').setAttribute('required', '');
         }
     });
     $('#availableABGC').change(function(){
         if(this.checked){
-// Если чекбокс выбран
             $('#hiddenABGCcheck').css("display", "block");
-            $('#serumBicarbonate').css("display", "none");
-        }else{
-// Если чекбокс не выбран
+            $('#serumBicarbonated').css("display", "none");
+            document.getElementById('phArterialBlood').setAttribute('required', '');
+            $('#serumBicarbonate').removeAttr('required');
+            if(document.getElementById('lowerFiO2').checked){
+                document.getElementById('paO2').setAttribute('required', '');
+                $('#gradientAA').removeAttr('required');
+            }
+            else {
+                $('#paO2').removeAttr('required');
+                document.getElementById('gradientAA').setAttribute('required', '');
+            }
+        }
+        else{
             $('#hiddenABGCcheck').css("display", "none");
-            $('#serumBicarbonate').css("display", "block");
+            $('#serumBicarbonated').css("display", "block");
+            $('#phArterialBlood').removeAttr('required');
+            $('#paO2').removeAttr('required');
+            $('#gradientAA').removeAttr('required');
+            document.getElementById('serumBicarbonate').setAttribute('required', '');
         }
     });
 })
