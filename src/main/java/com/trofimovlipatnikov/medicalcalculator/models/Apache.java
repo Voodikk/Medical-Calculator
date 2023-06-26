@@ -218,7 +218,7 @@ public class Apache {
         }
         result +=value;
 
-        if((rectalTemper > 40.9) || rectalTemper < 30) {
+        if(rectalTemper > 40.9 || rectalTemper < 30) {
             result += 4;
         }
         else if((rectalTemper >= 39 && rectalTemper <= 40.9) || (rectalTemper >= 30 && rectalTemper < 32)) {
@@ -231,7 +231,7 @@ public class Apache {
             result += 2;
         }
 
-        if(avgBloodPressure > 159 && avgBloodPressure < 50) {
+        if(avgBloodPressure > 159 || avgBloodPressure < 50) {
             result += 4;
         }
         else if(avgBloodPressure >= 130 && avgBloodPressure <= 159) {
@@ -257,11 +257,11 @@ public class Apache {
         else if (respiratoryRate >= 35 && respiratoryRate <= 49) {
             result += 3;
         }
-        else if((respiratoryRate >= 24 && respiratoryRate <= 34) || (respiratoryRate >= 6 && respiratoryRate <= 9)) {
-            result += 2;
-        }
-        else if(respiratoryRate == 10 || respiratoryRate == 11) {
+        else if((respiratoryRate > 24 && respiratoryRate <= 34) || (respiratoryRate == 10 || respiratoryRate == 11)) {
             result += 1;
+        }
+        else if(respiratoryRate >= 6 && respiratoryRate <= 9) {
+            result += 2;
         }
 
         if (availableABGC){
@@ -316,7 +316,7 @@ public class Apache {
             }
         }
 
-        if(serumSodium > 179 && serumSodium < 111) {
+        if(serumSodium > 179 || serumSodium < 111) {
             result += 4;
         }
         else if((serumSodium >= 160 && serumSodium <= 179) || (serumSodium >= 111 && serumSodium <= 119)) {
@@ -329,7 +329,7 @@ public class Apache {
             result += 1;
         }
 
-        if(serumPotassium > 6.9 && serumPotassium < 2.5) {
+        if(serumPotassium > 6.9 || serumPotassium < 2.5) {
             result += 4;
         }
         else if (serumPotassium >= 6 && serumPotassium <= 6.9) {
@@ -354,7 +354,10 @@ public class Apache {
         else if ((serumCreatinine >= 132.6 && serumCreatinine < 176.8) && renalFailure) {
             result += 4;
         }
-        else if (((serumCreatinine >= 176.8 && serumCreatinine <= 300.56) && !renalFailure) || serumCreatinine < 53.04) {
+        else if ((serumCreatinine >= 176.8 && serumCreatinine <= 300.56) && !renalFailure) {
+            result += 3;
+        }
+        else if (((serumCreatinine >= 132.6 && serumCreatinine <= 176.8) && !renalFailure) || serumCreatinine < 53.04) {
             result += 2;
         }
 
