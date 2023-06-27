@@ -381,7 +381,7 @@ public class Apache {
             result += 1;
         }
 
-        result += 3 - gcs;
+        result += 15 - gcs;
     }
     public void setPercLetal() {
         if(result <= 4) {
