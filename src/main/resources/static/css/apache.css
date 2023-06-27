@@ -205,3 +205,25 @@ select {
     outline: 0;
     box-shadow: 0 0 0 1px #2196f3;
 }
+
+.submit_input_div {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.submit_input {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: OverpassMedium;
+    font-size: 20px;
+}
+
+.submit_input:hover {
+    cursor: pointer;
+    background-color: #2196f3;
+    border: 2px solid #2196f3;
+    transition: 0.4s;
+}
