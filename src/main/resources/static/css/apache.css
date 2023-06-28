@@ -47,13 +47,13 @@ body {
     padding: 20px;
 }
 
-.form_input1_p {
-    margin: 0 0 15px 0;
-    width: 400px;
-    font-size: 20px;
-    font-family: OverpassMedium;
-    display: inline-block;
-}
+/*.form_input1_p {*/
+/*    margin: 0 0 15px 0;*/
+/*    width: 400px;*/
+/*    font-size: 20px;*/
+/*    font-family: OverpassMedium;*/
+/*    display: inline-block;*/
+/*}*/
 
 select {
     width: 235px;
@@ -109,8 +109,16 @@ select {
     font-size: 15px;
 }
 
-.pochka_text {
-    width: 400px;
+.text_select {
+    width: 360px;
+    display: inline-block;
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    font-family: OverpassMedium;
+}
+
+.text {
+    width: 450px;
     margin: 0 0 15px 0;
     font-size: 20px;
     font-family: OverpassMedium;
@@ -119,6 +127,7 @@ select {
 .infoconc {
     position: relative;
     cursor: pointer;
+    display: inline-block;
 }
 .infoconc::before {
     cursor: pointer;
@@ -137,11 +146,19 @@ select {
     border: 1px solid #333;
 }
 
-.form_input label {
+.form_input_switch_label {
     display: inline-block;
     position: relative;
     width: 50px;
     height: 25px;
+}
+
+.form_input_label {
+    display: block;
+    margin: 0 0 10px 0;
+    width: 450px;
+    font-size: 20px;
+    font-family: OverpassMedium;
 }
 
 .switch_input {
@@ -191,6 +208,7 @@ select {
 
 .input_number {
     font-family: OverpassMedium;
+    margin-top: 12px;
     font-size: 18px;
     padding: 8px;
     width: 300px;

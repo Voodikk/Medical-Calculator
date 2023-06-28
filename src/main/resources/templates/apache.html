@@ -21,7 +21,7 @@
         </div>
         <form name="form" id="form" onsubmit="return sendForm();" method="post">
             <div class="form_input">
-                <p class="form_input1_p">Тяжелая органная дисфункция или иммуносупрессия в анамнезе</p>
+                <p class="text_select">Тяжелая органная дисфункция или иммуносупрессия в анамнезе</p>
                 <span class="infoconc" data="Сердечная недостаточность IV ФК по NYHA, цирроз, хроническое заболевание легких, диализ"></span>
                 <div class="select_div">
                     <select name="value" class="first_select">
@@ -34,115 +34,115 @@
                 </div>
             </div>
             <div class="form_input">
-                <p class="pochka_text">Острая почечная недостаточность</p>
-                <label>
+                <p class="text">Острая почечная недостаточность</p>
+                <label class="form_input_switch_label">
                     <input type="checkbox" class="switch_input" name="checkboxIsRenalFailure" id="checkboxIsRenalFailure">
                     <span class="switch_slider"></span>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">Ваш возраст, (в годах)</p>
+                <label class="form_input_label">
+                    Ваш возраст, (в годах)
                     <input type="number" id="age" name="age" class="input_number" min="18" max="200" required>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">Ректальная температура, (в °C)</p>
+                <label class="form_input_label">
+                    Ректальная температура, (в °C)
                     <input type="number" id="popa_temp" name="rectalTemper" class="input_number" min="0" max="50" step="0.1" required>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">Среднее артериальное давление, (в мм Hg)</p>
+                <label class="form_input_label">
+                    Среднее артериальное давление, (в мм Hg)
                     <input type="number" id="abp" name="avgBloodPressure" class="input_number" min="0" max="500" placeholder="Норма: 70 - 100" required>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">ЧСС, (в уд/мин)</p>
+                <label class="form_input_label">
+                    ЧСС, (в уд/мин)
                     <input type="number" id="bpm" name="heartRate" class="input_number" min="0" max="500" placeholder="Норма: 60 - 100" required>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">ЧД, (в дых/мин)</p>
+                <label class="form_input_label">
+                    ЧД, (в дых/мин)
                     <input type="number" name="respiratoryRate" class="input_number" placeholder="Норма: 12 - 20" min="0" max="150" required>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">Натрий сыворотки, (в ммоль/л)</p>
+                <label class="form_input_label">
+                    Натрий сыворотки, (в ммоль/л)
                     <input type="number" name="serumSodium" class="input_number" placeholder="Норма: 136 - 145" min="80" max="250" required>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">Калий сыворотки, (в ммоль/л)</p>
+                <label class="form_input_label">
+                    Калий сыворотки, (в ммоль/л)
                     <input type="number" name="serumPotassium" class="input_number" placeholder="Норма: 3.5 - 5.5" step="0.1" min="0" max="15" required>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">Креатинин сыворотки, (в мкмоль/л)</p>
+                <label class="form_input_label">
+                    Креатинин сыворотки, (в мкмоль/л)
                     <input type="number" name="serumCreatinine" class="input_number" placeholder="Норма: 62 - 115"  min="0" max="5000" required>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">Гематокрит, (в %)</p>
+                <label class="form_input_label">
+                    Гематокрит, (в %)
                     <input type="number" name="percHematocrit" class="input_number" placeholder="Норма: 36 - 51"  min="0" max="100" required>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">Лейкоциты, (в 10<sup>9</sup>л)</p>
+                <label class="form_input_label">
+                    Лейкоциты, (в 10<sup>9</sup>л)
                     <input type="number" name="wbc" class="input_number" step="0.1" placeholder="Норма: 3.7 - 10.7"  min="0" max="300" required>
                 </label>
             </div>
             <div class="form_input">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">Оценка по шкале комы Глазго</p>
+                <label class="form_input_label">
+                    Оценка по шкале комы Глазго
                     <input type="number" name="gcs" class="input_number" placeholder="Норма: 3 - 15"  min="3" max="15" required>
                 </label>
             </div>
             <div class="form_input">
-                <p class="pochka_text">Оценка газового состава доступна?</p>
-                <label>
+                <p class="text">Оценка газового состава доступна?</p>
+                <label class="form_input_switch_label">
                     <input type="checkbox" class="switch_input" name="availableABGC" id="availableABGC" checked>
                     <span class="switch_slider"></span>
                 </label>
             </div>
             <div id="hiddenABGCcheck">
                 <div class="form_input">
-                    <label style="width: 400px;">
-                        <p class="form_input1_p">pH артериальной крови</p>
+                    <label class="form_input_label">
+                        pH артериальной крови
                         <input type="number" name="phArterialBlood" id="phArterialBlood" class="input_number" placeholder="Норма: 7.38 - 7.44" step="0.01" min="6" max="10" required>
                     </label>
                 </div>
                 <div class="form_input">
-                    <p class="pochka_text">Значение FiO<sub>2</sub> меньше 0.5?</p>
-                    <label>
+                    <p class="text">Значение FiO<sub>2</sub> меньше 0.5?</p>
+                    <label class="form_input_switch_label">
                         <input type="checkbox" class="switch_input" name="lowerFiO2" id="lowerFiO2" checked>
                         <span class="switch_slider"></span>
                     </label>
                 </div>
                 <div class="form_input" id="paO2d">
-                    <label style="width: 400px;">
-                        <p class="form_input1_p">PaO<sub>2</sub>, (в mm Hg)</p>
+                    <label class="form_input_label">
+                        PaO<sub>2</sub>, (в mm Hg)
                         <input type="number" name="paO2" id="paO2" class="input_number" placeholder="Норма: 75 - 100"  min="0" max="300" required>
                     </label>
                 </div>
                 <div class="form_input" id="gradientAAd" style="display: none">
-                    <label style="width: 400px;">
-                        <p class="form_input1_p">A-a - градиент, (в mm Hg)</p>
+                    <label class="form_input_label">
+                        A-a - градиент, (в mm Hg)
                         <input type="number" name="gradientAA" id="gradientAA" class="input_number" placeholder="Норма: 5 - 25"  min="0" max="1500">
                     </label>
                 </div>
             </div>
             <div class="form_input" id="serumBicarbonated" style="display: none">
-                <label style="width: 400px;">
-                    <p class="form_input1_p">Бикарбонат сыворотки, (в ммоль/л)</p>
+                <label class="form_input_label">
+                    Бикарбонат сыворотки, (в ммоль/л)
                     <input type="number" name="serumBicarbonate" id="serumBicarbonate" class="input_number" placeholder="Норма: 22 - 32"  min="0" max="500">
                 </label>
             </div>
@@ -151,7 +151,7 @@
                     <input type="submit" value="Рассчитать" class="submit_input">
                 </div>
                 <div class="info_calculator_div">
-                    <button id="InformationButton" class="information_button" data-toggle>О калькуляторе</button>
+                    <button id="InformationButton" class="information_button">О калькуляторе</button>
                 </div>
             </div>
         </form>
