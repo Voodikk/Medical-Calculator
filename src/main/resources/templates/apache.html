@@ -1,162 +1,181 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/apache.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="js/apache.js"></script>
-    <meta charset="UTF-8">
     <title>Шкала APACHE II</title>
 </head>
 <body>
-<div class="parent_div">
-    <div class="title_div">
-        <h1>Шкала APACHE II</h1>
-    </div>
-    <div class="body_div">
-        <div class="warning_div">
-            <p>Данные должны быть собраны в течение 24 часов после поступления пациента в ОРИТ.</p>
-            <p>Следует использовать наихудшие значения.</p>
+<div>
+    <div class="parent_div">
+        <div class="title_div">
+            <h1>Шкала APACHE II</h1>
         </div>
-        <form name="form" id="form" onsubmit="return sendForm();" method="post">
-            <div class="form_input">
-                <p class="text_select">Тяжелая органная дисфункция или иммуносупрессия в анамнезе</p>
-                <span class="infoconc" data="Сердечная недостаточность IV ФК по NYHA, цирроз, хроническое заболевание легких, диализ"></span>
-                <div class="select_div">
-                    <select name="value" class="first_select">
-                        <option selected disabled>Выберите</option>
-                        <option value="0">Нет</option>
-                        <option value="5">Да</option>
-                        <option value="2">Да + плановый послеоперационный</option>
-                        <option value="5">Да + экстренный послеоперационный</option>
-                    </select>
-                </div>
+        <div class="body_div">
+            <div class="warning_div">
+                <p>Данные должны быть собраны в течение 24 часов после поступления пациента в ОРИТ.</p>
+                <p>Следует использовать наихудшие значения.</p>
             </div>
-            <div class="form_input">
-                <p class="text">Острая почечная недостаточность</p>
-                <label class="form_input_switch_label">
-                    <input type="checkbox" class="switch_input" name="checkboxIsRenalFailure" id="checkboxIsRenalFailure">
-                    <span class="switch_slider"></span>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    Ваш возраст, (в годах)
-                    <input type="number" id="age" name="age" class="input_number" min="18" max="200" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    Ректальная температура, (в °C)
-                    <input type="number" id="popa_temp" name="rectalTemper" class="input_number" min="0" max="50" step="0.1" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    Среднее артериальное давление, (в мм Hg)
-                    <input type="number" id="abp" name="avgBloodPressure" class="input_number" min="0" max="500" placeholder="Норма: 70 - 100" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    ЧСС, (в уд/мин)
-                    <input type="number" id="bpm" name="heartRate" class="input_number" min="0" max="500" placeholder="Норма: 60 - 100" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    ЧД, (в дых/мин)
-                    <input type="number" name="respiratoryRate" class="input_number" placeholder="Норма: 12 - 20" min="0" max="150" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    Натрий сыворотки, (в ммоль/л)
-                    <input type="number" name="serumSodium" class="input_number" placeholder="Норма: 136 - 145" min="80" max="250" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    Калий сыворотки, (в ммоль/л)
-                    <input type="number" name="serumPotassium" class="input_number" placeholder="Норма: 3.5 - 5.5" step="0.1" min="0" max="15" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    Креатинин сыворотки, (в мкмоль/л)
-                    <input type="number" name="serumCreatinine" class="input_number" placeholder="Норма: 62 - 115"  min="0" max="5000" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    Гематокрит, (в %)
-                    <input type="number" name="percHematocrit" class="input_number" placeholder="Норма: 36 - 51"  min="0" max="100" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    Лейкоциты, (в 10<sup>9</sup>л)
-                    <input type="number" name="wbc" class="input_number" step="0.1" placeholder="Норма: 3.7 - 10.7"  min="0" max="300" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <label class="form_input_label">
-                    Оценка по шкале комы Глазго
-                    <input type="number" name="gcs" class="input_number" placeholder="Норма: 3 - 15"  min="3" max="15" required>
-                </label>
-            </div>
-            <div class="form_input">
-                <p class="text">Оценка газового состава доступна?</p>
-                <label class="form_input_switch_label">
-                    <input type="checkbox" class="switch_input" name="availableABGC" id="availableABGC" checked>
-                    <span class="switch_slider"></span>
-                </label>
-            </div>
-            <div id="hiddenABGCcheck">
+            <form name="form" id="form" onsubmit="return sendForm();" method="post">
                 <div class="form_input">
-                    <label class="form_input_label">
-                        pH артериальной крови
-                        <input type="number" name="phArterialBlood" id="phArterialBlood" class="input_number" placeholder="Норма: 7.38 - 7.44" step="0.01" min="6" max="10" required>
-                    </label>
+                    <p class="text_select">Тяжелая органная дисфункция или иммуносупрессия в анамнезе</p>
+                    <span class="infoconc" data="Сердечная недостаточность IV ФК по NYHA, цирроз, хроническое заболевание легких, диализ"></span>
+                    <div class="select_div">
+                        <select name="value" class="first_select">
+                            <option selected disabled>Выберите</option>
+                            <option value="0">Нет</option>
+                            <option value="5">Да</option>
+                            <option value="2">Да + плановый послеоперационный</option>
+                            <option value="5">Да + экстренный послеоперационный</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form_input">
-                    <p class="text">Значение FiO<sub>2</sub> меньше 0.5?</p>
+                    <p class="text">Острая почечная недостаточность</p>
                     <label class="form_input_switch_label">
-                        <input type="checkbox" class="switch_input" name="lowerFiO2" id="lowerFiO2" checked>
+                        <input type="checkbox" class="switch_input" name="checkboxIsRenalFailure" id="checkboxIsRenalFailure">
                         <span class="switch_slider"></span>
                     </label>
                 </div>
-                <div class="form_input" id="paO2d">
+                <div class="form_input">
                     <label class="form_input_label">
-                        PaO<sub>2</sub>, (в mm Hg)
-                        <input type="number" name="paO2" id="paO2" class="input_number" placeholder="Норма: 75 - 100"  min="0" max="300" required>
+                        Ваш возраст, (в годах)
+                        <input type="number" id="age" name="age" class="input_number" min="18" max="200" required>
                     </label>
                 </div>
-                <div class="form_input" id="gradientAAd" style="display: none">
+                <div class="form_input">
                     <label class="form_input_label">
-                        A-a - градиент, (в mm Hg)
-                        <input type="number" name="gradientAA" id="gradientAA" class="input_number" placeholder="Норма: 5 - 25"  min="0" max="1500">
+                        Ректальная температура, (в °C)
+                        <input type="number" id="popa_temp" name="rectalTemper" class="input_number" min="0" max="50" step="0.1" required>
                     </label>
                 </div>
-            </div>
-            <div class="form_input" id="serumBicarbonated" style="display: none">
-                <label class="form_input_label">
-                    Бикарбонат сыворотки, (в ммоль/л)
-                    <input type="number" name="serumBicarbonate" id="serumBicarbonate" class="input_number" placeholder="Норма: 22 - 32"  min="0" max="500">
-                </label>
-            </div>
-            <div class="submit_and_info_buttons">
-                <div class="submit_input_div">
-                    <input type="submit" value="Рассчитать" class="submit_input">
+                <div class="form_input">
+                    <label class="form_input_label">
+                        Среднее артериальное давление, (в мм Hg)
+                        <input type="number" id="abp" name="avgBloodPressure" class="input_number" min="0" max="500" placeholder="Норма: 70 - 100" required>
+                    </label>
                 </div>
-                <div class="info_calculator_div">
-                    <button id="InformationButton" class="information_button">О калькуляторе</button>
+                <div class="form_input">
+                    <label class="form_input_label">
+                        ЧСС, (в уд/мин)
+                        <input type="number" id="bpm" name="heartRate" class="input_number" min="0" max="500" placeholder="Норма: 60 - 100" required>
+                    </label>
                 </div>
+                <div class="form_input">
+                    <label class="form_input_label">
+                        ЧД, (в дых/мин)
+                        <input type="number" name="respiratoryRate" class="input_number" placeholder="Норма: 12 - 20" min="0" max="150" required>
+                    </label>
+                </div>
+                <div class="form_input">
+                    <label class="form_input_label">
+                        Натрий сыворотки, (в ммоль/л)
+                        <input type="number" name="serumSodium" class="input_number" placeholder="Норма: 136 - 145" min="80" max="250" required>
+                    </label>
+                </div>
+                <div class="form_input">
+                    <label class="form_input_label">
+                        Калий сыворотки, (в ммоль/л)
+                        <input type="number" name="serumPotassium" class="input_number" placeholder="Норма: 3.5 - 5.5" step="0.1" min="0" max="15" required>
+                    </label>
+                </div>
+                <div class="form_input">
+                    <label class="form_input_label">
+                        Креатинин сыворотки, (в мкмоль/л)
+                        <input type="number" name="serumCreatinine" class="input_number" placeholder="Норма: 62 - 115"  min="0" max="5000" required>
+                    </label>
+                </div>
+                <div class="form_input">
+                    <label class="form_input_label">
+                        Гематокрит, (в %)
+                        <input type="number" name="percHematocrit" class="input_number" placeholder="Норма: 36 - 51"  min="0" max="100" required>
+                    </label>
+                </div>
+                <div class="form_input">
+                    <label class="form_input_label">
+                        Лейкоциты, (в 10<sup>9</sup>л)
+                        <input type="number" name="wbc" class="input_number" step="0.1" placeholder="Норма: 3.7 - 10.7"  min="0" max="300" required>
+                    </label>
+                </div>
+                <div class="form_input">
+                    <label class="form_input_label">
+                        Оценка по шкале комы Глазго
+                        <input type="number" name="gcs" class="input_number" placeholder="Норма: 3 - 15"  min="3" max="15" required>
+                    </label>
+                </div>
+                <div class="form_input">
+                    <p class="text">Оценка газового состава доступна?</p>
+                    <label class="form_input_switch_label">
+                        <input type="checkbox" class="switch_input" name="availableABGC" id="availableABGC" checked>
+                        <span class="switch_slider"></span>
+                    </label>
+                </div>
+                <div id="hiddenABGCcheck">
+                    <div class="form_input">
+                        <label class="form_input_label">
+                            pH артериальной крови
+                            <input type="number" name="phArterialBlood" id="phArterialBlood" class="input_number" placeholder="Норма: 7.38 - 7.44" step="0.01" min="6" max="10" required>
+                        </label>
+                    </div>
+                    <div class="form_input">
+                        <p class="text">Значение FiO<sub>2</sub> меньше 0.5?</p>
+                        <label class="form_input_switch_label">
+                            <input type="checkbox" class="switch_input" name="lowerFiO2" id="lowerFiO2" checked>
+                            <span class="switch_slider"></span>
+                        </label>
+                    </div>
+                    <div class="form_input" id="paO2d">
+                        <label class="form_input_label">
+                            PaO<sub>2</sub>, (в mm Hg)
+                            <input type="number" name="paO2" id="paO2" class="input_number" placeholder="Норма: 75 - 100"  min="0" max="300" required>
+                        </label>
+                    </div>
+                    <div class="form_input" id="gradientAAd" style="display: none">
+                        <label class="form_input_label">
+                            A-a - градиент, (в mm Hg)
+                            <input type="number" name="gradientAA" id="gradientAA" class="input_number" placeholder="Норма: 5 - 25"  min="0" max="1500">
+                        </label>
+                    </div>
+                </div>
+                <div class="form_input" id="serumBicarbonated" style="display: none">
+                    <label class="form_input_label">
+                        Бикарбонат сыворотки, (в ммоль/л)
+                        <input type="number" name="serumBicarbonate" id="serumBicarbonate" class="input_number" placeholder="Норма: 22 - 32"  min="0" max="500">
+                    </label>
+                </div>
+                <div class="submit_button">
+                    <div class="submit_input_div">
+                        <input type="submit" value="Рассчитать" class="submit_input">
+                    </div>
+                </div>
+            </form>
+            <div class="info_calculator_div">
+                <button type="button" id="InformationButton" class="information_button" data-bs-toggle="modal" data-bs-target="#info_modal">О калькуляторе</button>
             </div>
-        </form>
+        </div>
     </div>
 </div>
+<div class="modal fade" id="info_modal" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="text">Информация о калькуляторе</p>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 <script>
     function sendForm() {
@@ -198,5 +217,4 @@
         return false; // отмена действия по умолчанию
     }
 </script>
-
 </html>
