@@ -155,6 +155,9 @@
                     </div>
                 </div>
             </form>
+            <div id="result">
+
+            </div>
             <div class="info_calculator_div">
                 <button type="button" id="InformationButton" class="information_button" data-bs-toggle="modal" data-bs-target="#info_modal">О калькуляторе</button>
             </div>
@@ -168,7 +171,7 @@
                 <p class="text">Информация о калькуляторе</p>
                 <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
-            <div class="modal-body"></div>
+            <div class="modal-body" id="textinfo"></div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
             </div>
@@ -177,44 +180,4 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-<script>
-    function sendForm() {
-        let form = $("#form");
-        let data = {
-            value: form.find("select[name='value']").val(),
-            renalFailure: $('#checkboxIsRenalFailure').is(":checked"),
-            age: form.find("input[name='age']").val(),
-            rectalTemper: form.find("input[name='rectalTemper']").val(),
-            avgBloodPressure: form.find("input[name='avgBloodPressure']").val(),
-            heartRate: form.find("input[name='heartRate']").val(),
-            respiratoryRate: form.find("input[name='respiratoryRate']").val(),
-            serumSodium: form.find("input[name='serumSodium']").val(),
-            serumPotassium: form.find("input[name='serumPotassium']").val(),
-            serumCreatinine: form.find("input[name='serumCreatinine']").val(),
-            percHematocrit: form.find("input[name='percHematocrit']").val(),
-            wbc: form.find("input[name='wbc']").val(),
-            gcs: form.find("input[name='gcs']").val(),
-            availableABGC: $('#availableABGC').is(":checked"),
-            phArterialBlood:form.find("input[name='phArterialBlood']").val() == null ? 0 : form.find("input[name='phArterialBlood']").val(),
-            lowerFiO2:$('#lowerFiO2').is(":checked"),
-            paO2: form.find("input[name='paO2']").val() == null ? 0 : form.find("input[name='paO2']").val(),
-            gradientAA: form.find("input[name='gradientAA']").val() == null ? 0 : form.find("input[name='gradientAA']").val(),
-            serumBicarbonate: form.find("input[name='serumBicarbonate']").val() == null ? 0 : form.find("input[name='serumBicarbonate']").val()
-        };
-        $.ajax({
-            url: "http://localhost:8080/apache/result",
-            type: "POST",
-            contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(data),
-            success: function(information) {
-                console.log(information.result, information.percLetal);
-            },
-            error: function(request,msg,error) {
-                // обработка ошибки отправки формы
-            }
-        });
-
-        return false; // отмена действия по умолчанию
-    }
-</script>
 </html>
