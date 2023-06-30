@@ -18,12 +18,13 @@ public class GraceController {
         return "grace";
     }
     @GetMapping("/info")
-    public ResponseEntity<?> getApacheInfo() {
+    public ResponseEntity<?> getGraceInfo() {
         Grace graceinfo = new Grace();
-        return new ResponseEntity<>(graceinfo, HttpStatus.OK);
+        return new ResponseEntity<>(graceinfo.getInfo(), HttpStatus.OK);
     }
     @PostMapping("/result")
-    public ResponseEntity<?> sendApacheResult (@RequestBody Grace grace) {
-        return new ResponseEntity<>(grace, HttpStatus.OK);
+    public ResponseEntity<?> sendGraceResult (@RequestBody Grace grace) {
+        grace.setResult();
+        return new ResponseEntity<>(grace.getResult(), HttpStatus.OK);
     }
 }
