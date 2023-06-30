@@ -68,7 +68,7 @@ function sendForm() {
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(data),
         success: function(information) {
-            $('#result').html(information.result + " баллов <br/> " + information.percLetal + "% Летальность");
+            $('#result').html("<table class=\"result_table\"><tr><td colSpan=\"2\" style=\"font-weight: bold\">Результат</td></tr><tr><td>Баллов</td><td>Летальность</td></tr><tr><td>" + information.result + "</td><td>" + information.percLetal + "%</td></tr></table>");
         },
         error: function(request,msg,error) {
             // обработка ошибки отправки формы

@@ -7,19 +7,23 @@ public class Grace {
     private int serumCreatinine;
     private boolean heartStop;
     private boolean segDeviationST;
+    private boolean hloce;
     private int selectValue;
 
     private int result;
 
+    //private String info = ;
+
     public Grace() {}
 
-    public Grace(int age, int heartRate, int sbp, int serumCreatinine, boolean heartStop, boolean segDeviationST, int selectValue) {
+    public Grace(int age, int heartRate, int sbp, int serumCreatinine, boolean heartStop, boolean segDeviationST, boolean hloce, int selectValue) {
         this.age = age;
         this.heartRate = heartRate;
         this.sbp = sbp;
         this.serumCreatinine = serumCreatinine;
         this.heartStop = heartStop;
         this.segDeviationST = segDeviationST;
+        this.hloce = hloce;
         this.selectValue = selectValue;
     }
 
@@ -69,6 +73,14 @@ public class Grace {
 
     public void setSegDeviationST(boolean segDeviationST) {
         this.segDeviationST = segDeviationST;
+    }
+
+    public boolean isHloce() {
+        return hloce;
+    }
+
+    public void setHloce(boolean hloce) {
+        this.hloce = hloce;
     }
 
     public int getSelectValue() {

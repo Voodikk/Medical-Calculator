@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,25 +46,25 @@
                 <div class="form_input">
                     <label class="form_input_label">
                         Ваш возраст, (в годах)
-                        <input type="number" id="age" name="age" class="input_number" min="18" max="200" required>
+                        <input type="number" name="age" class="input_number" min="18" max="200" required>
                     </label>
                 </div>
                 <div class="form_input">
                     <label class="form_input_label">
                         Ректальная температура, (в °C)
-                        <input type="number" id="popa_temp" name="rectalTemper" class="input_number" min="0" max="50" step="0.1" required>
+                        <input type="number" name="rectalTemper" class="input_number" min="0" max="50" step="0.1" required>
                     </label>
                 </div>
                 <div class="form_input">
                     <label class="form_input_label">
                         Среднее артериальное давление, (в мм Hg)
-                        <input type="number" id="abp" name="avgBloodPressure" class="input_number" min="0" max="500" placeholder="Норма: 70 - 100" required>
+                        <input type="number" name="avgBloodPressure" class="input_number" min="0" max="500" placeholder="Норма: 70 - 100" required>
                     </label>
                 </div>
                 <div class="form_input">
                     <label class="form_input_label">
                         ЧСС, (в уд/мин)
-                        <input type="number" id="bpm" name="heartRate" class="input_number" min="0" max="500" placeholder="Норма: 60 - 100" required>
+                        <input type="number" name="heartRate" class="input_number" min="0" max="500" placeholder="Норма: 60 - 100" required>
                     </label>
                 </div>
                 <div class="form_input">
@@ -155,9 +155,7 @@
                     </div>
                 </div>
             </form>
-            <div id="result">
-
-            </div>
+            <div id="result" class="result_div"></div>
             <div class="info_calculator_div">
                 <button type="button" id="InformationButton" class="information_button" data-bs-toggle="modal" data-bs-target="#info_modal">О калькуляторе</button>
             </div>

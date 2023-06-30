@@ -1,3 +1,8 @@
+@font-face {
+    font-family: OverpassMedium;
+    src: url("../fonts/Overpass-Medium.ttf");
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -16,7 +21,7 @@ body {
 }
 
 .parent_div li:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition-duration: 0.4s;
 }
 
@@ -26,11 +31,24 @@ body {
     justify-content: center;
 }
 
-.ul_calcs a {
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #2196f3;
+    transition: 0.4s;
+}
+
+.text {
     margin-top: 40px;
     display: block;
     text-align: center;
+    font-family: OverpassMedium;
+    font-size: 18px;
 }
+
 .ul_calcs img {
     border-radius: 100%;
     margin-top: 20px;
