@@ -22,6 +22,7 @@ body {
 
 .parent_div li:hover {
     transform: scale(1.05);
+    color: #2196f3;
     transition-duration: 0.4s;
 }
 
@@ -36,17 +37,19 @@ a {
     color: black;
 }
 
-a:hover {
-    color: #2196f3;
-    transition: 0.4s;
-}
-
 .text {
     margin-top: 40px;
     display: block;
     text-align: center;
     font-family: OverpassMedium;
     font-size: 18px;
+}
+
+.schwartz_text {
+    display: block;
+    text-align: center;
+    font-family: OverpassMedium;
+    font-size: 13px;
 }
 
 .ul_calcs img {

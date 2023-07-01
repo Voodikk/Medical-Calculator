@@ -17,43 +17,43 @@ function sendForm() {
         data: JSON.stringify(data),
         success: function(result) {
             if(result < 126) {
-                $('#result1').html("<table class=\"result_table\"><tr><td colSpan=\"3\" style=\"font-weight: bold\">Результат</td></tr><tr><td colSpan=\"3\" style=\"font-weight: bold\">" + result + " Баллов</td></tr><tr><td>Вид летальности</td><td>Риск</td><td>Летальность</td></tr><tr><td> Внутригоспитальная </td><td> Низкий </td><td> < 2% </td> </tr></table>");
+                $('#result1').html("<tr><td colSpan=\"3\" style=\"font-weight: bold\">Результат</td></tr><tr><td colSpan=\"3\">" + result + " Баллов</td></tr><tr><td style=\"font-weight: bold\">Вид летальности</td><td style=\"font-weight: bold\">Риск</td><td style=\"font-weight: bold\">Летальность</td></tr><tr><td colspan=\"3\" style=\"font-weight: bold\">ОКС с подъемом ST</td></tr><tr><td> Внутригоспитальная </td><td> Низкий </td><td> < 2% </td> </tr>");
             }
             else if(result >= 126 && result <= 154) {
-                $('#result1').html("<table class=\"result_table\"><tr><td colSpan=\"3\" style=\"font-weight: bold\">Результат</td></tr><tr><td colSpan=\"3\" style=\"font-weight: bold\">" + result + " Баллов</td></tr><tr><td>Вид летальности</td><td>Риск</td><td>Летальность</td></tr><tr><td> Внутригоспитальная </td><td> Средний </td><td> 2 - 5% </td> </tr></table>");
+                $('#result1').html("<tr><td colSpan=\"3\" style=\"font-weight: bold\">Результат</td></tr><tr><td colSpan=\"3\">" + result + " Баллов</td></tr><tr><td style=\"font-weight: bold\">Вид летальности</td><td style=\"font-weight: bold\">Риск</td><td style=\"font-weight: bold\">Летальность</td></tr><tr><td colspan=\"3\" style=\"font-weight: bold\">ОКС с подъемом ST</td></tr><tr><td> Внутригоспитальная </td><td> Средний </td><td> 2 - 5% </td> </tr>");
             }
             else if(result > 154) {
-                $('#result1').html("<table class=\"result_table\"><tr><td colSpan=\"3\" style=\"font-weight: bold\">Результат</td></tr><tr><td colSpan=\"3\" style=\"font-weight: bold\">" + result + " Баллов</td></tr><tr><td>Вид летальности</td><td>Риск</td><td>Летальность</td></tr><tr><td> Внутригоспитальная </td><td> Высокий </td><td> > 5% </td> </tr></table>");
+                $('#result1').html("<tr><td colSpan=\"3\" style=\"font-weight: bold\">Результат</td></tr><tr><td colSpan=\"3\">" + result + " Баллов</td></tr><tr><td style=\"font-weight: bold\">Вид летальности</td><td style=\"font-weight: bold\">Риск</td><td style=\"font-weight: bold\">Летальность</td></tr><tr><td colspan=\"3\" style=\"font-weight: bold\">ОКС с подъемом ST</td></tr><tr><td> Внутригоспитальная </td><td> Высокий </td><td> > 5% </td> </tr>");
             }
 
             if(result < 100) {
-                $('#result2').html("<table class=\"result_table\"><tr><td> В течение 6 месяцев </td><td> Низкий </td><td> < 4.5% </td> </tr></table>");
+                $('#result2').html("<tr><td> В течение 6 месяцев </td><td> Низкий </td><td> < 4.5% </td> </tr>");
             }
             else if(result >= 100 && result <= 127) {
-                $('#result2').html("<table class=\"result_table\"><tr><td> В течение 6 месяцев </td><td> Средний </td><td> 4.5 - 11% </td> </tr></table>");
+                $('#result2').html("<tr><td> В течение 6 месяцев </td><td> Средний </td><td> 4.5 - 11% </td> </tr>");
             }
             else if(result > 127) {
-                $('#result2').html("<table class=\"result_table\"><tr><td> В течение 6 месяцев </td><td> Высокий </td><td> > 11% </td> </tr></table>");
+                $('#result2').html("<tr><td> В течение 6 месяцев </td><td> Высокий </td><td> > 11% </td> </tr>");
             }
 
             if(result < 109) {
-                $('#result3').html("<table class=\"result_table\"><tr><td> Внутригоспитальная </td><td> Низкий </td><td> < 1% </td> </tr></table>");
+                $('#result3').html("<tr><td colspan=\"3\" style=\"font-weight: bold\">ОКС без подъема ST</td></tr><tr><td> Внутригоспитальная </td><td> Низкий </td><td> < 1% </td> </tr>");
             }
             else if(result >= 109 && result <= 140) {
-                $('#result3').html("<table class=\"result_table\"><tr><td> Внутригоспитальная </td><td> Средний </td><td> 1 - 3% </td> </tr></table>");
+                $('#result3').html("<tr><td colspan=\"3\" style=\"font-weight: bold\">ОКС без подъема ST</td></tr><tr><td> Внутригоспитальная </td><td> Средний </td><td> 1 - 3% </td> </tr>");
             }
             else if(result > 140) {
-                $('#result3').html("<table class=\"result_table\"><tr><td> Внутригоспитальная </td><td> Высокий </td><td> > 3% </td> </tr></table>");
+                $('#result3').html("<tr><td colspan=\"3\" style=\"font-weight: bold\">ОКС без подъема ST</td></tr><tr><td> Внутригоспитальная </td><td> Высокий </td><td> > 3% </td> </tr>");
             }
 
             if(result < 89) {
-                $('#result4').html("<table class=\"result_table\"><tr><td> В течение 6 месяцев </td><td> Средний </td><td> < 3% </td> </tr></table>");
+                $('#result4').html("<tr><td> В течение 6 месяцев </td><td> Средний </td><td> < 3% </td> </tr>");
             }
             else if(result >= 89 && result <= 118) {
-                $('#result4').html("<table class=\"result_table\"><tr><td> В течение 6 месяцев </td><td> Средний </td><td> 3 - 8% </td> </tr></table>");
+                $('#result4').html("<tr><td> В течение 6 месяцев </td><td> Средний </td><td> 3 - 8% </td> </tr>");
             }
             else if(result > 118) {
-                $('#result4').html("<table class=\"result_table\"><tr><td> В течение 6 месяцев </td><td> Средний </td><td> > 8% </td> </tr></table>");
+                $('#result4').html("<tr><td> В течение 6 месяцев </td><td> Средний </td><td> > 8% </td> </tr>");
             }
         },
         error: function(request,msg,error) {

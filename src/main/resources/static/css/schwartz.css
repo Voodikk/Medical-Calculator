@@ -40,11 +40,18 @@ body {
     padding: 20px;
 }
 
+.form_input_height {
+    display: none;
+    margin-left: 50px;
+    width: 600px;
+    padding: 20px;
+}
+
 .form_input_label {
     display: block;
     margin: 0 0 10px 0;
     width: 450px;
-    font-size: 20px;
+    font-size: 25px;
     font-family: OverpassMedium;
 }
 
@@ -67,72 +74,30 @@ body {
     transition: 0.4s;
 }
 
-.submit_button {
-    text-align: center;
-}
-
-.submit_input_div {
-    display: inline-block;
-    margin-top: 35px;
-    text-align: center;
-}
-
-.submit_input {
-    width: 200px;
-    padding: 10px;
-    margin-bottom: 30px;
-    border: 2px solid black;
-    border-radius: 10px;
-    font-family: OverpassMedium;
-    font-size: 20px;
-    margin-right: 2px;
-}
-
-.submit_input:hover, .information_button:hover {
-    cursor: pointer;
-    border: 2px solid #2196f3;
-    color: #2196f3;
-    transform: scale(0.98);
-    transition: 0.4s;
-}
-
 .text {
     width: 450px;
     margin: 0 0 15px 0;
-    font-size: 20px;
+    font-size: 25px;
     font-family: OverpassMedium;
 }
 
 .text1 {
-    width: 200px;
+    width: 300px;
     margin: 0 0 15px 0;
-    font-size: 20px;
+    font-size: 25px;
     font-family: OverpassMedium;
     display: inline-block;
 }
 
-.infoconc {
+.form_input_switch_label {
+    display: block;
     position: relative;
-    cursor: pointer;
-}
-.infoconc::before {
-    cursor: pointer;
-    content: url("../img/img_question.png");
-}
-.infoconc:hover:after {
-    font-size: 12px;
-    width: 300px;
-    font-family: OverpassMedium;
-    content:attr(data);
-    position: absolute;
-    left: 20px; bottom: 10px;
-    z-index: 999;
-    background: rgba(255,255,230,0.9);
-    padding: 5px 10px;
-    border: 1px solid #333;
+    width: 50px;
+    height: 25px;
+    float: left;
 }
 
-.form_input_switch_label {
+.form_input_switch_idms_label {
     display: block;
     position: relative;
     width: 50px;
@@ -184,76 +149,72 @@ body {
     -ms-transform: translateX(25px);
 }
 
-.text_select {
-    width: 360px;
-    display: inline-block;
-    margin: 0 0 15px 0;
+.text_for_switch1 {
+    float: left;
+    margin-right: 20px;
+}
+
+.text_for_switch {
+    margin-left: 178px;
+}
+
+.text_for_switch2 {
+    margin-left: 155px;
+}
+
+.text_for_switch1, .text_for_switch, .text_for_switch2 {
     font-size: 20px;
     font-family: OverpassMedium;
 }
 
-select {
-    width: 235px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: 0;
-    box-shadow: none;
-    border: solid 1px black;
-    background: #fafafa;
-    border-radius: 15px;
-}
-
-select::-ms-expand {
-    display: none;
-}
-
-.select_div {
+.infoconc {
     position: relative;
-    display: flex;
-    width: 400px;
-    height: 30px;
-    background: #fafafa;
-}
-
-select {
-    flex: 1;
-    padding-left: 15px;
     cursor: pointer;
 }
-
-.select_div:after {
-    content: url("../img/img_down_arrow.png");
+.infoconc::before {
+    cursor: pointer;
+    content: url("../img/img_question.png");
+}
+.infoconc:hover:after {
+    font-size: 12px;
+    width: 300px;
+    font-family: OverpassMedium;
+    content:attr(data);
     position: absolute;
-    top: 8px;
-    right: 0;
-    padding-right: 15px;
-    cursor: pointer;
-    pointer-events: none;
-    transition: 0.25s all ease;
+    left: 20px; bottom: 10px;
+    z-index: 999;
+    background: rgba(255,255,230,0.9);
+    padding: 5px 10px;
+    border: 1px solid #333;
 }
 
-.select_div select {
-    font-family: OverpassMedium;
-    font-size: 15px;
-    padding-top: 3.5px;
-}
-
-.select_div option {
-    padding: 5px;
-    font-family: OverpassMedium;
-    font-size: 15px;
-}
-
-.result_div {
-    background: #fafafa;
-    width: 350px;
+.submit_button {
     text-align: center;
-    margin: 0 auto;
+}
+
+.submit_input_div {
+    display: inline-block;
+    margin-top: 35px;
+    text-align: center;
+}
+
+.submit_input {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 30px;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 10px;
+    font-family: OverpassMedium;
+    font-size: 20px;
+    margin-right: 2px;
+}
+
+.submit_input:hover, .information_button:hover {
+    cursor: pointer;
+    border: 2px solid #2196f3;
+    color: #2196f3;
+    transform: scale(0.98);
+    transition: 0.4s;
 }
 
 .info_calculator_div {
@@ -270,6 +231,22 @@ select {
     font-family: OverpassMedium;
 }
 
+.big_text_info {
+    font-weight: bold;
+    font-family: OverpassMedium;
+    font-size: 20px;
+}
+
+.text_info {
+    font-size: 15px;
+    font-family: OverpassMedium;
+}
+
+.interpret {
+    font-family: OverpassMedium;
+    font-size: 15px;
+}
+
 .result_div {
     background: #fafafa;
     width: 638px;
@@ -277,26 +254,5 @@ select {
     margin: 0 auto;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 10px;
-}
-
-.result_div_1 tr {
-    width: 618px;
-    font-size: 20px;
-    font-family: OverpassMedium;
-    text-align: center;
-    padding: 10px;
-}
-
-.result_div_1 td {
-    width: 33%;
-}
-
-.about {
-    font-family: OverpassMedium;
-    font-size: 15px;
-}
-
-.about table {
     padding: 10px;
 }
