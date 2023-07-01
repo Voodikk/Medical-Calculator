@@ -3,7 +3,7 @@ function sendForm() {
     let data = {
         gender: $('#gender').is(":checked"),
         age: form.find("input[name='age']").val(),
-        height: form.find("input[name='height']"),
+        height: form.find("input[name='height']").val(),
         creat: form.find("input[name='creat']").val(),
         race: $('#race').is(":checked"),
         idms:$('#idms').is(":checked")
@@ -14,7 +14,32 @@ function sendForm() {
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(data),
         success: function(result) {
-
+            var st;
+            var add = "";
+            if(result >= 150) {
+                $('#result').html("<tr><td style=\"font-weight: bold\">Результат</td></tr><tr><td>СКФ=" + result + " мл/мин/1.73 м<sup>2</sup></td></tr><tr><td>Нельзя исключить фильтрацию</td></tr>");
+                return 0;
+            }
+            else if(result >= 90) {
+                st = "I";
+                add = "<br>при наличии факторов риска<br>или повреждение почек<br>с нормальной почечной функцией</td></tr>";
+            }
+            else if(result >= 60) {
+                st = "II";
+            }
+            else if(result >= 45) {
+                st = "IIIa";
+            }
+            else if(result >= 30) {
+                st = "IIIb";
+            }
+            else if(result >= 15) {
+                st = "IV";
+            }
+            else {
+                st = "V";
+            }
+            $('#result').html("<tr><td style=\"font-weight: bold\">Результат</td></tr><tr><td>СКФ=" + result + " мл/мин/1.73 м<sup>2</sup></td></tr><tr><td>Стадия ХБП: " + st + add);
         },
         error: function(request,msg,error) {
             // обработка ошибки отправки формы
