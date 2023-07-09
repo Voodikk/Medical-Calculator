@@ -19,7 +19,14 @@ public class Schwartz {
 
     public Schwartz() {}
 
-
+    public Schwartz(boolean gender, int age, double height, double creat, boolean race, boolean idms) {
+        this.gender = gender;
+        this.age = age;
+        this.height = height;
+        this.creat = creat;
+        this.race = race;
+        this.idms = idms;
+    }
 
     public boolean isGender() {
         return gender;
@@ -61,10 +68,6 @@ public class Schwartz {
         this.idms = idms;
     }
 
-    public void setResult(int result) {
-        this.result = result;
-    }
-
     public double getHeight() {
         return height;
     }
@@ -89,6 +92,13 @@ public class Schwartz {
 
 
     public void setResult() {
-
+        double result;
+        if(age > 18) {
+             result = 175 * (idms ? Math.pow(creat * 1 / 88.4, -1.154) : Math.pow(creat * 0.95 / 88.4, -1.154)) * Math.pow(age, -0.203) * (gender ? 1 : 0.742) * (race ? 1.212 : 1);
+        }
+        else {
+            result = (36.2 * height) / creat;
+        }
+        this.result = (int)Math.round(result);
     }
 }

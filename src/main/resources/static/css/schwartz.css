@@ -249,10 +249,18 @@ body {
 
 .result_div {
     background: #fafafa;
-    width: 638px;
+    width: 350px;
     text-align: center;
     margin: 0 auto;
     border: 2px solid black;
     border-radius: 10px;
+    padding: 10px;
+}
+
+.result_table {
+    font-family: OverpassMedium;
+    font-size: 25px;
+    text-align: center;
+    width: 330px;
     padding: 10px;
 }
