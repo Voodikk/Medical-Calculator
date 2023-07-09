@@ -8,6 +8,8 @@ html {
     padding: 0;
 }
 body {
+    margin: 0;
+    padding: 0;
     background: #EAE6CA;
 }
 
@@ -18,6 +20,7 @@ body {
     width: 170px;
     height: 220px;
     background: #fafafa;
+    border-radius: 20px;
 }
 
 .parent_div li:hover {
@@ -59,4 +62,48 @@ a {
     margin-left: auto;
     margin-right: auto;
 }
+.header_div {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    border-radius: 0 0 20px 20px;
+}
 
+.logo_div {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.logo_img {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+}
+
+.logo_text {
+    height: 35px;
+    font-size: 35px;
+    font-family: OverpassMedium;
+    font-weight: bold;
+    display: inline-block;
+    color: #2196f3;
+    text-align: center;
+}
+
+
+.header_text {
+    font-family: OverpassMedium;
+    font-size: 20px;
+    color: black;
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.header_text:hover {
+    color: #2196f3;
+    transition: 0.2s;
+}
