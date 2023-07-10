@@ -7,12 +7,20 @@ html {
     padding: 0;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main_div {
+    background: #EAE6CA;
+}
+
 .parent_div {
     width: 100%;
     height: 100%;
     margin: 0;
-    padding: 70px 0 0 0;
-    background: #EAE6CA;
+    padding: 120px 0 0 0;
 }
 
 .title_div h1 {
@@ -301,4 +309,9 @@ select {
     text-align: center;
     width: 330px;
     padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }

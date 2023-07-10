@@ -3,6 +3,11 @@
     src: url("../fonts/Overpass-Medium.ttf");
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 html {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -13,18 +18,27 @@ body {
     padding: 0;
 }
 
+.main_div {
+    background: #EAE6CA;
+}
+
 .parent_div {
     width: 100%;
     height: 100%;
     margin: 0;
-    padding: 70px 0 0 0;
-    background: #EAE6CA;
+    padding: 120px 0 0 0;
+}
+
+.title_div {
+    display: flex;
+    justify-content: center;
 }
 
 .title_name_calculator_text {
     text-align: center;
     font-family: OverpassMedium;
     font-size: 40px;
+    width: 800px;
 }
 
 #form {

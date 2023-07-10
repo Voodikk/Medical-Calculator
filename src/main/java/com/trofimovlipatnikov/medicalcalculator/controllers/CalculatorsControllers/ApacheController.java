@@ -1,17 +1,13 @@
-package com.trofimovlipatnikov.medicalcalculator.controller;
+package com.trofimovlipatnikov.medicalcalculator.controllers.CalculatorsControllers;
 
-import com.trofimovlipatnikov.medicalcalculator.models.Apache;
+import com.trofimovlipatnikov.medicalcalculator.models.CalculatorModels.Apache;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
-@RequestMapping("/apache")
+@RequestMapping("calculators/apache")
 public class ApacheController {
     @GetMapping()
     public String getApache () {

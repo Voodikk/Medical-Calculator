@@ -1,4 +1,4 @@
-package com.trofimovlipatnikov.medicalcalculator.models;
+package com.trofimovlipatnikov.medicalcalculator.models.CalculatorModels;
 
 public class Grace {
     private int age;

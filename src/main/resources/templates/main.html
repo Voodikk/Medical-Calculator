@@ -2,35 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="css/main.css">
-    <title>Список калькуляторов</title>
+    <title>Главная</title>
 
 </head>
 <body>
-<div class="header_div">
-    <div class="logo_div">
-        <img src="/img/logo.png" class="logo_img">
-        <p class="logo_text">WebLab</p>
-    </div>
-    <div class="header_buttons_div">
-        <a href="/"><p class="header_text">Статистика</p></a>
-        <a href="/"><p class="header_text">Войти</p></a>
-    </div>
-</div>
-<div class="parent_div">
-    <ul class="ul_calcs">
-        <a href="/apache"><li class="calc_apache">
-            <img src="/img/img_apache.png" alt="Ошибка" title="Мышцы созданы для того, чтобы драться">
-            <p class="text">Шкала APACHE II</p>
-        </li></a>
-        <a href="/grace"><li class="calc_grace">
-            <img src="/img/img_grace.jpg" alt="Ошибка" title="Со свистом пролетело">
-            <p class="text">Шкала GRACE</p>
-        </li></a>
-        <a href="/schwartz"><li class="calc_schwartz">
-            <img src="/img/img_schwartz.jpg" alt="Ошибка" title="Мышцы созданы для того, чтобы драться">
-            <p class="schwartz_text">Скорость клубочковой фильтрации по формулам MDRD и Schwartz</p>
-        </li></a>
-    </ul>
-</div>
+<div th:replace="fragments/header :: header"></div>
+
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

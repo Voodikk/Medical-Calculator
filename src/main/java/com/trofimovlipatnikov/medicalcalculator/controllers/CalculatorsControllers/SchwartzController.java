@@ -1,6 +1,6 @@
-package com.trofimovlipatnikov.medicalcalculator.controller;
+package com.trofimovlipatnikov.medicalcalculator.controllers.CalculatorsControllers;
 
-import com.trofimovlipatnikov.medicalcalculator.models.Schwartz;
+import com.trofimovlipatnikov.medicalcalculator.models.CalculatorModels.Schwartz;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/schwartz")
+@RequestMapping("calculators/schwartz")
 public class SchwartzController {
 
     @GetMapping

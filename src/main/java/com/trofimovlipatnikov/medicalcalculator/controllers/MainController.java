@@ -1,7 +1,6 @@
-package com.trofimovlipatnikov.medicalcalculator.controller;
+package com.trofimovlipatnikov.medicalcalculator.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -12,9 +11,4 @@ public class MainController {
         return "main";
     }
 
-
-//    @GetMapping("/apache")
-//    public String getApache() {
-//        return "apache";
-//    }
 }

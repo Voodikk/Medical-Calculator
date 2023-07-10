@@ -1,7 +1,7 @@
-package com.trofimovlipatnikov.medicalcalculator.controller;
+package com.trofimovlipatnikov.medicalcalculator.controllers.CalculatorsControllers;
 
 
-import com.trofimovlipatnikov.medicalcalculator.models.Grace;
+import com.trofimovlipatnikov.medicalcalculator.models.CalculatorModels.Grace;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/grace")
+@RequestMapping("calculators/grace")
 public class GraceController {
     @GetMapping()
     public String getGrace() {
