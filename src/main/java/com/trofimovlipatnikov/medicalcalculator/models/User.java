@@ -3,59 +3,32 @@ package com.trofimovlipatnikov.medicalcalculator.models;
 
 import jakarta.persistence.*;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
-@Table(name = "users", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "username"),
-        @UniqueConstraint(columnNames = "email")
-})
+@Table(name = "users")
 public class User {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "user_id")
+    private int id;
 
-    @NotBlank
-    @Size(min = 4, max = 20, message = "Имя пользователя должно содержать от 4 до 20 символов")
     private String username;
 
-    @NotBlank
-    @Email
-    @Size(min = 4, max = 50, message = "Введите корректный адрес")
     private String email;
 
-    @NotBlank
-    @Size(min = 5, max = 50, message = "Пароль должен содержать минимум 5 символов")
     private String password;
 
-    @NotBlank
     private int region;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "fk_role_id")
+    private Role role;
 
-    public User(){}
-
-    public User(Long id, String username, String email, String password, int region) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.region = region;
-    }
-
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -91,11 +64,11 @@ public class User {
         this.region = region;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
