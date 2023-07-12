@@ -3,6 +3,9 @@ package com.trofimovlipatnikov.medicalcalculator.models;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -10,6 +13,7 @@ public class User {
 
     @Id
     @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String username;
@@ -20,9 +24,12 @@ public class User {
 
     private int region;
 
-    @ManyToOne
-    @JoinColumn(name = "fk_role_id")
-    private Role role;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "user_roles",
+    joinColumns = {@JoinColumn(name = "fk_iser_id", referencedColumnName = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "fk_role_id", referencedColumnName = "role_id")}
+    )
+    private Set<Role> roles = new HashSet<>();
 
     public int getId() {
         return id;
@@ -64,11 +71,11 @@ public class User {
         this.region = region;
     }
 
-    public Role getRole() {
-        return role;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

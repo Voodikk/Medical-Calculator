@@ -3,6 +3,7 @@ package com.trofimovlipatnikov.medicalcalculator.config;
 
 import com.trofimovlipatnikov.medicalcalculator.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -26,11 +27,16 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
                 .authorizeHttpRequests((requests) -> requests
-                    .requestMatchers("/",
-                            "/main",
-                            "/calculators/**",
-                            "/addRole",
-                            "/addUser").permitAll()
+                    .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+                        .requestMatchers("/",
+                                "/main",
+                                "/calculators/**",
+                                "/addRole",
+                                "/addUser",
+                                "/img/**",
+                                "/css/**",
+                                "/fonts/**",
+                                "/js/**").permitAll()
                     .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form

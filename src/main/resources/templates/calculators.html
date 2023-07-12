@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" href="css/calculators.css">
+    <link rel="stylesheet" href="/css/calculators.css">
     <meta charset="UTF-8">
     <title>Медицинские калькуляторы</title>
 </head>
 <body>
 
-<div th:replace="fragments/header :: header" class="div"></div>
-<div class="parent_div">
-    <ul class="ul_calcs">
-        <a href="calculators/apache"><li class="calc_apache">
-            <img src="/img/img_apache.png" alt="Ошибка" title="Мышцы созданы для того, чтобы драться">
-            <p class="text">Шкала APACHE II</p>
-        </li></a>
-        <a href="calculators/grace"><li class="calc_grace">
-            <img src="/img/img_grace.jpg" alt="Ошибка" title="Со свистом пролетело">
-            <p class="text">Шкала GRACE</p>
-        </li></a>
-        <a href="calculators/schwartz"><li class="calc_schwartz">
-            <img src="/img/img_schwartz.jpg" alt="Ошибка" title="Мышцы созданы для того, чтобы драться">
-            <p class="schwartz_text">Скорость клубочковой фильтрации по формулам MDRD и Schwartz</p>
-        </li></a>
-    </ul>
+<div class="main_div">
+    <div th:replace="fragments/header :: header" class="div"></div>
+    <div class="parent_div">
+        <ul class="ul_calcs">
+            <a href="calculators/apache"><li class="calc_apache">
+                <img src="/img/img_apache.png" alt="Ошибка" title="Мышцы созданы для того, чтобы драться">
+                <p class="text">Шкала APACHE II</p>
+            </li></a>
+            <a href="calculators/grace"><li class="calc_grace">
+                <img src="/img/img_grace.jpg" alt="Ошибка" title="Со свистом пролетело">
+                <p class="text">Шкала GRACE</p>
+            </li></a>
+            <a href="calculators/schwartz"><li class="calc_schwartz">
+                <img src="/img/img_schwartz.jpg" alt="Ошибка" title="Мышцы созданы для того, чтобы драться">
+                <p class="schwartz_text">Скорость клубочковой фильтрации по формулам MDRD и Schwartz</p>
+            </li></a>
+        </ul>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
 </div>
-<div th:replace="fragments/footer :: footer"></div>
+
 
 </body>
 </html>
