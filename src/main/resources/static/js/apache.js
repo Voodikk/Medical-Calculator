@@ -63,7 +63,7 @@ function sendForm() {
         serumBicarbonate: form.find("input[name='serumBicarbonate']").val() == null ? 0 : form.find("input[name='serumBicarbonate']").val()
     };
     $.ajax({
-        url: "http://localhost:8080/apache/result",
+        url: "http://localhost:8080/calculators/apache/result",
         type: "POST",
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(data),
@@ -79,7 +79,7 @@ function sendForm() {
 }
 document.addEventListener('DOMContentLoaded', function() {
     $.ajax({
-        url: "http://localhost:8080/apache/info",
+        url: "http://localhost:8080/calculators/apache/info",
         type: "GET",
         contentType: 'application/json; charset=utf-8',
         success: function(information) {

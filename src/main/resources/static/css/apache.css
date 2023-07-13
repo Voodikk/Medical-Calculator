@@ -50,7 +50,8 @@ body {
     width: 700px;
     background: #fafafa;
     border-radius: 20px;
-    margin: 15px auto ;
+    margin: 15px auto;
+    padding: 20px;
 }
 
 .form_input {

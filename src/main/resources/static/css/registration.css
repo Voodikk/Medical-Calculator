@@ -1,0 +1,112 @@
+@font-face {
+    font-family: OverpassMedium;
+    src: url("../fonts/Overpass-Medium.ttf");
+}
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main_div {
+    background: #EAE6CA;
+}
+
+.parent_div {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 120px 0 0 0;
+}
+
+.title_div h1 {
+    text-align: center;
+    font-family: OverpassMedium;
+    font-size: 40px;
+}
+
+.registration_form {
+    width: 700px;
+    background: #fafafa;
+    border-radius: 20px;
+    margin: 15px auto ;
+    padding: 20px;
+}
+.form_input {
+    margin-left: 50px;
+    width: 600px;
+    padding: 20px;
+}
+
+.form_input_label {
+    display: block;
+    margin: 0 0 10px 0;
+    width: 450px;
+    font-size: 20px;
+    font-family: OverpassMedium;
+}
+
+.input {
+    font-family: OverpassMedium;
+    display: block;
+    margin-top: 12px;
+    font-size: 18px;
+    padding: 8px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #eeeeee;
+}
+
+.input:focus {
+    border-color: #2196f3;
+    outline: 0;
+    box-shadow: 0 0 0 1px #2196f3;
+    transition: 0.4s;
+}
+
+.input_label {
+    display: block;
+    margin: 0 0 10px 0;
+    width: 450px;
+    font-size: 20px;
+    font-family: OverpassMedium;
+}
+
+p {
+    margin: 0;
+}
+
+.submit_button {
+    text-align: center;
+}
+
+.submit_input_div {
+    display: inline-block;
+    margin-top: 35px;
+    text-align: center;
+}
+
+.submit_input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: OverpassMedium;
+    font-size: 20px;
+    margin-right: 2px;
+}
+
+.submit_input:hover {
+    cursor: pointer;
+    border: 2px solid #2196f3;
+    color: #2196f3;
+    transform: scale(0.98);
+    transition: 0.4s;
+}

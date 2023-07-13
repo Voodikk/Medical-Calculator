@@ -21,11 +21,6 @@ public class RegistrationController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/addrole")
-    public Role addRole(@RequestBody Role role) {
-        return roleRepository.save(role);
-    }
-
     @GetMapping("/registration")
     public String getRegistratoin() {
         return "registration";

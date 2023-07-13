@@ -32,15 +32,23 @@ public class UserService implements UserDetailsService {
 
     public User addUser(User user) {
 
+        if(userRepository.findByUsername(user.getUsername()) != null) {
+            throw new IllegalArgumentException("Пользователь с таким именем уже есть");
+        }
+
+        if(userRepository.findByEmail(user.getEmail()) != null) {
+            throw new IllegalArgumentException("Пользователь с такой почтой уже зарегистрирован");
+        }
+
+        Role defaultRole = roleRepository.findByName("user");
+        if (defaultRole == null) {
+            throw new RuntimeException("Роль не найдена");
+        }
+
         Set<Role> roles = new HashSet<>();
-        user.getRoles().forEach(role -> {
-            Role nRole = roleRepository.findById(role.getId()).get();
-            nRole.getUsers().add(user);
-            roles.add(nRole);
-        });
+        roles.add(defaultRole);
 
         user.setRoles(roles);
-
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 
         return userRepository.save(user);

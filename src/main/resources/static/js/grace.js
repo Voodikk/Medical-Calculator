@@ -11,7 +11,7 @@ function sendForm() {
         selectValue: form.find("select[name='value']").val()
     };
     $.ajax({
-        url: "http://localhost:8080/grace/result",
+        url: "http://localhost:8080/calculators/grace/result",
         type: "POST",
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(data),
@@ -65,7 +65,7 @@ function sendForm() {
 }
 document.addEventListener('DOMContentLoaded', function() {
     $.ajax({
-        url: "http://localhost:8080/grace/info",
+        url: "http://localhost:8080/calculators/grace/info",
         type: "GET",
         contentType: 'application/json; charset=utf-8',
         success: function(information) {
