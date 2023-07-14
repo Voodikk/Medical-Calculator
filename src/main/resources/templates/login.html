@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/login.css">
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+</head>
+<body>
+<div class="main_div">
+    <div th:replace="fragments/header :: header"></div>
+
+    <div class="parent_div">
+        <div class="title_div"><h1>Авторизация</h1></div>
+        <div class="body_div">
+            <form th:action="@{/login}" method="post" class="login_form">
+                <div class="form_input">
+                    <label class="input_label">
+                        Введите имя пользователя (Ваш логин):
+                        <input type="text" name="username" class="input" required>
+                    </label>
+                </div>
+                <div class="form_input">
+                    <label class="input_label">
+                        Пароль:
+                        <input type="password" name="password" class="input" required>
+                    </label>
+                </div>
+
+                <div class="submit_button">
+                    <div class="submit_input_div">
+                        <input type="submit" value="Войти" class="submit_input">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="dont_have_acc_div">
+            <a href="/registration"><p class="text">У вас еще нет аккаунта?</p></a>
+        </div>
+    </div>
+
+
+
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
+</body>
+</html>

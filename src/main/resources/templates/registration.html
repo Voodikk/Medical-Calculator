@@ -13,29 +13,32 @@
     <div class="parent_div">
         <div class="title_div"><h1>Регистрация</h1></div>
         <div class="body_div">
+            <div th:if="${errorMessage}" class="error_div">
+                <p th:text="${errorMessage}"></p>
+            </div>
             <form th:action="@{/registration}" method="post" class="registration_form">
                 <div class="form_input">
                     <label class="input_label">
                         Введите имя пользователя (Ваш логин):
-                        <input type="text" name="login" class="input" min="3" max="20" required>
+                        <input type="text" name="username" class="input" required>
                     </label>
                 </div>
                 <div class="form_input">
                     <label class="input_label">
                         Ваша почта:
-                        <input type="email" name="email" class="input" min="3" max="100" required>
+                        <input type="email" name="email" class="input" required>
                     </label>
                 </div>
                 <div class="form_input">
                     <label class="input_label">
                         Пароль:
-                        <input type="password" name="password" class="input" min="3" max="200" required>
+                        <input type="password" name="password" class="input" required>
                     </label>
                 </div>
                 <div class="form_input">
                     <label class="input_label">
                         Выберите свой регион проживания
-                        <input list="list_regions" class="input" required>
+                        <input list="list_regions" class="input" name="region" required>
                     </label>
                 </div>
 
