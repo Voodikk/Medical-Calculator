@@ -24,14 +24,6 @@ public class UserService implements UserDetailsService {
 
     public User addUser(User user) {
 
-        if(userRepository.findByUsername(user.getUsername()) != null) {
-            throw new IllegalArgumentException("Пользователь с таким именем уже есть");
-        }
-
-        if(userRepository.findByEmail(user.getEmail()) != null) {
-            throw new IllegalArgumentException("Пользователь с такой почтой уже зарегистрирован");
-        }
-
         user.setRole("ROLE_USER");
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 

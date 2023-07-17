@@ -11,6 +11,12 @@ html {
 body {
     margin: 0;
     padding: 0;
+    line-height: normal !important;
+}
+
+.header_div p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .main_div {

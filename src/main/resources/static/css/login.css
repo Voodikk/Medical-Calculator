@@ -29,6 +29,11 @@ body {
     font-size: 40px;
 }
 
+.body_div {
+    width: 740px;
+    margin: 0 auto;
+}
+
 .login_form {
     width: 700px;
     background: #fafafa;
@@ -116,12 +121,38 @@ a {
     transition: 0.4s;
 }
 
-.parent_div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.dont_have_acc_div {
+    text-align: end;
+    margin-top: 10px;
 }
 
-.dont_have_acc_div {
-    margin-top: 10px;
+.dont_have_acc_div p {
+    display: inline;
+}
+
+.text {
+    font-family: OverpassMedium;
+    font-size: 18px;
+}
+
+.text:hover {
+    color: #2196f3;
+    transition: 0.2s;
+}
+
+.error_div {
+    width: 430px;
+    margin: 0 auto;
+    background: rgba(255, 197, 49, 0.39);
+    padding: 15px;
+    border:2px solid rgb(203, 135, 40);
+    border-radius: 10px;
+}
+
+.error_div p {
+    width: 400px;
+    font-size: 14px;
+    font-family: OverpassMedium;
+    margin-right: auto;
+    margin-left: auto;
 }

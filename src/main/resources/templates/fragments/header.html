@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,18 +12,58 @@
             <p class="logo_text">WebLab</p>
         </div>
         <div class="header_buttons_div">
-            <div class="calculators_div"><a href="/calculators"><p class="header_text">Калькуляторы</p></a></div>
-            <div class="stat_div"><a href="/"><p class="header_text">Статистика</p></a></div>
-            <div class="auth_div"><a href="/registration"><p class="header_text">Войти</p></a></div>
+            <div class="calculators_div">
+                <a href="/calculators">
+                    <p class="header_text">Калькуляторы</p>
+                </a>
+            </div>
+            <div class="stat_div">
+                <a href="#">
+                    <p class="header_text">Статистика</p>
+                </a>
+            </div>
+            <div class="auth_div" sec:authorize="!isAuthenticated()">
+                <a href="/login">
+                    <p class="header_text">Войти</p>
+                </a>
+            </div>
+            <div class="user_div" sec:authorize="isAuthenticated()">
+                <img src="/img/user_icon.png" class="user_icon">
+                <div class="dropdown-content">
+                    <a href="#"><div class="item_one_div">
+                        <p class="text_menu">Личный кабинет</p>
+                    </div></a>
+                    <a href="/logout"><div class="item_two_div">
+                        <p class="text_menu">Выйти</p>
+                    </div></a>
+                </div>
+            </div>
         </div>
     </div>
 
     <style>
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            display: inline;
+        }
+
         .header_div {
             width: 100%;
             height: 70px;
             position: fixed;
-            z-index: 999;
+            z-index: 998;
             display: flex;
             top: 0;
             justify-content: space-between;
@@ -45,13 +85,13 @@
         }
 
         .logo_text {
-            height: 35px;
+            height: 36px;
+            margin: auto 0;
             font-size: 35px;
             font-family: OverpassMedium;
             font-weight: bold;
             display: inline-block;
             color: #2196f3;
-            text-align: center;
         }
 
         .header_buttons_div {
@@ -60,7 +100,7 @@
             justify-content: space-around;
         }
 
-        .calculators_div, .stat_div, .auth_div {
+        .calculators_div, .stat_div, .auth_div, .user_div {
             display: flex;
             align-items: center;
             height: 70px;
@@ -70,7 +110,6 @@
         .header_text {
             font-family: OverpassMedium;
             font-size: 20px;
-            margin-bottom: 0;
             color: black;
             text-align: center;
             display: inline-block;
@@ -81,6 +120,46 @@
             transition: 0.2s;
         }
 
+        .user_icon {
+            width: 35px;
+            height: 35px;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            right: 10px;
+            display: none;
+            z-index: 1;
+        }
+
+        .text_menu {
+            font-family: OverpassMedium;
+            font-size: 14px;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .user_div:hover .dropdown-content {
+            display: block;
+        }
+
+        .item_one_div {
+            border-radius: 10px 10px 0 0 ;
+            background: #fafafa;
+        }
+
+        .item_two_div {
+            border-radius: 0 0 10px 10px;
+            background: #fafafa;
+        }
+
+
+        .item_one_div:hover, .item_two_div:hover {
+            background: #2196f3;
+            color: #fafafa;
+            transition: 0.2s;
+        }
 
     </style>
 

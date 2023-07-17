@@ -97,87 +97,41 @@ public class Grace {
 
     public void setResult() {
         result = 0;
-        if(age >= 30 && age <= 39) {
-            result += 8;
-        }
-        else if(age >= 40 && age <= 49) {
-            result += 25;
-        }
-        else if(age >= 50 && age <= 59) {
-            result += 41;
-        }
-        else if(age >= 60 && age <= 69) {
-            result += 58;
-        }
-        else if(age >= 70 && age <= 79) {
-            result += 75;
-        }
-        else if(age >= 80 && age <= 89) {
-            result += 91;
-        }
-        else if(age >= 90) {
-            result += 100;
-        }
+        result += (age >= 30 && age <= 39) ? 8 :
+                (age >= 40 && age <= 49) ? 25 :
+                        (age >= 50 && age <= 59) ? 41 :
+                                (age >= 60 && age <= 69) ? 58 :
+                                        (age >= 70 && age <= 79) ? 75 :
+                                                (age >= 80 && age <= 89) ? 91 :
+                                                        (age >= 90) ? 100 :
+                                                                0;
 
-        if(heartRate >= 50 && heartRate <= 69) {
-            result += 3;
-        }
-        else if(heartRate >= 70 && heartRate <= 89) {
-            result += 9;
-        }
-        else if(heartRate >= 90 && heartRate <= 109) {
-            result += 15;
-        }
-        else if(heartRate >= 110 && heartRate <= 149) {
-            result += 24;
-        }
-        else if(heartRate >= 150 && heartRate <= 199) {
-            result += 38;
-        }
-        else if(heartRate > 200) {
-            result += 46;
-        }
 
-        if(sbp < 80) {
-            result += 58;
-        }
-        else if(sbp >= 80 && sbp <= 99) {
-            result += 53;
-        }
-        else if(sbp >= 100 && sbp <= 119) {
-            result += 43;
-        }
-        else if(sbp >= 120 && sbp <= 139) {
-            result += 34;
-        }
-        else if(sbp >= 140 && sbp <= 159) {
-            result += 24;
-        }
-        else if(sbp >= 160 && sbp <= 199) {
-            result += 10;
-        }
+        result += (heartRate >= 50 && heartRate <= 69) ? 3 :
+                (heartRate >= 70 && heartRate <= 89) ? 9 :
+                        (heartRate >= 90 && heartRate <= 109) ? 15 :
+                                (heartRate >= 110 && heartRate <= 149) ? 24 :
+                                        (heartRate >= 150 && heartRate <= 199) ? 38 :
+                                                (heartRate > 200) ? 46 :
+                                                        0;
 
-        if(serumCreatinine < 35.36) {
-            result += 1;
-        }
-        else if(serumCreatinine >= 35.36 && serumCreatinine <= 70.71) {
-            result += 4;
-        }
-        else if(serumCreatinine >= 70.72 && serumCreatinine <=106.07) {
-            result += 7;
-        }
-        else if(serumCreatinine >= 106.08 && serumCreatinine <= 141.43) {
-            result += 10;
-        }
-        else if(serumCreatinine >= 141.44 && serumCreatinine <= 176.7) {
-            result += 13;
-        }
-        else if(serumCreatinine > 176.7 && serumCreatinine <= 353) {
-            result += 21;
-        }
-        else if(serumCreatinine > 353) {
-            result += 28;
-        }
+
+        result += (sbp < 80) ? 58 :
+                (sbp >= 80 && sbp <= 99) ? 53 :
+                        (sbp >= 100 && sbp <= 119) ? 43 :
+                                (sbp >= 120 && sbp <= 139) ? 34 :
+                                        (sbp >= 140 && sbp <= 159) ? 24 :
+                                                (sbp >= 160 && sbp <= 199) ? 10 :
+                                                        0;
+
+        result += (serumCreatinine < 35.36) ? 1 :
+                (serumCreatinine >= 35.36 && serumCreatinine <= 70.71) ? 4 :
+                        (serumCreatinine >= 70.72 && serumCreatinine <= 106.07) ? 7 :
+                                (serumCreatinine >= 106.08 && serumCreatinine <= 141.43) ? 10 :
+                                        (serumCreatinine >= 141.44 && serumCreatinine <= 176.7) ? 13 :
+                                                (serumCreatinine > 176.7 && serumCreatinine <= 353) ? 21 :
+                                                        (serumCreatinine > 353) ? 28 :
+                                                                0;
 
         if(heartStop) {
             result += 39;

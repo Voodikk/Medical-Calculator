@@ -16,6 +16,11 @@ body {
     background: #EAE6CA;
 }
 
+.body_div {
+    width: 740px;
+    margin: 0 auto;
+}
+
 .parent_div {
     width: 100%;
     height: 100%;
@@ -131,4 +136,23 @@ a {
     color: #2196f3;
     transform: scale(0.98);
     transition: 0.4s;
+}
+
+.have_acc_div {
+    text-align: end;
+    margin-top: 10px;
+}
+
+.dont_have_acc_div p {
+    display: inline;
+}
+
+.text {
+    font-family: OverpassMedium;
+    font-size: 18px;
+}
+
+.text:hover {
+    color: #2196f3;
+    transition: 0.2s;
 }
