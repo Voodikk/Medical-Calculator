@@ -29,17 +29,9 @@ public class WebSecurityConfig {
                     .requestMatchers("/**").permitAll()
  //                   .anyRequest().authenticated()
                 )
-                .formLogin(form -> form
-                        .loginPage("/login")
-                        .defaultSuccessUrl("/main")
-                        .failureUrl("/login?error=true")
-                        .permitAll()
-                )
                 .logout((logout) -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/main")
-                        .invalidateHttpSession(true)
-                        .deleteCookies("JSESSIONID"));
+                        .logoutSuccessUrl("/main"));
 
         return http.build();
 
