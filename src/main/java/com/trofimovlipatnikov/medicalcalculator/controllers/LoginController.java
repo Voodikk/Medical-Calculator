@@ -2,7 +2,13 @@ package com.trofimovlipatnikov.medicalcalculator.controllers;
 
 import com.trofimovlipatnikov.medicalcalculator.models.User;
 import com.trofimovlipatnikov.medicalcalculator.repositories.UserRepository;
+import com.trofimovlipatnikov.medicalcalculator.service.UserService;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +16,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
     @Autowired
     private UserRepository userRepository;
@@ -21,22 +33,23 @@ public class LoginController {
 
     @PostMapping("/login")
     public String postLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
+        try {
+            // Аутентификация пользователя
+            Authentication authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(username, password)
+            );
 
-        User user = userRepository.findByUsername(username);
+            // Установка аутентификации в контексте безопасности
+            SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        if (user != null && user.getPassword().equals(password)) {
-            // Авторизация успешна
-            // Выполните необходимые действия, например, установите атрибуты сессии или добавьте пользователя в контекст безопасности
+            // Получение информации о пользователе
+            UserDetails userDetails = userService.loadUserByUsername(username);
 
+            // Дополнительные действия после успешной аутентификации, например, перенаправление на главную страницу
             return "main";
-        } else {
-
-            System.out.println(username);
-            System.out.println(password);
-            // Неверные авторизационные данные
-            // Вы можете добавить обработку ошибки, например, установить флаг ошибки в модель и отобразить его на странице входа
-
-            return "login";
+        } catch (Exception e) {
+            // Обработка ошибки аутентификации, например, перенаправление на страницу с ошибкой
+            return "login?error=true";
         }
     }
 }

@@ -12,7 +12,7 @@ public class UsersVotes {
 
     @Id
     @Column(name = "user_id")
-    private int userId;
+    private Long userId;
 
     @Column(name = "region_id")
     private int regionId;
@@ -20,11 +20,11 @@ public class UsersVotes {
     @Column(name = "points")
     private int points;
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

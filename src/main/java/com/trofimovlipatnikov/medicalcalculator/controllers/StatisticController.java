@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Optional;
+
 @Controller
 public class StatisticController {
 
@@ -30,21 +32,21 @@ public class StatisticController {
         return "statistic";
     }
 
-    @PostMapping("/submit_vote")
-    public String vote(HttpServletRequest request, UsersVotes usersVotes) {
-
-        int points = Integer.parseInt(request.getParameter("points"));
-
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
-        User user = userRepository.findByUsername(username);
-
-        usersVotes.setUserId(user.getId());
-        usersVotes.setRegionId(user.getRegion());
-        usersVotesService.addVote(usersVotes, points);
-
-        return "statistic";
-
-
-    }
+//    @PostMapping("/submit_vote")
+//    public String vote(HttpServletRequest request, UsersVotes usersVotes) {
+//
+//        int points = Integer.parseInt(request.getParameter("points"));
+//
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        String username = authentication.getName();
+//        Optional<User> user = userRepository.findByUsername(username);
+//
+//        usersVotes.setUserId(user.getId());
+//        usersVotes.setRegionId(user.getRegion());
+//        usersVotesService.addVote(usersVotes, points);
+//
+//        return "statistic";
+//
+//
+//    }
 }

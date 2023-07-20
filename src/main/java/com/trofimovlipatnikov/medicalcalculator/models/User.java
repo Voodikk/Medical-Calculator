@@ -3,6 +3,8 @@ package com.trofimovlipatnikov.medicalcalculator.models;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+
 
 @Entity
 @Table(name = "users")
@@ -12,27 +14,34 @@ public class User {
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @Column(unique = true)
+    @Column(unique = true, name = "username")
     private String username;
 
-    @Column(unique = true)
+    @Column(unique = true, name = "email")
     private String email;
 
+    @Column(name = "password")
     private String password;
 
+    @Column(name = "region")
     private int region;
 
-    private String role;
+    @ManyToMany
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Collection<Role> roles;
 
 
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -68,11 +77,11 @@ public class User {
         this.region = region;
     }
 
-    public String getRole() {
-        return role;
+    public Collection<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(String roles) {
-        this.role = roles;
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
 }
