@@ -25,8 +25,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "region")
-    private int region;
+    @ManyToOne()
+    @JoinColumn(name = "region_id", referencedColumnName = "region_id")
+    private Region region;
 
     @ManyToMany
     @JoinTable(
@@ -69,11 +70,11 @@ public class User {
         this.password = password;
     }
 
-    public int getRegion() {
+    public Region getRegion() {
         return region;
     }
 
-    public void setRegion(int region) {
+    public void setRegion(Region region) {
         this.region = region;
     }
 

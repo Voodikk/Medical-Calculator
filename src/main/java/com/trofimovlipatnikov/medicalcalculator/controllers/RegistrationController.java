@@ -1,18 +1,16 @@
 package com.trofimovlipatnikov.medicalcalculator.controllers;
 
+import com.trofimovlipatnikov.medicalcalculator.models.Region;
 import com.trofimovlipatnikov.medicalcalculator.models.Role;
 import com.trofimovlipatnikov.medicalcalculator.models.User;
 import com.trofimovlipatnikov.medicalcalculator.repositories.RoleRepository;
-import com.trofimovlipatnikov.medicalcalculator.repositories.UserRepository;
+import com.trofimovlipatnikov.medicalcalculator.service.RegionsService;
 import com.trofimovlipatnikov.medicalcalculator.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +19,9 @@ public class RegistrationController {
 
     @Autowired
     private RoleRepository roleRepository;
+
+    @Autowired
+    RegionsService regionsService;
 
     @Autowired
     private UserService userService;
@@ -37,7 +38,7 @@ public class RegistrationController {
     public String addUser(@RequestParam("username") String username,
                           @RequestParam("password") String password,
                           @RequestParam("email") String email,
-                          @RequestParam("region") int region) {
+                          @RequestParam("region") int regionNumber) {
         Optional<Role> userRole = roleRepository.findByName("ROLE_USER");
 
         try {
@@ -47,6 +48,7 @@ public class RegistrationController {
                 return "registration?error=true";
             }
 
+            Region region = regionsService.findByRegionNumber(regionNumber);
 
             if (userRole.isPresent()) {
                 // Создание нового пользователя
