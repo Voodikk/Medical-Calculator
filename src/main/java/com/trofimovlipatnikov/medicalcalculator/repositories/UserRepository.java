@@ -1,6 +1,6 @@
 package com.trofimovlipatnikov.medicalcalculator.repositories;
 
-import com.trofimovlipatnikov.medicalcalculator.models.User;
+import com.trofimovlipatnikov.medicalcalculator.models.Entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

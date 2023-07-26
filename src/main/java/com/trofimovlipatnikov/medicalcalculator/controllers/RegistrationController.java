@@ -1,8 +1,8 @@
 package com.trofimovlipatnikov.medicalcalculator.controllers;
 
-import com.trofimovlipatnikov.medicalcalculator.models.Region;
-import com.trofimovlipatnikov.medicalcalculator.models.Role;
-import com.trofimovlipatnikov.medicalcalculator.models.User;
+import com.trofimovlipatnikov.medicalcalculator.models.Entities.Region;
+import com.trofimovlipatnikov.medicalcalculator.models.Entities.Role;
+import com.trofimovlipatnikov.medicalcalculator.models.Entities.User;
 import com.trofimovlipatnikov.medicalcalculator.repositories.RoleRepository;
 import com.trofimovlipatnikov.medicalcalculator.service.RegionsService;
 import com.trofimovlipatnikov.medicalcalculator.service.UserService;

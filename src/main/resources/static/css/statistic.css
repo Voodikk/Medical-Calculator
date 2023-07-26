@@ -171,6 +171,42 @@ body {
     transition: 0.4s;
 }
 
+.value_1 {
+    fill: #e32200 !important;
+}
+
+.value_2 {
+    fill: #d94f12 !important;
+}
+
+.value_3 {
+    fill: #c5701f !important;
+}
+
+.value_4 {
+    fill: #deac18 !important;
+}
+
+.value_5 {
+    fill: #c8c60f !important;
+}
+
+.value_6 {
+    fill: #8cb40b !important;
+}
+
+.value_7 {
+    fill: #87c60a !important;
+}
+
+.value_8 {
+    fill: #68cb1b !important;
+}
+
+.value_9 {
+    fill: #56c914 !important;
+}
+
 /* Цвета регионов */
 /*.rf-map [data-code="RU-SAR"] {*/
 /*    fill: #116f21;*/

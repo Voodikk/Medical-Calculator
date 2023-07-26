@@ -1,36 +1,35 @@
 package com.trofimovlipatnikov.medicalcalculator.controllers;
 
-import com.trofimovlipatnikov.medicalcalculator.models.User;
-import com.trofimovlipatnikov.medicalcalculator.models.Vote;
+import com.trofimovlipatnikov.medicalcalculator.models.Entities.RegionVote;
+import com.trofimovlipatnikov.medicalcalculator.models.Entities.Vote;
+import com.trofimovlipatnikov.medicalcalculator.repositories.RegionVoteRepository;
 import com.trofimovlipatnikov.medicalcalculator.repositories.RegionsRepository;
-import com.trofimovlipatnikov.medicalcalculator.repositories.UserRepository;
-import com.trofimovlipatnikov.medicalcalculator.service.UsersVotesService;
+import com.trofimovlipatnikov.medicalcalculator.service.VotesService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.Optional;
+import java.util.List;
 
 @Controller
 public class StatisticController {
 
     @Autowired
-    UsersVotesService usersVotesService;
+    VotesService votesService;
 
     @Autowired
-    UserRepository userRepository;
+    RegionVoteRepository regionVoteRepository;
 
     @Autowired
     RegionsRepository regionsRepository;
 
-
-
     @GetMapping("/statistic")
-    public String getStatistic() {
+    public String getStatistic(Model model) {
+        List<RegionVote> votesList = regionVoteRepository.findAll();
+        model.addAttribute("votesList", votesList);
         return "statistic";
     }
 
@@ -38,18 +37,8 @@ public class StatisticController {
     public String vote(HttpServletRequest request, Vote usersVotes) {
 
         int points = Integer.parseInt(request.getParameter("points"));
-
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
-        Optional<User> user = userRepository.findByUsername(username);
-
-        usersVotes.setUser(user.get());
-        usersVotes.setRegion(user.get().getRegion());
-        usersVotesService.addVote(usersVotes, points);
-
-
+        votesService.addVote(usersVotes, points);
+        regionsRepository.calculateAvgPoints();
         return "statistic";
-
-
     }
 }

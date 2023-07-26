@@ -1,4 +1,4 @@
-package com.trofimovlipatnikov.medicalcalculator.models;
+package com.trofimovlipatnikov.medicalcalculator.models.Entities;
 
 import jakarta.persistence.*;
 

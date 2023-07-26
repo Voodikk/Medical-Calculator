@@ -9,7 +9,7 @@ function sendForm() {
         idms:$('#idms').is(":checked")
     };
     $.ajax({
-        url: "http://localhost:8080/calculators/schwartz/result",
+        url: "http://localhost:8090/calculators/schwartz/result",
         type: "POST",
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(data),
@@ -51,7 +51,7 @@ function sendForm() {
 
 document.addEventListener('DOMContentLoaded', function() {
     $.ajax({
-        url: "http://localhost:8080/calculators/schwartz/info",
+        url: "http://localhost:8090/calculators/schwartz/info",
         type: "GET",
         contentType: 'application/json; charset=utf-8',
         success: function(information) {

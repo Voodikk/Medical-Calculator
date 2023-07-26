@@ -27,13 +27,12 @@
       <div class="rf-map">
         <div class="district">
           <p class="title_region"></p>
-
           <p class="text">Среднее значение самочувствия населения:</p>
           <p class="text" id="result_number">0</p>
         </div>
 
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 808.9 458.9" enable-background="new 0 0 808.9 458.9" xml:space="preserve">
-		<path data-title="Республика Крым" data-code="91" d="M1.6,328.6H4l1.2,0.8l1.5,0.2v-0.9l1.3-0.2l0.8,1.3h3.3l0.1-1.1
+          <path data-title="Республика Крым" data-code="91" d="M1.6,328.6H4l1.2,0.8l1.5,0.2v-0.9l1.3-0.2l0.8,1.3h3.3l0.1-1.1
 		l1.2,0.3v2.1l1.4,1.3l-0.8,2l1.6,1.6v2.9l0.4,1.1l-0.5,1.3l-0.8,1.1l1.2,1.2l0.5,1.2l2,0.6l2.1,0.3l2.5,4.2l-1.5,0.2l-1.3,1.3
 		l-2.6-0.9l-2-1.8l-0.4-1.1l-0.2-1l-1.3-0.9l-2.6,0.6l-1.7-0.9l-2.1-1.2l-3,0.5l-2.2-0.4l-1-1.7l-0.7-2.6l1.6-0.1l1.9-2.3l0.5-2.4
 		L4.2,334v-1.7l-1-1.6l-1.6-1.2L1.6,328.6z"/>
@@ -767,6 +766,9 @@
         </div>
         <div class="form_div">
 
+          <div data-code="1"></div>
+          <div data-code="2"></div>
+
           <form th:action="@{/submit_vote}" method="post" class="vote_form">
             <div class="form_input">
               <label class="input_label">
@@ -792,6 +794,52 @@
   <div th:replace="fragments/footer :: footer"></div>
 
 </div>
+<script th:inline="javascript">
+  let votesList = [[${votesList}]];
 
+  votesList.forEach(vote => {
+    let dataCode = vote.region.regionNumber;
+    let pathElements = document.querySelectorAll(`path[data-code="${dataCode}"]`);
+    pathElements.forEach(pathElement => {
+      pathElement.setAttribute("value", vote.votesAverage);
+    });
+  });
+
+  var pathTags = document.getElementsByTagName('path');
+
+  for (var i = 0; i < pathTags.length; i++) {
+    var valueAttr = pathTags[i].getAttribute('value');
+
+    if (valueAttr !== null) {
+      if (parseFloat(valueAttr) >= 1 && parseFloat(valueAttr) < 2) {
+        pathTags[i].classList.add('value_1');
+      }
+      else if (parseFloat(valueAttr) >= 2 && parseFloat(valueAttr) < 3){
+        pathTags[i].classList.add('value_2')
+      }
+      else if (parseFloat(valueAttr) >= 3 && parseFloat(valueAttr) < 4){
+        pathTags[i].classList.add('value_3')
+      }
+      else if (parseFloat(valueAttr) >= 4 && parseFloat(valueAttr) < 5){
+        pathTags[i].classList.add('value_4')
+      }
+      else if (parseFloat(valueAttr) >= 5 && parseFloat(valueAttr) < 6){
+        pathTags[i].classList.add('value_5')
+      }
+      else if (parseFloat(valueAttr) >= 6 && parseFloat(valueAttr) < 7){
+        pathTags[i].classList.add('value_6')
+      }
+      else if (parseFloat(valueAttr) >= 7 && parseFloat(valueAttr) < 8){
+        pathTags[i].classList.add('value_7')
+      }
+      else if (parseFloat(valueAttr) >= 8 && parseFloat(valueAttr) < 9){
+        pathTags[i].classList.add('value_8')
+      }
+      else if (parseFloat(valueAttr) >= 9 && parseFloat(valueAttr) <= 10){
+        pathTags[i].classList.add('value_9')
+      }
+    }
+  }
+</script>
 </body>
 </html>

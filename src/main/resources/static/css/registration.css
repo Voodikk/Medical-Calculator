@@ -156,3 +156,58 @@ a {
     color: #2196f3;
     transition: 0.2s;
 }
+
+select {
+    width: 235px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: solid 1px black;
+    background: #fafafa;
+    border-radius: 15px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select_div {
+    position: relative;
+    display: flex;
+    width: 250px;
+    height: 30px;
+    top: 20px;
+    background: #fafafa;
+}
+
+select {
+    flex: 1;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.select_div:after {
+    content: url("../img/img_down_arrow.png");
+    position: absolute;
+    top: 8px;
+    right: 0;
+    padding-right: 15px;
+    cursor: pointer;
+    pointer-events: none;
+    transition: 0.25s all ease;
+}
+
+.select_div select {
+    font-family: OverpassMedium;
+    font-size: 18px;
+    padding-top: 3.5px;
+}
+
+.select_div option {
+    padding: 5px;
+    font-family: OverpassMedium;
+    font-size: 15px;
+}

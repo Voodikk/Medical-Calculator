@@ -3,10 +3,11 @@ package com.trofimovlipatnikov.medicalcalculator.repositories;
 import com.trofimovlipatnikov.medicalcalculator.models.Entities.User;
 import com.trofimovlipatnikov.medicalcalculator.models.Entities.Vote;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface UsersVotesRepository extends JpaRepository<Vote, Integer> {
+import java.util.Optional;
 
-    Vote findByUser(User user);
+public interface VoteRepository extends JpaRepository<Vote, Long> {
+
+    Optional<Vote> findByUser(User user);
+
 }

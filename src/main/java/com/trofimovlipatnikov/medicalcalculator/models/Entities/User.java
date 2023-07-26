@@ -1,6 +1,8 @@
-package com.trofimovlipatnikov.medicalcalculator.models;
+package com.trofimovlipatnikov.medicalcalculator.models.Entities;
 
 
+import com.trofimovlipatnikov.medicalcalculator.models.Entities.Region;
+import com.trofimovlipatnikov.medicalcalculator.models.Entities.Role;
 import jakarta.persistence.*;
 
 import java.util.Collection;

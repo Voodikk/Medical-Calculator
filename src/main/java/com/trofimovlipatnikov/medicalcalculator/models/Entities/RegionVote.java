@@ -1,5 +1,6 @@
-package com.trofimovlipatnikov.medicalcalculator.models;
+package com.trofimovlipatnikov.medicalcalculator.models.Entities;
 
+import com.trofimovlipatnikov.medicalcalculator.models.Entities.Region;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,7 +16,7 @@ public class RegionVote {
     private Region region;
 
     @Column(name = "v_avg")
-    private Integer votesAverage;
+    private float votesAverage;
 
     public Integer getId() {
         return id;
@@ -33,11 +34,11 @@ public class RegionVote {
         this.region = region;
     }
 
-    public Integer getVotesAverage() {
+    public float getVotesAverage() {
         return votesAverage;
     }
 
-    public void setVotesAverage(Integer votesAverage) {
+    public void setVotesAverage(float votesAverage) {
         this.votesAverage = votesAverage;
     }
 }
