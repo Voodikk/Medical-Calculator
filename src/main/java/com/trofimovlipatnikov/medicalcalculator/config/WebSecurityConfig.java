@@ -29,14 +29,8 @@ public class WebSecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((requests) -> requests
-                    .requestMatchers("/**").permitAll()
- //                   .anyRequest().authenticated()
-                )
-                .formLogin(form -> form
-                        .loginPage("/login")
-                        .defaultSuccessUrl("/main")
-                        .failureUrl("/login?error=true")
-                        .permitAll()
+                        .requestMatchers("/statistic/submit_vote").authenticated()
+                        .anyRequest().permitAll()
                 )
                 .logout((logout) -> logout
                         .logoutUrl("/logout")
@@ -60,6 +54,7 @@ public class WebSecurityConfig {
 
         return daoAuthenticationProvider;
     }
+
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {

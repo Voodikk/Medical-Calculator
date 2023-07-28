@@ -11,10 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 @Controller
+@RequestMapping("/statistic")
 public class StatisticController {
 
     @Autowired
@@ -26,8 +28,9 @@ public class StatisticController {
     @Autowired
     RegionsRepository regionsRepository;
 
-    @GetMapping("/statistic")
+    @GetMapping
     public String getStatistic(Model model) {
+
         List<RegionVote> votesList = regionVoteRepository.findAll();
         model.addAttribute("votesList", votesList);
         return "statistic";
@@ -39,6 +42,6 @@ public class StatisticController {
         int points = Integer.parseInt(request.getParameter("points"));
         votesService.addVote(usersVotes, points);
         regionsRepository.calculateAvgPoints();
-        return "statistic";
+        return "redirect:/statistic";
     }
 }

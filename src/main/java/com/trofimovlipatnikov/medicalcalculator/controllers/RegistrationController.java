@@ -1,77 +1,33 @@
 package com.trofimovlipatnikov.medicalcalculator.controllers;
 
-import com.trofimovlipatnikov.medicalcalculator.models.Entities.Region;
-import com.trofimovlipatnikov.medicalcalculator.models.Entities.Role;
-import com.trofimovlipatnikov.medicalcalculator.models.Entities.User;
-import com.trofimovlipatnikov.medicalcalculator.repositories.RoleRepository;
-import com.trofimovlipatnikov.medicalcalculator.service.RegionsService;
-import com.trofimovlipatnikov.medicalcalculator.service.UserService;
+import com.trofimovlipatnikov.medicalcalculator.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class RegistrationController {
 
     @Autowired
-    private RoleRepository roleRepository;
-
-    @Autowired
-    RegionsService regionsService;
-
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    AuthService authService;
 
     @GetMapping("/registration")
-    public String getRegistratoin() {
+    public String getRegistration(@RequestParam(value = "error", required = false) boolean error,
+                                  @RequestParam(value = "errorMessage", required = false) String errorMessage,
+                                  Model model) {
+        model.addAttribute("error", error);
+        model.addAttribute("errorMessage", errorMessage);
         return "registration";
     }
 
     @PostMapping("/registration")
-    public String addUser(@RequestParam("username") String username,
+    public ModelAndView addUser(@RequestParam("username") String username,
                           @RequestParam("password") String password,
                           @RequestParam("email") String email,
                           @RequestParam("region") int regionNumber) {
-        Optional<Role> userRole = roleRepository.findByName("ROLE_USER");
 
-        try {
-            // Проверка, существует ли пользователь с таким же именем пользователя
-            if (userService.findByUsername(username).isPresent()) {
-                // Пользователь с таким именем уже существует, выполните соответствующие действия, например, перенаправление на страницу с ошибкой
-                return "registration?error=true";
-            }
-
-            Region region = regionsService.findByRegionNumber(regionNumber);
-
-            if (userRole.isPresent()) {
-                // Создание нового пользователя
-                User user = new User();
-                user.setUsername(username);
-                user.setPassword(passwordEncoder.encode(password));
-                user.setEmail(email);
-                user.setRegion(region);
-                user.setRoles(List.of(userRole.get()));
-
-                // Сохранение пользователя в базе данных
-                userService.save(user);
-
-                // Дополнительные действия после успешной регистрации, например, перенаправление на страницу входа
-                return "login";
-            } else {
-                // Роль "ROLE_ADMIN" не найдена, выполните соответствующие действия, например, перенаправление на страницу с ошибкой
-                return "main";
-            }
-
-        } catch (Exception e) {
-            System.out.println(userRole);
-            return "registration?error=true";
-        }
+        return authService.addUser(username, password, email, regionNumber);
     }
 }

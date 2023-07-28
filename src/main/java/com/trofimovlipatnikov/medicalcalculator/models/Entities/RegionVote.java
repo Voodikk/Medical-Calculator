@@ -1,6 +1,5 @@
 package com.trofimovlipatnikov.medicalcalculator.models.Entities;
 
-import com.trofimovlipatnikov.medicalcalculator.models.Entities.Region;
 import jakarta.persistence.*;
 
 @Entity

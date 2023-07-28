@@ -12,11 +12,9 @@
     <div class="parent_div">
         <div class="title_div"><h1>Авторизация</h1></div>
         <div class="body_div">
-
-            <div th:if="${param.error}" class="error_div">
-                <p>Неверное имя пользователя или пароль</p>
+            <div th:if="${error}" class="error_div">
+                <p th:text="${errorMessage}"></p>
             </div>
-
             <form th:action="@{/login}" method="post" class="login_form">
                 <div class="form_input">
                     <label class="input_label">

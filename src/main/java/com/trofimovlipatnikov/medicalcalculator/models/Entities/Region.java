@@ -3,8 +3,6 @@ package com.trofimovlipatnikov.medicalcalculator.models.Entities;
 
 import jakarta.persistence.*;
 
-import java.util.Collection;
-
 @Entity
 @Table(name = "regions")
 public class Region {

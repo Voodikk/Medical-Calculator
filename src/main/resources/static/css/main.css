@@ -21,3 +21,124 @@ a {
 .header_div p {
     margin: 0;
 }
+
+.main_div {
+    margin-top: 150px;
+    width: 100%;
+    height: 100%;
+}
+
+.parent_div {
+    margin: 0 auto;
+    width: 1000px;
+
+}
+
+.title_weblab_div {
+    height: 110px;
+}
+
+.title_weblab_text {
+    font-size: 100px;
+    font-family: OverpassMedium;
+    color: #2196f3;
+    font-weight: bold;
+    margin: 0;
+}
+
+.title_text {
+    font-family: OverpassMedium;
+    font-size: 24px;
+    color: black;
+    margin: 0;
+}
+
+.basic_div {
+    margin-top: 100px;
+    width: 1000px;
+    background: #fafafa;
+    border-radius: 20px;
+}
+
+.basic_items_div {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.basic_item_calculators_div, .basic_item_develop_div, .basic_item_statistic_div {
+    width: 200px;
+    margin-left: 35px;
+    margin-right: 35px;
+    display: inline-block;
+    text-align: center;
+}
+
+.basic_items_div img {
+    width: 30px;
+    height: 30px;
+}
+
+.basic_items_text {
+    font-size: 14px;
+    font-family: OverpassMedium;
+    margin: 5px 0 0 0;
+}
+
+.about_statistic_parent_div {
+    justify-content: space-around;
+    display: flex;
+    margin-top: 30px;
+}
+
+.about_statistic_title_div {
+    background: #2196f3;
+    border-radius: 20px;
+    display: inline-block;
+    width: 480px;
+    margin-right: 18px;
+    height: 400px;
+    text-align: center;
+}
+
+.about_statistic_title_div img {
+    margin: 30px auto;
+    width: 350px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.about_statistic_title_text {
+    margin: 20px 0 0 0;
+    font-size: 30px;
+    font-family: OverpassMedium;
+    color: #fafafa;
+    font-weight: bold;
+}
+
+.about_statistic {
+    background: #fafafa;
+    border-radius: 20px;
+    display: inline-block;
+    width: 480px;
+    margin-left: 18px;
+    height: 400px;
+}
+
+.about_statistic_text_1 {
+    margin: 20px auto;
+    font-size: 30px;
+    font-family: OverpassMedium;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.about_statistic_text_2 {
+    margin: 40px 0 0 30px;
+    font-size: 20px;
+    font-family: OverpassMedium;
+}

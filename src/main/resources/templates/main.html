@@ -8,6 +8,50 @@
 <body>
 <div th:replace="fragments/header :: header"></div>
 
+<div class="main_div">
+    <div class="parent_div">
+        <div class="title_div">
+            <div class="title_weblab_div">
+                <p class="title_weblab_text">WebLab</p>
+            </div>
+            <div>
+                <p class="title_text">Помощник в сфере здравоохранения</p>
+            </div>
+        </div>
+
+        <div class="basic_div">
+            <div class="basic_items_div">
+                <div class="basic_item_statistic_div">
+                    <img src="/img/statistic.png">
+                    <p class="basic_items_text">Сбор данных и их представление на карте РФ</p>
+                </div>
+                <div class="basic_item_calculators_div">
+                    <img src="/img/calculator.png">
+                    <p class="basic_items_text">Сборник медицинских калькуляторов для врачей</p>
+                </div>
+                <div class="basic_item_develop_div">
+                    <img src="/img/develop.png">
+                    <p class="basic_items_text">Постоянное развитие</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about_statistic_parent_div">
+            <div class="about_statistic_title_div">
+                <p class="about_statistic_title_text">Статистика самочувствия пользователей</p>
+                <img src="/img/russian_map.png">
+            </div>
+            <div class="about_statistic">
+                <p class="about_statistic_text_1">Для кого?</p>
+                <p class="about_statistic_text_2">1. Гражданам </p>
+                <p class="about_statistic_text_2">2. Медицинским организациям</p>
+                <p class="about_statistic_text_2">3. Государственным органам</p>
+                <p class="about_statistic_text_2">4. Исследователям и социологам</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>
