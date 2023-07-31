@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.trofimovlipatnikov</groupId>
     <artifactId>Medical-Calculator</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.8.4-SNAPSHOT</version>
     <name>Medical-Calculator</name>
     <description>Medical-Calculator</description>
     <properties>

@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -29,19 +31,24 @@ public class StatisticController {
     RegionsRepository regionsRepository;
 
     @GetMapping
-    public String getStatistic(Model model) {
+    public String getStatistic(@RequestParam(value = "error", required = false) boolean error,
+                               @RequestParam(value = "errorMessage", required = false) String errorMessage,
+                               Model model) {
 
         List<RegionVote> votesList = regionVoteRepository.findAll();
         model.addAttribute("votesList", votesList);
+        model.addAttribute("error", error);
+        model.addAttribute("errorMessage", errorMessage);
+
         return "statistic";
     }
 
     @PostMapping("/submit_vote")
-    public String vote(HttpServletRequest request, Vote usersVotes) {
+    public ModelAndView vote(HttpServletRequest request, Vote usersVotes) {
 
         int points = Integer.parseInt(request.getParameter("points"));
         votesService.addVote(usersVotes, points);
         regionsRepository.calculateAvgPoints();
-        return "redirect:/statistic";
+        return votesService.addVote(usersVotes, points);
     }
 }

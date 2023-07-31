@@ -171,6 +171,23 @@ body {
     transition: 0.4s;
 }
 
+.error_div {
+    width: 430px;
+    margin: 0 auto;
+    background: rgba(255, 197, 49, 0.39);
+    padding: 15px;
+    border:2px solid rgb(203, 135, 40);
+    border-radius: 10px;
+}
+
+.error_div p {
+    width: 400px;
+    font-size: 14px;
+    font-family: OverpassMedium;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .value_1 {
     fill: #e32200 !important;
 }

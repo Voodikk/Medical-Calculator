@@ -29,8 +29,7 @@ public class WebSecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/statistic/submit_vote").authenticated()
-                        .anyRequest().permitAll()
+                        .requestMatchers("/**").permitAll()
                 )
                 .logout((logout) -> logout
                         .logoutUrl("/logout")

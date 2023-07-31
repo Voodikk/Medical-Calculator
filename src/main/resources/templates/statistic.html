@@ -766,8 +766,9 @@
         </div>
         <div class="form_div">
 
-          <div data-code="1"></div>
-          <div data-code="2"></div>
+          <div th:if="${error}" class="error_div">
+            <p th:text="${errorMessage}"></p>
+          </div>
 
           <form th:action="@{/statistic/submit_vote}" method="post" class="vote_form">
             <div class="form_input">

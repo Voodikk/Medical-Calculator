@@ -132,7 +132,7 @@ a {
     margin: 20px auto;
     font-size: 30px;
     font-family: OverpassMedium;
-    color: black;
+    color: #2196f3;
     text-align: center;
     font-weight: bold;
 }
@@ -141,4 +141,239 @@ a {
     margin: 40px 0 0 30px;
     font-size: 20px;
     font-family: OverpassMedium;
+}
+
+.how_statistic_work_div_parent {
+    position: relative;
+    height: 270px;
+}
+
+.how_statistic_work_div_child {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 280px;
+    text-align: center;
+    background: #2196f3;
+    border-radius: 50px;
+    z-index: 5;
+    -webkit-transform: rotate(40grad);
+    -moz-transform: rotate(40grad);
+    -o-transform: rotate(40grad);
+    -ms-transform: rotate(40grad);
+    transform: rotate(40grad);
+}
+
+.how_statistic_work_text {
+    font-size: 30px;
+    color: #fafafa;
+    font-family: OverpassMedium;
+    font-weight: bold;
+}
+
+.about_how_statistic_work_div_child {
+    z-index: 4;
+    border-radius: 20px;
+    background: #fafafa;
+    width: 1000px;
+    position: absolute;
+    top: 40px;
+}
+
+.about_how_statistic_work_text {
+    margin: 20px;
+    width: 750px;
+    font-family: OverpassMedium;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.about_how_statistic_work_text a {
+    text-decoration: none;
+    color: #2196f3;
+}
+
+.about_how_statistic_work_text a:hover {
+    color: #8f8f8f;
+    transition: 0.2s;
+}
+
+.about_calculators_parent_div {
+    justify-content: space-around;
+    display: flex;
+    margin-top: 60px;
+}
+
+.about_calculators_text1 {
+    color: #2196f3;
+    font-family: OverpassMedium;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.about_calculators_text2 {
+    font-size: 20px;
+    font-family: OverpassMedium;
+    margin: 40px 0 0 30px;
+}
+
+.about_calculators_title_div {
+    background: #2196f3;
+    border-radius: 20px;
+    display: inline-block;
+    width: 480px;
+    height: 400px;
+    text-align: center;
+}
+
+.about_calculators_title_text {
+    margin: 20px 0 0 0;
+    font-size: 30px;
+    font-family: OverpassMedium;
+    color: #fafafa;
+    font-weight: bold;
+}
+
+.about_calculators_title_div img {
+    width: 80px;
+    height: 80px;
+}
+
+.about_calculators_title_div_parent_div {
+    position: relative;
+}
+
+.about_calculators_title_div_div1 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 120px;
+    text-align: center;
+}
+
+.about_calculators_title_div_div2 {
+    width: 120px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    text-align: center;
+}
+
+.about_calculators_title_div_div3 {
+    width: 120px;
+    position: absolute;
+    top: 150px;
+    left: 190px;
+    text-align: center;
+}
+
+.about_calculators_div {
+    background: #fafafa;
+    border-radius: 20px;
+    display: inline-block;
+    width: 480px;
+    height: 400px;
+}
+
+.about_calculators_title_text2 {
+    font-size: 17px;
+    font-family: OverpassMedium;
+    color: #fafafa;
+}
+
+.how_calculators_work_div_parent {
+    position: relative;
+    height: 270px;
+}
+
+.how_calculators_work_div_child {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 280px;
+    text-align: center;
+    background: #2196f3;
+    border-radius: 50px;
+    z-index: 5;
+    -webkit-transform: rotate(-40grad);
+    -moz-transform: rotate(-40grad);
+    -o-transform: rotate(-40grad);
+    -ms-transform: rotate(-40grad);
+    transform: rotate(-40grad);
+}
+
+.how_calculators_work_text {
+    font-size: 30px;
+    color: #fafafa;
+    font-family: OverpassMedium;
+    font-weight: bold;
+}
+
+.about_how_calculators_work_div_child {
+    z-index: 4;
+    border-radius: 20px;
+    background: #fafafa;
+    width: 1000px;
+    height: 180px;
+    position: absolute;
+    top: 40px;
+}
+
+.about_how_calculators_work_text {
+    margin: 50px 20px 20px 300px;
+    width: 600px;
+    font-family: OverpassMedium;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.about_us_div_parent {
+    position: relative;
+}
+
+.about_us_title_div {
+    padding: 20px;
+    width: 150px;
+    background: #2196f3;
+    border-radius: 50px;
+    text-align: center;
+    position: absolute;
+    top: -40px;
+    z-index: 5;
+    left: 425px;
+}
+
+.about_us_title_text {
+    font-family: OverpassMedium;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fafafa;
+    margin: 0;
+}
+
+.about_us_div {
+    margin-top: 30px;
+    border-radius: 20px;
+    background: #fafafa;
+    width: 1000px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.about_us_text {
+    font-size: 18px;
+    font-family: OverpassMedium;
+    color: black;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+.about_us_text_list {
+    font-size: 18px;
+    font-family: OverpassMedium;
+    color: black;
+    margin: 0 50px 10px 50px;
 }
