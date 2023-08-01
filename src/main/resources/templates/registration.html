@@ -18,7 +18,7 @@
             <div th:if="${error}" class="error_div">
                 <p th:text="${errorMessage}"></p>
             </div>
-            <form th:action="@{/registration}" method="post" class="registration_form">
+            <form th:action="@{/registration/add_user}" method="post" class="registration_form">
                 <div class="form_input">
                     <label class="input_label">
                         Введите имя пользователя (Ваш логин):
@@ -42,7 +42,6 @@
                         Выберите свой регион проживания:
                         <div class="select_div">
                         <select class="select_region" name="region" required>
-                            <option selected disabled>Выберите</option>
                             <option value="22">Алтайский край</option>
                             <option value="28">Амурская область</option>
                             <option value="29">Архангельская область</option>

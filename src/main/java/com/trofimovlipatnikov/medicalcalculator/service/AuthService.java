@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,8 +42,8 @@ public class AuthService {
     UserRepository userRepository;
 
 
-    public ModelAndView authUser(String username, String password) {
-        ModelAndView modelAndView = new ModelAndView();
+    @Transactional
+    public String authUser(String username, String password) {
         try {
             Optional<User> user = userRepository.findByUsername(username);
             if (userRepository.findByUsername(username).isPresent()) {
@@ -51,7 +53,7 @@ public class AuthService {
                     );
                     SecurityContextHolder.getContext().setAuthentication(authentication);
 
-                    modelAndView.setViewName("main");
+                    return "redirect:/main";
                 }
                 else {
                     throw new Exception("Неправильный пароль");
@@ -63,17 +65,12 @@ public class AuthService {
 
         }
         catch (Exception exception) {
-            modelAndView.setViewName("login");
-            modelAndView.addObject("error", true);
-            modelAndView.addObject("errorMessage", exception.getMessage());
+            return "redirect:/login?error=true&errorMessage=" + URLEncoder.encode(exception.getMessage(), StandardCharsets.UTF_8);
         }
-
-        return modelAndView;
     }
 
     @Transactional
-    public ModelAndView addUser(String username, String password, String email, int regionNumber) {
-        ModelAndView modelAndView = new ModelAndView();
+    public String addUser(String username, String password, String email, int regionNumber) {
         try {
             Optional<Role> userRole = roleRepository.findByName("ROLE_USER");
             Region region = regionsService.findByRegionNumber(regionNumber);
@@ -83,6 +80,9 @@ public class AuthService {
             }
             else if(userRepository.findByEmail(email).isPresent()) {
                 throw new Exception("Пользователь с такой почтой уже есть");
+            }
+            if(username == null || password == null || email == null || regionNumber == 0) {
+                throw new Exception("Заполните все поля");
             }
             else {
                 if (userRole.isPresent()) {
@@ -94,7 +94,7 @@ public class AuthService {
                     user.setRoles(List.of(userRole.get()));
                     userService.save(user);
 
-                    modelAndView.setViewName("login");
+                    return "redirect:/login";
                 }
                 else {
                     throw new Exception("Непредвиденная ошибка");
@@ -103,10 +103,7 @@ public class AuthService {
 
         }
         catch (Exception exception) {
-            modelAndView.setViewName("redirect:/registration");
-            modelAndView.addObject("error", true);
-            modelAndView.addObject("errorMessage", exception.getMessage());
+            return "redirect:/registration?error=true&errorMessage=" + URLEncoder.encode(exception.getMessage(), StandardCharsets.UTF_8);
         }
-        return modelAndView;
     }
 }

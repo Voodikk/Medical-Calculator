@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/registration")
 public class RegistrationController {
 
     @Autowired
     AuthService authService;
 
-    @GetMapping("/registration")
+    @GetMapping
     public String getRegistration(@RequestParam(value = "error", required = false) boolean error,
                                   @RequestParam(value = "errorMessage", required = false) String errorMessage,
                                   Model model) {
@@ -22,8 +23,8 @@ public class RegistrationController {
         return "registration";
     }
 
-    @PostMapping("/registration")
-    public ModelAndView addUser(@RequestParam("username") String username,
+    @PostMapping("/add_user")
+    public String addUser(@RequestParam("username") String username,
                           @RequestParam("password") String password,
                           @RequestParam("email") String email,
                           @RequestParam("region") int regionNumber) {

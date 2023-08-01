@@ -27,8 +27,6 @@ public class StatisticController {
     @Autowired
     RegionVoteRepository regionVoteRepository;
 
-    @Autowired
-    RegionsRepository regionsRepository;
 
     @GetMapping
     public String getStatistic(@RequestParam(value = "error", required = false) boolean error,
@@ -44,11 +42,9 @@ public class StatisticController {
     }
 
     @PostMapping("/submit_vote")
-    public ModelAndView vote(HttpServletRequest request, Vote usersVotes) {
+    public String vote(HttpServletRequest request, Vote usersVotes) {
 
         int points = Integer.parseInt(request.getParameter("points"));
-        votesService.addVote(usersVotes, points);
-        regionsRepository.calculateAvgPoints();
         return votesService.addVote(usersVotes, points);
     }
 }
