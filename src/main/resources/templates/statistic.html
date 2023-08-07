@@ -804,9 +804,14 @@
     pathElements.forEach(pathElement => {
       pathElement.setAttribute("value", vote.votesAverage);
     });
+    let gElements = document.querySelectorAll(`g[data-code="${dataCode}"]`);
+    gElements.forEach(gElement => {
+      gElement.setAttribute("value", vote.votesAverage);
+    });
   });
 
   var pathTags = document.getElementsByTagName('path');
+  var gTags = document.getElementsByTagName("g")
 
   for (var i = 0; i < pathTags.length; i++) {
     var valueAttr = pathTags[i].getAttribute('value');
@@ -814,30 +819,48 @@
     if (valueAttr !== null) {
       if (parseFloat(valueAttr) >= 1 && parseFloat(valueAttr) < 2) {
         pathTags[i].classList.add('value_1');
-      }
-      else if (parseFloat(valueAttr) >= 2 && parseFloat(valueAttr) < 3){
+      } else if (parseFloat(valueAttr) >= 2 && parseFloat(valueAttr) < 3) {
         pathTags[i].classList.add('value_2')
-      }
-      else if (parseFloat(valueAttr) >= 3 && parseFloat(valueAttr) < 4){
+      } else if (parseFloat(valueAttr) >= 3 && parseFloat(valueAttr) < 4) {
         pathTags[i].classList.add('value_3')
-      }
-      else if (parseFloat(valueAttr) >= 4 && parseFloat(valueAttr) < 5){
+      } else if (parseFloat(valueAttr) >= 4 && parseFloat(valueAttr) < 5) {
         pathTags[i].classList.add('value_4')
-      }
-      else if (parseFloat(valueAttr) >= 5 && parseFloat(valueAttr) < 6){
+      } else if (parseFloat(valueAttr) >= 5 && parseFloat(valueAttr) < 6) {
         pathTags[i].classList.add('value_5')
-      }
-      else if (parseFloat(valueAttr) >= 6 && parseFloat(valueAttr) < 7){
+      } else if (parseFloat(valueAttr) >= 6 && parseFloat(valueAttr) < 7) {
         pathTags[i].classList.add('value_6')
-      }
-      else if (parseFloat(valueAttr) >= 7 && parseFloat(valueAttr) < 8){
+      } else if (parseFloat(valueAttr) >= 7 && parseFloat(valueAttr) < 8) {
         pathTags[i].classList.add('value_7')
-      }
-      else if (parseFloat(valueAttr) >= 8 && parseFloat(valueAttr) < 9){
+      } else if (parseFloat(valueAttr) >= 8 && parseFloat(valueAttr) < 9) {
         pathTags[i].classList.add('value_8')
-      }
-      else if (parseFloat(valueAttr) >= 9 && parseFloat(valueAttr) <= 10){
+      } else if (parseFloat(valueAttr) >= 9 && parseFloat(valueAttr) <= 10) {
         pathTags[i].classList.add('value_9')
+      }
+    }
+  }
+
+  for (var j = 0; j < gTags.length; j++) {
+    var gValueAttr = gTags[j].getAttribute('value');
+
+    if (gValueAttr !== null) {
+      if (parseFloat(gValueAttr) >= 1 && parseFloat(gValueAttr) < 2) {
+        gTags[j].classList.add('value_1');
+      } else if (parseFloat(gValueAttr) >= 2 && parseFloat(gValueAttr) < 3) {
+        gTags[j].classList.add('value_2')
+      } else if (parseFloat(gValueAttr) >= 3 && parseFloat(gValueAttr) < 4) {
+        gTags[j].classList.add('value_3')
+      } else if (parseFloat(gValueAttr) >= 4 && parseFloat(gValueAttr) < 5) {
+        gTags[j].classList.add('value_4')
+      } else if (parseFloat(gValueAttr) >= 5 && parseFloat(gValueAttr) < 6) {
+        gTags[j].classList.add('value_5')
+      } else if (parseFloat(gValueAttr) >= 6 && parseFloat(gValueAttr) < 7) {
+        gTags[j].classList.add('value_6')
+      } else if (parseFloat(gValueAttr) >= 7 && parseFloat(gValueAttr) < 8) {
+        gTags[j].classList.add('value_7')
+      } else if (parseFloat(gValueAttr) >= 8 && parseFloat(gValueAttr) < 9) {
+        gTags[j].classList.add('value_8')
+      } else if (parseFloat(gValueAttr) >= 9 && parseFloat(gValueAttr) <= 10) {
+        gTags[j].classList.add('value_9')
       }
     }
   }

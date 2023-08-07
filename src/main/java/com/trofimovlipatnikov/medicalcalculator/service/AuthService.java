@@ -5,15 +5,13 @@ import com.trofimovlipatnikov.medicalcalculator.models.Entities.Role;
 import com.trofimovlipatnikov.medicalcalculator.models.Entities.User;
 import com.trofimovlipatnikov.medicalcalculator.repositories.RoleRepository;
 import com.trofimovlipatnikov.medicalcalculator.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -21,28 +19,29 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class AuthService {
 
-    @Autowired
-    RoleRepository roleRepository;
 
-    @Autowired
-    RegionsService regionsService;
-
-    @Autowired
-    UserService userService;
-
-    @Autowired
-    BCryptPasswordEncoder passwordEncoder;
-
-    @Autowired
-    AuthenticationManager authenticationManager;
-
-    @Autowired
-    UserRepository userRepository;
+    private final RoleRepository roleRepository;
 
 
-    @Transactional
+    private final RegionsService regionsService;
+
+
+    private final UserService userService;
+
+
+    private final BCryptPasswordEncoder passwordEncoder;
+
+
+    private final AuthenticationManager authenticationManager;
+
+
+    private final UserRepository userRepository;
+
+
+
     public String authUser(String username, String password) {
         try {
             Optional<User> user = userRepository.findByUsername(username);
@@ -69,8 +68,8 @@ public class AuthService {
         }
     }
 
-    @Transactional
     public String addUser(String username, String password, String email, int regionNumber) {
+
         try {
             Optional<Role> userRole = roleRepository.findByName("ROLE_USER");
             Region region = regionsService.findByRegionNumber(regionNumber);

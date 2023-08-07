@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/MedicalCalculatorsData
+    username: postgres
+    password: o4ykqz88lks
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  web:
+    resources:
+      static-locations: classpath:/static/
+server:
+  servlet:
+    session:
+      timeout:
+
+
+## Database connection settings
+#spring.datasource.url=jdbc:postgresql://localhost:5432/MedicalCalculatorsData
+#spring.datasource.username=postgres
+#spring.datasource.password=o4ykqz88lks
+#
+#
+## Hibernate settings
+#spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+#spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=update
+#
+## Logging settings
+#logging.level.com.example=DEBUG
+#
+#spring.web.resources.static-locations=classpath:/static/

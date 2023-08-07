@@ -16,6 +16,6 @@ public interface RegionsRepository extends JpaRepository<Region, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO votes_avg (region_id, v_avg) SELECT region_id, AVG(points) FROM votes GROUP BY region_id ON CONFLICT (region_id) DO UPDATE SET v_avg = EXCLUDED.v_avg;", nativeQuery = true)
-    void calculateAvgPoints();
+    @Query(value = "INSERT INTO votes_avg (region_id, v_avg) SELECT region_id, AVG(points) FROM votes WHERE region_id = :regionId GROUP BY region_id ON CONFLICT (region_id) DO UPDATE SET v_avg = EXCLUDED.v_avg;", nativeQuery = true)
+    void calculateAvgPointsForRegion(Integer regionId);
 }

@@ -1,36 +1,33 @@
 package com.trofimovlipatnikov.medicalcalculator.service;
 
+import com.trofimovlipatnikov.medicalcalculator.models.Entities.Region;
 import com.trofimovlipatnikov.medicalcalculator.models.Entities.User;
 import com.trofimovlipatnikov.medicalcalculator.models.Entities.Vote;
 import com.trofimovlipatnikov.medicalcalculator.repositories.RegionsRepository;
 import com.trofimovlipatnikov.medicalcalculator.repositories.UserRepository;
 import com.trofimovlipatnikov.medicalcalculator.repositories.UsersVotesRepository;
 import com.trofimovlipatnikov.medicalcalculator.repositories.VoteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class VotesService {
 
-    @Autowired
-    UsersVotesRepository usersVotesRepository;
+    private final UsersVotesRepository usersVotesRepository;
 
-    @Autowired
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
-    VoteRepository voteRepository;
+    private final VoteRepository voteRepository;
 
-    @Autowired
-    RegionsRepository regionsRepository;
+    private final RegionsRepository regionsRepository;
 
 
     @Transactional
@@ -54,7 +51,10 @@ public class VotesService {
                     usersVotes.setPoints(points);
                     usersVotesRepository.save(usersVotes);
                 }
-                regionsRepository.calculateAvgPoints();
+
+                Region region = user.get().getRegion();
+                Integer regionId = region.getId();
+                regionsRepository.calculateAvgPointsForRegion(regionId);
                 return "redirect:/statistic";
 
 

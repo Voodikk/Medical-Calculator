@@ -1,28 +1,30 @@
 package com.trofimovlipatnikov.medicalcalculator.config;
 
 
-import com.trofimovlipatnikov.medicalcalculator.service.UserService;
+import com.trofimovlipatnikov.medicalcalculator.models.AuthFailureHandler;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.logout.HeaderWriterLogoutHandler;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
+import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class WebSecurityConfig {
 
     private final UserDetailsService userDetailsService;
-
-    public WebSecurityConfig(UserService userService, UserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
 
 
     @Bean
@@ -30,19 +32,39 @@ public class WebSecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/**").permitAll()
+                        .requestMatchers("/statistic").authenticated()
+                        .anyRequest().permitAll()
                 )
-//                .rememberMe((httpSecurityRememberMeConfigurer) -> httpSecurityRememberMeConfigurer
-//                )
-                .sessionManagement((httpSecuritySessionManagementConfigurer) -> httpSecuritySessionManagementConfigurer
+                .sessionManagement((session) -> session
+                        .sessionFixation(SessionManagementConfigurer.SessionFixationConfigurer::changeSessionId)
+                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                         .maximumSessions(1)
+                        .maxSessionsPreventsLogin(true)
                 )
+                .securityContext((security) -> security
+                        .securityContextRepository(httpSessionSecurityContextRepository())
+                )
+                .formLogin((form) -> form
+                        .loginPage("/login")
+                        .loginProcessingUrl("/login/auth_user")
+                        .defaultSuccessUrl("/main")
+                        .usernameParameter("username")
+                        .passwordParameter("password")
+                        .failureHandler(authenticationFailureHandler()))
                 .logout((logout) -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/main"));
+                        .logoutSuccessUrl("/main")
+                        .invalidateHttpSession(true)
+                        .clearAuthentication(true)
+                        .addLogoutHandler(new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ClearSiteDataHeaderWriter.Directive.ALL))));
 
         return http.build();
 
+    }
+
+    @Bean
+    public AuthenticationFailureHandler authenticationFailureHandler() {
+        return new AuthFailureHandler();
     }
 
     @Bean
@@ -50,15 +72,15 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider() {
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-
-        daoAuthenticationProvider.setPasswordEncoder(bcryptPasswordEncoder());
-        daoAuthenticationProvider.setUserDetailsService(this.userDetailsService);
-
-        return daoAuthenticationProvider;
-    }
+//    @Bean
+//    public DaoAuthenticationProvider daoAuthenticationProvider() {
+//        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+//
+//        daoAuthenticationProvider.setPasswordEncoder(bcryptPasswordEncoder());
+//        daoAuthenticationProvider.setUserDetailsService(this.userDetailsService);
+//
+//        return daoAuthenticationProvider;
+//    }
 
 
     @Bean
@@ -66,10 +88,8 @@ public class WebSecurityConfig {
         return config.getAuthenticationManager();
     }
 
-
-//    @Bean
-//    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-//        return authenticationConfiguration.getAuthenticationManager();
-//    }
-
+    @Bean
+    public HttpSessionSecurityContextRepository httpSessionSecurityContextRepository() {
+        return new HttpSessionSecurityContextRepository();
+    }
 }

@@ -1,18 +1,17 @@
 package com.trofimovlipatnikov.medicalcalculator.controllers;
 
 import com.trofimovlipatnikov.medicalcalculator.service.AuthService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/registration")
+@RequiredArgsConstructor
 public class RegistrationController {
 
-    @Autowired
-    AuthService authService;
+    private final AuthService authService;
 
     @GetMapping
     public String getRegistration(@RequestParam(value = "error", required = false) boolean error,

@@ -2,7 +2,7 @@ package com.trofimovlipatnikov.medicalcalculator.service;
 
 import com.trofimovlipatnikov.medicalcalculator.models.Entities.User;
 import com.trofimovlipatnikov.medicalcalculator.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,10 +15,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class UserService implements UserDetailsService{
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
 
     public Optional<User> findByUsername(String username) {

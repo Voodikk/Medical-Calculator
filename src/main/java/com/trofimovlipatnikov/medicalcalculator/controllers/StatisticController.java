@@ -3,29 +3,26 @@ package com.trofimovlipatnikov.medicalcalculator.controllers;
 import com.trofimovlipatnikov.medicalcalculator.models.Entities.RegionVote;
 import com.trofimovlipatnikov.medicalcalculator.models.Entities.Vote;
 import com.trofimovlipatnikov.medicalcalculator.repositories.RegionVoteRepository;
-import com.trofimovlipatnikov.medicalcalculator.repositories.RegionsRepository;
 import com.trofimovlipatnikov.medicalcalculator.service.VotesService;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/statistic")
+@RequiredArgsConstructor
 public class StatisticController {
 
-    @Autowired
-    VotesService votesService;
+    private final VotesService votesService;
 
-    @Autowired
-    RegionVoteRepository regionVoteRepository;
+    private final RegionVoteRepository regionVoteRepository;
 
 
     @GetMapping
