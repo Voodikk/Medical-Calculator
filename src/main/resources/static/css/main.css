@@ -18,362 +18,1468 @@ a {
     color: black;
 }
 
-.header_div p {
-    margin: 0;
+@media (min-width: 1021px) {
+    .header_div p {
+        margin: 0;
+    }
+
+    .main_div {
+        margin-top: 150px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .parent_div {
+        margin: 0 auto;
+        width: 1000px;
+
+    }
+
+    .title_weblab_div {
+        height: 110px;
+    }
+
+    .title_weblab_text {
+        font-size: 100px;
+        font-family: OverpassMedium;
+        color: #2196f3;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .title_text {
+        font-family: OverpassMedium;
+        font-size: 24px;
+        color: black;
+        margin: 0;
+    }
+
+    .basic_div {
+        margin-top: 100px;
+        width: 1000px;
+        background: #fafafa;
+        border-radius: 20px;
+    }
+
+    .basic_items_div {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .basic_item_calculators_div, .basic_item_develop_div, .basic_item_statistic_div {
+        width: 200px;
+        margin-left: 35px;
+        margin-right: 35px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .basic_items_div img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .basic_items_text {
+        font-size: 14px;
+        font-family: OverpassMedium;
+        margin: 5px 0 0 0;
+    }
+
+    .about_statistic_parent_div {
+        justify-content: space-around;
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .about_statistic_title_div {
+        background: #2196f3;
+        border-radius: 20px;
+        display: inline-block;
+        width: 480px;
+        margin-right: 18px;
+        height: 400px;
+        text-align: center;
+    }
+
+    .about_statistic_title_div img {
+        margin: 30px auto;
+        width: 350px;
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    .about_statistic_title_text {
+        margin: 20px 0 0 0;
+        font-size: 30px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+        font-weight: bold;
+    }
+
+    .about_statistic {
+        background: #fafafa;
+        border-radius: 20px;
+        display: inline-block;
+        width: 480px;
+        margin-left: 18px;
+        height: 400px;
+    }
+
+    .about_statistic_text_1 {
+        margin: 20px auto;
+        font-size: 30px;
+        font-family: OverpassMedium;
+        color: #2196f3;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .about_statistic_text_2 {
+        margin: 40px 0 0 30px;
+        font-size: 20px;
+        font-family: OverpassMedium;
+    }
+
+    .how_statistic_work_div_parent {
+        position: relative;
+        height: 270px;
+    }
+
+    .how_statistic_work_div_child {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 280px;
+        text-align: center;
+        background: #2196f3;
+        border-radius: 50px;
+        z-index: 5;
+        -webkit-transform: rotate(40grad);
+        -moz-transform: rotate(40grad);
+        -o-transform: rotate(40grad);
+        -ms-transform: rotate(40grad);
+        transform: rotate(40grad);
+    }
+
+    .how_statistic_work_text {
+        font-size: 30px;
+        color: #fafafa;
+        font-family: OverpassMedium;
+        font-weight: bold;
+    }
+
+    .about_how_statistic_work_div_child {
+        z-index: 4;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 1000px;
+        position: absolute;
+        top: 40px;
+    }
+
+    .about_how_statistic_work_text_1, .about_how_statistic_work_text_2 {
+        margin: 20px;
+        width: 750px;
+        font-family: OverpassMedium;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .about_how_statistic_work_text_1 a {
+        text-decoration: none;
+        color: #2196f3;
+    }
+
+    .about_how_statistic_work_text_1 a:hover {
+        color: #8f8f8f;
+        transition: 0.2s;
+    }
+
+    .about_calculators_parent_div {
+        justify-content: space-around;
+        display: flex;
+        margin-top: 60px;
+    }
+
+    .about_calculators_text1 {
+        color: #2196f3;
+        font-family: OverpassMedium;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .about_calculators_text2 {
+        font-size: 20px;
+        font-family: OverpassMedium;
+        margin: 40px 0 0 30px;
+    }
+
+    .about_calculators_title_div {
+        background: #2196f3;
+        border-radius: 20px;
+        display: inline-block;
+        width: 480px;
+        height: 400px;
+        text-align: center;
+    }
+
+    .about_calculators_title_text {
+        margin: 20px 0 0 0;
+        font-size: 30px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+        font-weight: bold;
+    }
+
+    .about_calculators_title_div img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .about_calculators_title_div_parent_div {
+        position: relative;
+    }
+
+    .about_calculators_title_div_div1 {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 120px;
+        text-align: center;
+    }
+
+    .about_calculators_title_div_div2 {
+        width: 120px;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        text-align: center;
+    }
+
+    .about_calculators_title_div_div3 {
+        width: 120px;
+        position: absolute;
+        top: 150px;
+        left: 190px;
+        text-align: center;
+    }
+
+    .about_calculators_div {
+        background: #fafafa;
+        border-radius: 20px;
+        display: inline-block;
+        width: 480px;
+        height: 400px;
+    }
+
+    .about_calculators_title_text2 {
+        font-size: 17px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+    }
+
+    .how_calculators_work_div_parent {
+        position: relative;
+        height: 270px;
+    }
+
+    .how_calculators_work_div_child {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 280px;
+        text-align: center;
+        background: #2196f3;
+        border-radius: 50px;
+        z-index: 5;
+        -webkit-transform: rotate(-40grad);
+        -moz-transform: rotate(-40grad);
+        -o-transform: rotate(-40grad);
+        -ms-transform: rotate(-40grad);
+        transform: rotate(-40grad);
+    }
+
+    .how_calculators_work_text {
+        font-size: 30px;
+        color: #fafafa;
+        font-family: OverpassMedium;
+        font-weight: bold;
+    }
+
+    .about_how_calculators_work_div_child {
+        z-index: 4;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 1000px;
+        height: 180px;
+        position: absolute;
+        top: 40px;
+    }
+
+    .about_how_calculators_work_text {
+        margin: 50px 20px 20px 300px;
+        width: 600px;
+        font-family: OverpassMedium;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .about_us_div_parent {
+        position: relative;
+    }
+
+    .about_us_title_div {
+        padding: 20px;
+        width: 150px;
+        background: #2196f3;
+        border-radius: 50px;
+        text-align: center;
+        position: absolute;
+        top: -40px;
+        z-index: 5;
+        left: 425px;
+    }
+
+    .about_us_title_text {
+        font-family: OverpassMedium;
+        font-size: 30px;
+        font-weight: bold;
+        color: #fafafa;
+        margin: 0;
+    }
+
+    .about_us_div {
+        margin-top: 30px;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 1000px;
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    .about_us_text {
+        font-size: 18px;
+        font-family: OverpassMedium;
+        color: black;
+        margin-left: 30px;
+        margin-right: 50px;
+    }
+
+    .about_us_text_list {
+        font-size: 18px;
+        font-family: OverpassMedium;
+        color: black;
+        margin: 0 50px 10px 50px;
+    }
 }
 
-.main_div {
-    margin-top: 150px;
-    width: 100%;
-    height: 100%;
+
+
+@media (min-width: 781px) and (max-width: 1020px) {
+    .header_div p {
+        margin: 0;
+    }
+
+    .main_div {
+        margin-top: 150px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .parent_div {
+        margin: 0 auto;
+        width: 760px;
+
+    }
+
+    .title_weblab_div {
+        height: 110px;
+    }
+
+    .title_weblab_text {
+        font-size: 100px;
+        font-family: OverpassMedium;
+        color: #2196f3;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .title_text {
+        font-family: OverpassMedium;
+        font-size: 24px;
+        color: black;
+        margin: 0;
+    }
+
+    .basic_div {
+        margin-top: 100px;
+        width: 760px;
+        background: #fafafa;
+        border-radius: 20px;
+    }
+
+    .basic_items_div {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .basic_item_calculators_div, .basic_item_develop_div, .basic_item_statistic_div {
+        width: 200px;
+        margin-left: 20px;
+        margin-right: 20px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .basic_items_div img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .basic_items_text {
+        font-size: 14px;
+        font-family: OverpassMedium;
+        margin: 5px 0 0 0;
+    }
+
+    .about_statistic_parent_div {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .about_statistic_title_div {
+        background: #2196f3;
+        border-radius: 20px;
+        display: block;
+        width: 362px;
+        margin-right: 18px;
+        height: 400px;
+        text-align: center;
+    }
+
+    .about_statistic_title_div img {
+        margin: 30px auto;
+        width: 350px;
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    .about_statistic_title_text {
+        margin: 20px 0 0 0;
+        font-size: 30px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+        font-weight: bold;
+    }
+
+    .about_statistic {
+        background: #fafafa;
+        border-radius: 20px;
+        display: block;
+        width: 362px;
+        margin-left: 18px;
+        height: 400px;
+    }
+
+    .about_statistic_text_1 {
+        margin: 20px auto;
+        font-size: 30px;
+        font-family: OverpassMedium;
+        color: #2196f3;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .about_statistic_text_2 {
+        margin: 40px 0 0 30px;
+        font-size: 20px;
+        font-family: OverpassMedium;
+    }
+
+    .how_statistic_work_div_parent {
+        position: relative;
+        height: 270px;
+    }
+
+    .how_statistic_work_div_child {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 280px;
+        text-align: center;
+        background: #2196f3;
+        border-radius: 50px;
+        z-index: 5;
+        -webkit-transform: rotate(40grad);
+        -moz-transform: rotate(40grad);
+        -o-transform: rotate(40grad);
+        -ms-transform: rotate(40grad);
+        transform: rotate(40grad);
+    }
+
+    .how_statistic_work_text {
+        font-size: 30px;
+        color: #fafafa;
+        font-family: OverpassMedium;
+        font-weight: bold;
+    }
+
+    .about_how_statistic_work_div_child {
+        z-index: 4;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 760px;
+        position: absolute;
+        top: 40px;
+    }
+
+    .about_how_statistic_work_text_1 {
+        margin: 20px;
+        width: 450px;
+        font-family: OverpassMedium;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .about_how_statistic_work_text_2 {
+        margin: 20px;
+        width: 710px;
+        font-family: OverpassMedium;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .about_how_statistic_work_text_1 a {
+        text-decoration: none;
+        color: #2196f3;
+    }
+
+    .about_how_statistic_work_text_1 a:hover {
+        color: #8f8f8f;
+        transition: 0.2s;
+    }
+
+    .about_calculators_parent_div {
+        display: flex;
+        margin-top: 100px;
+    }
+
+    .about_calculators_text1 {
+        color: #2196f3;
+        font-family: OverpassMedium;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .about_calculators_text2 {
+        font-size: 20px;
+        font-family: OverpassMedium;
+        margin: 40px 0 0 30px;
+    }
+
+    .about_calculators_title_div {
+        background: #2196f3;
+        border-radius: 20px;
+        display: block;
+        width: 362px;
+        height: 400px;
+        margin-left: 18px;
+        text-align: center;
+    }
+
+    .about_calculators_title_text {
+        margin: 20px 0 0 0;
+        font-size: 30px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+        font-weight: bold;
+    }
+
+    .about_calculators_title_div img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .about_calculators_title_div_parent_div {
+        position: relative;
+    }
+
+    .about_calculators_title_div_div1 {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+        width: 100px;
+        text-align: center;
+    }
+
+    .about_calculators_title_div_div2 {
+        width: 100px;
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        text-align: center;
+    }
+
+    .about_calculators_title_div_div3 {
+        width: 100px;
+        position: absolute;
+        top: 130px;
+        left: 131px;
+        text-align: center;
+    }
+
+    .about_calculators_div {
+        background: #fafafa;
+        border-radius: 20px;
+        display: block;
+        width: 362px;
+        height: 400px;
+        margin-right: 18px;
+    }
+
+    .about_calculators_title_text2 {
+        font-size: 15px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+    }
+
+    .how_calculators_work_div_parent {
+        position: relative;
+        height: 270px;
+    }
+
+    .how_calculators_work_div_child {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 280px;
+        text-align: center;
+        background: #2196f3;
+        border-radius: 50px;
+        z-index: 5;
+        -webkit-transform: rotate(-40grad);
+        -moz-transform: rotate(-40grad);
+        -o-transform: rotate(-40grad);
+        -ms-transform: rotate(-40grad);
+        transform: rotate(-40grad);
+    }
+
+    .how_calculators_work_text {
+        font-size: 30px;
+        color: #fafafa;
+        font-family: OverpassMedium;
+        font-weight: bold;
+    }
+
+    .about_how_calculators_work_div_child {
+        z-index: 4;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 760px;
+        height: 180px;
+        position: absolute;
+        top: 40px;
+    }
+
+    .about_how_calculators_work_text {
+        margin: 20px 20px 20px 280px;
+        width: 400px;
+        font-family: OverpassMedium;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .about_us_div_parent {
+        position: relative;
+    }
+
+    .about_us_title_div {
+        padding: 20px;
+        width: 150px;
+        background: #2196f3;
+        border-radius: 50px;
+        text-align: center;
+        position: absolute;
+        top: -40px;
+        z-index: 5;
+        left: 285px;
+    }
+
+    .about_us_title_text {
+        font-family: OverpassMedium;
+        font-size: 30px;
+        font-weight: bold;
+        color: #fafafa;
+        margin: 0;
+    }
+
+    .about_us_div {
+        margin-top: 30px;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 760px;
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    .about_us_text {
+        font-size: 18px;
+        font-family: OverpassMedium;
+        color: black;
+        margin-left: 30px;
+        margin-right: 50px;
+    }
+
+    .about_us_text_list {
+        font-size: 18px;
+        font-family: OverpassMedium;
+        color: black;
+        margin: 0 50px 10px 50px;
+    }
 }
 
-.parent_div {
-    margin: 0 auto;
-    width: 1000px;
+@media (min-width: 451px) and (max-width: 780px) {
+    .header_div p {
+        margin: 0;
+    }
 
+    .main_div {
+        margin-top: 150px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .parent_div {
+        margin: 0 auto;
+        width: 430px;
+
+    }
+
+    .title_div {
+        margin-left: 10px;
+    }
+
+    .title_weblab_text {
+        font-size: 80px;
+        font-family: OverpassMedium;
+        color: #2196f3;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .title_text {
+        font-family: OverpassMedium;
+        font-size: 16px;
+        color: black;
+        margin: 0;
+    }
+
+    .basic_div {
+        margin-top: 50px;
+        width: 430px;
+        background: #fafafa;
+        border-radius: 20px;
+    }
+
+    .basic_items_div {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .basic_item_calculators_div, .basic_item_develop_div, .basic_item_statistic_div {
+        width: 120px;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .basic_items_div img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .basic_items_text {
+        font-size: 12px;
+        font-family: OverpassMedium;
+        margin: 5px 0 0 0;
+    }
+
+    .about_statistic_parent_div {
+        margin-top: 30px;
+    }
+
+    .about_statistic_title_div {
+        background: #2196f3;
+        border-radius: 20px;
+        display: block;
+        width: 430px;
+        height: 400px;
+        text-align: center;
+    }
+
+    .about_statistic_title_div img {
+        margin: 40px auto;
+        width: 350px;
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    .about_statistic_title_text {
+        margin: 0;
+        padding-top: 20px;
+        font-size: 30px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+        font-weight: bold;
+    }
+
+    .about_statistic {
+        background: #fafafa;
+        border-radius: 20px;
+        display: block;
+        width: 430px;
+        height: 400px;
+    }
+
+    .about_statistic_text_1 {
+        margin: 20px auto;
+        padding-top: 20px;
+        font-size: 30px;
+        font-family: OverpassMedium;
+        color: #2196f3;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .about_statistic_text_2 {
+        margin: 40px 0 0 30px;
+        font-size: 20px;
+        font-family: OverpassMedium;
+    }
+
+    .how_statistic_work_div_parent {
+        position: relative;
+        height: 400px;
+    }
+
+    .how_statistic_work_div_child {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        text-align: center;
+        background: #2196f3;
+        border-radius: 50px;
+        width: 190px;
+        z-index: 5;
+        -webkit-transform: rotate(40grad);
+        -moz-transform: rotate(40grad);
+        -o-transform: rotate(40grad);
+        -ms-transform: rotate(40grad);
+        transform: rotate(40grad);
+    }
+
+    .how_statistic_work_text {
+        font-size: 20px;
+        color: #fafafa;
+        font-family: OverpassMedium;
+        font-weight: bold;
+    }
+
+    .about_how_statistic_work_div_child {
+        z-index: 4;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 430px;
+        position: absolute;
+        top: 40px;
+    }
+
+    .about_how_statistic_work_text_1 {
+        margin: 20px;
+        width: 250px;
+        font-family: OverpassMedium;
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .about_how_statistic_work_text_2 {
+        margin: 20px;
+        width: 400px;
+        font-family: OverpassMedium;
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .about_how_statistic_work_text_1 a {
+        text-decoration: none;
+        color: #2196f3;
+    }
+
+    .about_how_statistic_work_text_1 a:hover {
+        color: #8f8f8f;
+        transition: 0.2s;
+    }
+
+    .about_calculators_text1 {
+        color: #2196f3;
+        font-family: OverpassMedium;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 0;
+        padding-top: 20px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .about_calculators_text2 {
+        font-size: 20px;
+        font-family: OverpassMedium;
+        margin: 40px 0 0 30px;
+    }
+
+    .about_calculators_title_div {
+        background: #2196f3;
+        border-radius: 20px;
+        display: block;
+        width: 430px;
+        height: 340px;
+        text-align: center;
+    }
+
+    .about_calculators_title_text {
+        margin: 20px 0 0 0;
+        padding-top: 20px;
+        font-size: 28px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+        font-weight: bold;
+    }
+
+    .about_calculators_title_div img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .about_calculators_title_div_parent_div {
+        position: relative;
+    }
+
+    .about_calculators_title_div_div1 {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+        width: 100px;
+        text-align: center;
+    }
+
+    .about_calculators_title_div_div2 {
+        width: 100px;
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        text-align: center;
+    }
+
+    .about_calculators_title_div_div3 {
+        width: 100px;
+        position: absolute;
+        top: 130px;
+        left: 170px;
+        text-align: center;
+    }
+
+    .about_calculators_div {
+        background: #fafafa;
+        border-radius: 20px;
+        display: block;
+        margin-top: 30px;
+        width: 430px;
+        height: 340px;
+    }
+
+    .about_calculators_title_text2 {
+        font-size: 15px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+    }
+
+    .how_calculators_work_div_parent {
+        position: relative;
+        height: 270px;
+    }
+
+    .how_calculators_work_div_child {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 190px;
+        text-align: center;
+        background: #2196f3;
+        border-radius: 50px;
+        z-index: 5;
+        -webkit-transform: rotate(-40grad);
+        -moz-transform: rotate(-40grad);
+        -o-transform: rotate(-40grad);
+        -ms-transform: rotate(-40grad);
+        transform: rotate(-40grad);
+    }
+
+    .how_calculators_work_text {
+        font-size: 20px;
+        color: #fafafa;
+        font-family: OverpassMedium;
+        font-weight: bold;
+    }
+
+    .about_how_calculators_work_div_child {
+        z-index: 4;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 430px;
+        height: 220px;
+        position: absolute;
+        top: 40px;
+    }
+
+    .about_how_calculators_work_text {
+        margin: 20px 20px 20px 190px;
+        width: 240px;
+        font-family: OverpassMedium;
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .about_us_div_parent {
+        margin-top: 60px;
+        position: relative;
+    }
+
+    .about_us_title_div {
+        padding: 20px;
+        width: 120px;
+        background: #2196f3;
+        border-radius: 50px;
+        text-align: center;
+        position: absolute;
+        top: -40px;
+        z-index: 5;
+        left: 155px;
+    }
+
+    .about_us_title_text {
+        font-family: OverpassMedium;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fafafa;
+        margin: 0;
+    }
+
+    .about_us_div {
+        margin-top: 30px;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 430px;
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    .about_us_text {
+        font-size: 18px;
+        font-family: OverpassMedium;
+        color: black;
+        margin-left: 30px;
+        margin-right: 50px;
+    }
+
+    .about_us_text_list {
+        font-size: 18px;
+        font-family: OverpassMedium;
+        color: black;
+        margin: 0 50px 10px 50px;
+    }
 }
 
-.title_weblab_div {
-    height: 110px;
-}
+@media (max-width: 450px) {
+    .header_div p {
+        margin: 0;
+    }
 
-.title_weblab_text {
-    font-size: 100px;
-    font-family: OverpassMedium;
-    color: #2196f3;
-    font-weight: bold;
-    margin: 0;
-}
+    .main_div {
+        margin-top: 150px;
+        width: 100%;
+        height: 100%;
+    }
 
-.title_text {
-    font-family: OverpassMedium;
-    font-size: 24px;
-    color: black;
-    margin: 0;
-}
+    .parent_div {
+        margin: 0 auto;
+        width: 430px;
 
-.basic_div {
-    margin-top: 100px;
-    width: 1000px;
-    background: #fafafa;
-    border-radius: 20px;
-}
+    }
 
-.basic_items_div {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
+    .title_div {
+        margin-left: 10px;
+    }
 
-.basic_item_calculators_div, .basic_item_develop_div, .basic_item_statistic_div {
-    width: 200px;
-    margin-left: 35px;
-    margin-right: 35px;
-    display: inline-block;
-    text-align: center;
-}
+    .title_weblab_text {
+        font-size: 80px;
+        font-family: OverpassMedium;
+        color: #2196f3;
+        font-weight: bold;
+        margin: 0;
+    }
 
-.basic_items_div img {
-    width: 30px;
-    height: 30px;
-}
+    .title_text {
+        font-family: OverpassMedium;
+        font-size: 16px;
+        color: black;
+        margin: 0;
+    }
 
-.basic_items_text {
-    font-size: 14px;
-    font-family: OverpassMedium;
-    margin: 5px 0 0 0;
-}
+    .basic_div {
+        margin-top: 50px;
+        width: 430px;
+        background: #fafafa;
+        border-radius: 20px;
+    }
 
-.about_statistic_parent_div {
-    justify-content: space-around;
-    display: flex;
-    margin-top: 30px;
-}
+    .basic_items_div {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 
-.about_statistic_title_div {
-    background: #2196f3;
-    border-radius: 20px;
-    display: inline-block;
-    width: 480px;
-    margin-right: 18px;
-    height: 400px;
-    text-align: center;
-}
+    .basic_item_calculators_div, .basic_item_develop_div, .basic_item_statistic_div {
+        width: 120px;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: inline-block;
+        text-align: center;
+    }
 
-.about_statistic_title_div img {
-    margin: 30px auto;
-    width: 350px;
-    height: 200px;
-    border-radius: 20px;
-}
+    .basic_items_div img {
+        width: 30px;
+        height: 30px;
+    }
 
-.about_statistic_title_text {
-    margin: 20px 0 0 0;
-    font-size: 30px;
-    font-family: OverpassMedium;
-    color: #fafafa;
-    font-weight: bold;
-}
+    .basic_items_text {
+        font-size: 12px;
+        font-family: OverpassMedium;
+        margin: 5px 0 0 0;
+    }
 
-.about_statistic {
-    background: #fafafa;
-    border-radius: 20px;
-    display: inline-block;
-    width: 480px;
-    margin-left: 18px;
-    height: 400px;
-}
+    .about_statistic_parent_div {
+        margin-top: 30px;
+    }
 
-.about_statistic_text_1 {
-    margin: 20px auto;
-    font-size: 30px;
-    font-family: OverpassMedium;
-    color: #2196f3;
-    text-align: center;
-    font-weight: bold;
-}
+    .about_statistic_title_div {
+        background: #2196f3;
+        border-radius: 20px;
+        display: block;
+        width: 430px;
+        height: 400px;
+        text-align: center;
+    }
 
-.about_statistic_text_2 {
-    margin: 40px 0 0 30px;
-    font-size: 20px;
-    font-family: OverpassMedium;
-}
+    .about_statistic_title_div img {
+        margin: 40px auto;
+        width: 350px;
+        height: 200px;
+        border-radius: 20px;
+    }
 
-.how_statistic_work_div_parent {
-    position: relative;
-    height: 270px;
-}
+    .about_statistic_title_text {
+        margin: 0;
+        padding-top: 20px;
+        font-size: 30px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+        font-weight: bold;
+    }
 
-.how_statistic_work_div_child {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 280px;
-    text-align: center;
-    background: #2196f3;
-    border-radius: 50px;
-    z-index: 5;
-    -webkit-transform: rotate(40grad);
-    -moz-transform: rotate(40grad);
-    -o-transform: rotate(40grad);
-    -ms-transform: rotate(40grad);
-    transform: rotate(40grad);
-}
+    .about_statistic {
+        background: #fafafa;
+        border-radius: 20px;
+        display: block;
+        width: 430px;
+        height: 400px;
+    }
 
-.how_statistic_work_text {
-    font-size: 30px;
-    color: #fafafa;
-    font-family: OverpassMedium;
-    font-weight: bold;
-}
+    .about_statistic_text_1 {
+        margin: 20px auto;
+        padding-top: 20px;
+        font-size: 30px;
+        font-family: OverpassMedium;
+        color: #2196f3;
+        text-align: center;
+        font-weight: bold;
+    }
 
-.about_how_statistic_work_div_child {
-    z-index: 4;
-    border-radius: 20px;
-    background: #fafafa;
-    width: 1000px;
-    position: absolute;
-    top: 40px;
-}
+    .about_statistic_text_2 {
+        margin: 40px 0 0 30px;
+        font-size: 20px;
+        font-family: OverpassMedium;
+    }
 
-.about_how_statistic_work_text {
-    margin: 20px;
-    width: 750px;
-    font-family: OverpassMedium;
-    font-size: 18px;
-    font-weight: normal;
-}
+    .how_statistic_work_div_parent {
+        position: relative;
+        height: 400px;
+    }
 
-.about_how_statistic_work_text a {
-    text-decoration: none;
-    color: #2196f3;
-}
+    .how_statistic_work_div_child {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        text-align: center;
+        background: #2196f3;
+        border-radius: 50px;
+        width: 190px;
+        z-index: 5;
+        -webkit-transform: rotate(40grad);
+        -moz-transform: rotate(40grad);
+        -o-transform: rotate(40grad);
+        -ms-transform: rotate(40grad);
+        transform: rotate(40grad);
+    }
 
-.about_how_statistic_work_text a:hover {
-    color: #8f8f8f;
-    transition: 0.2s;
-}
+    .how_statistic_work_text {
+        font-size: 20px;
+        color: #fafafa;
+        font-family: OverpassMedium;
+        font-weight: bold;
+    }
 
-.about_calculators_parent_div {
-    justify-content: space-around;
-    display: flex;
-    margin-top: 60px;
-}
+    .about_how_statistic_work_div_child {
+        z-index: 4;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 430px;
+        position: absolute;
+        top: 40px;
+    }
 
-.about_calculators_text1 {
-    color: #2196f3;
-    font-family: OverpassMedium;
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    text-align: center;
-}
+    .about_how_statistic_work_text_1 {
+        margin: 20px;
+        width: 250px;
+        font-family: OverpassMedium;
+        font-size: 14px;
+        font-weight: normal;
+    }
 
-.about_calculators_text2 {
-    font-size: 20px;
-    font-family: OverpassMedium;
-    margin: 40px 0 0 30px;
-}
+    .about_how_statistic_work_text_2 {
+        margin: 20px;
+        width: 400px;
+        font-family: OverpassMedium;
+        font-size: 14px;
+        font-weight: normal;
+    }
 
-.about_calculators_title_div {
-    background: #2196f3;
-    border-radius: 20px;
-    display: inline-block;
-    width: 480px;
-    height: 400px;
-    text-align: center;
-}
+    .about_how_statistic_work_text_1 a {
+        text-decoration: none;
+        color: #2196f3;
+    }
 
-.about_calculators_title_text {
-    margin: 20px 0 0 0;
-    font-size: 30px;
-    font-family: OverpassMedium;
-    color: #fafafa;
-    font-weight: bold;
-}
+    .about_how_statistic_work_text_1 a:hover {
+        color: #8f8f8f;
+        transition: 0.2s;
+    }
 
-.about_calculators_title_div img {
-    width: 80px;
-    height: 80px;
-}
+    .about_calculators_text1 {
+        color: #2196f3;
+        font-family: OverpassMedium;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 0;
+        padding-top: 20px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
 
-.about_calculators_title_div_parent_div {
-    position: relative;
-}
+    .about_calculators_text2 {
+        font-size: 20px;
+        font-family: OverpassMedium;
+        margin: 40px 0 0 30px;
+    }
 
-.about_calculators_title_div_div1 {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    width: 120px;
-    text-align: center;
-}
+    .about_calculators_title_div {
+        background: #2196f3;
+        border-radius: 20px;
+        display: block;
+        width: 430px;
+        height: 340px;
+        text-align: center;
+    }
 
-.about_calculators_title_div_div2 {
-    width: 120px;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    text-align: center;
-}
+    .about_calculators_title_text {
+        margin: 20px 0 0 0;
+        padding-top: 20px;
+        font-size: 28px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+        font-weight: bold;
+    }
 
-.about_calculators_title_div_div3 {
-    width: 120px;
-    position: absolute;
-    top: 150px;
-    left: 190px;
-    text-align: center;
-}
+    .about_calculators_title_div img {
+        width: 50px;
+        height: 50px;
+    }
 
-.about_calculators_div {
-    background: #fafafa;
-    border-radius: 20px;
-    display: inline-block;
-    width: 480px;
-    height: 400px;
-}
+    .about_calculators_title_div_parent_div {
+        position: relative;
+    }
 
-.about_calculators_title_text2 {
-    font-size: 17px;
-    font-family: OverpassMedium;
-    color: #fafafa;
-}
+    .about_calculators_title_div_div1 {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+        width: 100px;
+        text-align: center;
+    }
 
-.how_calculators_work_div_parent {
-    position: relative;
-    height: 270px;
-}
+    .about_calculators_title_div_div2 {
+        width: 100px;
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        text-align: center;
+    }
 
-.how_calculators_work_div_child {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 280px;
-    text-align: center;
-    background: #2196f3;
-    border-radius: 50px;
-    z-index: 5;
-    -webkit-transform: rotate(-40grad);
-    -moz-transform: rotate(-40grad);
-    -o-transform: rotate(-40grad);
-    -ms-transform: rotate(-40grad);
-    transform: rotate(-40grad);
-}
+    .about_calculators_title_div_div3 {
+        width: 100px;
+        position: absolute;
+        top: 130px;
+        left: 170px;
+        text-align: center;
+    }
 
-.how_calculators_work_text {
-    font-size: 30px;
-    color: #fafafa;
-    font-family: OverpassMedium;
-    font-weight: bold;
-}
+    .about_calculators_div {
+        background: #fafafa;
+        border-radius: 20px;
+        display: block;
+        margin-top: 30px;
+        width: 430px;
+        height: 340px;
+    }
 
-.about_how_calculators_work_div_child {
-    z-index: 4;
-    border-radius: 20px;
-    background: #fafafa;
-    width: 1000px;
-    height: 180px;
-    position: absolute;
-    top: 40px;
-}
+    .about_calculators_title_text2 {
+        font-size: 15px;
+        font-family: OverpassMedium;
+        color: #fafafa;
+    }
 
-.about_how_calculators_work_text {
-    margin: 50px 20px 20px 300px;
-    width: 600px;
-    font-family: OverpassMedium;
-    font-size: 18px;
-    font-weight: normal;
-}
+    .how_calculators_work_div_parent {
+        position: relative;
+        height: 270px;
+    }
 
-.about_us_div_parent {
-    position: relative;
-}
+    .how_calculators_work_div_child {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 190px;
+        text-align: center;
+        background: #2196f3;
+        border-radius: 50px;
+        z-index: 5;
+        -webkit-transform: rotate(-40grad);
+        -moz-transform: rotate(-40grad);
+        -o-transform: rotate(-40grad);
+        -ms-transform: rotate(-40grad);
+        transform: rotate(-40grad);
+    }
 
-.about_us_title_div {
-    padding: 20px;
-    width: 150px;
-    background: #2196f3;
-    border-radius: 50px;
-    text-align: center;
-    position: absolute;
-    top: -40px;
-    z-index: 5;
-    left: 425px;
-}
+    .how_calculators_work_text {
+        font-size: 20px;
+        color: #fafafa;
+        font-family: OverpassMedium;
+        font-weight: bold;
+    }
 
-.about_us_title_text {
-    font-family: OverpassMedium;
-    font-size: 30px;
-    font-weight: bold;
-    color: #fafafa;
-    margin: 0;
-}
+    .about_how_calculators_work_div_child {
+        z-index: 4;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 430px;
+        height: 220px;
+        position: absolute;
+        top: 40px;
+    }
 
-.about_us_div {
-    margin-top: 30px;
-    border-radius: 20px;
-    background: #fafafa;
-    width: 1000px;
-    padding-top: 40px;
-    padding-bottom: 30px;
-}
+    .about_how_calculators_work_text {
+        margin: 20px 20px 20px 190px;
+        width: 240px;
+        font-family: OverpassMedium;
+        font-size: 16px;
+        font-weight: normal;
+    }
 
-.about_us_text {
-    font-size: 18px;
-    font-family: OverpassMedium;
-    color: black;
-    margin-left: 30px;
-    margin-right: 50px;
-}
+    .about_us_div_parent {
+        margin-top: 60px;
+        position: relative;
+    }
 
-.about_us_text_list {
-    font-size: 18px;
-    font-family: OverpassMedium;
-    color: black;
-    margin: 0 50px 10px 50px;
+    .about_us_title_div {
+        padding: 20px;
+        width: 120px;
+        background: #2196f3;
+        border-radius: 50px;
+        text-align: center;
+        position: absolute;
+        top: -40px;
+        z-index: 5;
+        left: 155px;
+    }
+
+    .about_us_title_text {
+        font-family: OverpassMedium;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fafafa;
+        margin: 0;
+    }
+
+    .about_us_div {
+        margin-top: 30px;
+        border-radius: 20px;
+        background: #fafafa;
+        width: 430px;
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    .about_us_text {
+        font-size: 18px;
+        font-family: OverpassMedium;
+        color: black;
+        margin-left: 30px;
+        margin-right: 50px;
+    }
+
+    .about_us_text_list {
+        font-size: 18px;
+        font-family: OverpassMedium;
+        color: black;
+        margin: 0 50px 10px 50px;
+    }
 }

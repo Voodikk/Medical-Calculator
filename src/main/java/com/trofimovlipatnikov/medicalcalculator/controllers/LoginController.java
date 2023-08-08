@@ -18,16 +18,14 @@ public class LoginController {
                            @RequestParam(value = "error", required = false) boolean error,
                            @RequestParam(value = "errorMessage", required = false, defaultValue = "") String errorMessage) {
 
-        if(error) {
-            model.addAttribute("error", error);
-            model.addAttribute("errorMessage", errorMessage);
-        }
+        model.addAttribute("error", error);
+        model.addAttribute("errorMessage", errorMessage);
         return "login";
     }
 
-    @PostMapping("/auth_user")
-    public String postLogin(@RequestParam("username") String username,
-                            @RequestParam("password") String password) {
-        return authService.authUser(username, password);
-    }
+//    @PostMapping("/auth_user")
+//    public String postLogin(@RequestParam("username") String username,
+//                            @RequestParam("password") String password) {
+//        return authService.authUser(username, password);
+//    }
 }

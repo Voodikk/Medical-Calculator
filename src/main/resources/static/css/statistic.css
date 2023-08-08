@@ -188,6 +188,30 @@ body {
     margin-left: auto;
 }
 
+.submit_done_div {
+    width: 700px;
+    background: #fafafa;
+    border-radius: 20px;
+    margin: 40px auto ;
+    padding: 20px;
+    text-align: center;
+}
+
+.submit_done_title_text {
+    width: 500px;
+    margin: 30px auto;
+    font-family: OverpassMedium;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.submit_done_text {
+    width: 400px;
+    margin: 70px auto;
+    font-family: OverpassMedium;
+    font-size: 20px;
+}
+
 .value_1 {
     fill: #e32200 !important;
 }

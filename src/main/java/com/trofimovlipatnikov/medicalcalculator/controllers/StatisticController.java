@@ -28,12 +28,15 @@ public class StatisticController {
     @GetMapping
     public String getStatistic(@RequestParam(value = "error", required = false) boolean error,
                                @RequestParam(value = "errorMessage", required = false) String errorMessage,
+                               @RequestParam(value = "isSubmit", required = false) boolean isSubmit,
                                Model model) {
 
         List<RegionVote> votesList = regionVoteRepository.findAll();
         model.addAttribute("votesList", votesList);
         model.addAttribute("error", error);
         model.addAttribute("errorMessage", errorMessage);
+        model.addAttribute("isSubmit", isSubmit);
+
 
         return "statistic";
     }

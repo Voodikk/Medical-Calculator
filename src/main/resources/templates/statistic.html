@@ -760,7 +760,7 @@
 	</svg>
       </div>
 
-      <div class="parent_form_div">
+      <div th:if="${!isSubmit}" class="parent_form_div">
         <div class="title_div">
           <h1>Ваш голос тоже важен</h1>
         </div>
@@ -777,15 +777,20 @@
                 <input type="number" name="points" min="1" max="10" step="1" class="input" required>
               </label>
             </div>
-
             <div class="submit_button">
               <div class="submit_input_div">
                 <input type="submit" value="Проголосовать" class="submit_input">
               </div>
             </div>
           </form>
-
         </div>
+      </div>
+
+      <div th:if="${isSubmit}" class="submit_done_div">
+        <p class="submit_done_title_text">Благодарим за ваш голос!</p>
+        <p class="submit_done_title_text">Ваш ответ записан</p>
+        <p class="submit_done_text">Вы всегда можете изменить свой голос</p>
+
       </div>
 
     </div>

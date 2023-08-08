@@ -55,7 +55,7 @@ public class VotesService {
                 Region region = user.get().getRegion();
                 Integer regionId = region.getId();
                 regionsRepository.calculateAvgPointsForRegion(regionId);
-                return "redirect:/statistic";
+                return "redirect:/statistic?isSubmit=true";
 
 
             }
