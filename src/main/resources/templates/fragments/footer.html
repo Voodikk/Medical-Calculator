@@ -28,36 +28,109 @@
     </div>
 
     <style>
-        .footer_div {
-            display: flex;
-            justify-content: center;
-            position: relative;
-            width: 100%;
-            height: 150px;
-            background: #fafafa;
-            margin: 150px 0 0 0;
-            padding-top: 20px;
+        
+        @media (max-width: 450px) {
+            .footer_div {
+                display: flex;
+                position: relative;
+                width: 100%;
+                background: #fafafa;
+                margin: 80px 0 0 0;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                justify-content: space-around;
+            }
+
+            .contacts_div, .about_div, .authors_div {
+                width: 90px;
+            }
+
+            .big_footer_text {
+                font-family: OverpassMedium;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .footer_text, .footer_text_clickable {
+                margin-top: 20px;
+                font-family: OverpassMedium;
+                font-size: 10px;
+            }
+
+            .footer_text_clickable:hover {
+                color: #2196f3;
+                transition: 0.2s;
+            }
         }
 
-        .contacts_div, .about_div, .authors_div {
-            width: 220px;
-            margin-left: 40px;
+        @media (min-width: 450px) and (max-width: 1000px){
+            .footer_div {
+                display: flex;
+                position: relative;
+                width: 100%;
+                background: #fafafa;
+                margin: 80px 0 0 0;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                justify-content: space-around;
+            }
+
+            .contacts_div, .about_div, .authors_div {
+                width: 120px;
+            }
+
+            .big_footer_text {
+                font-family: OverpassMedium;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .footer_text, .footer_text_clickable {
+                margin-top: 20px;
+                font-family: OverpassMedium;
+                font-size: 14px;
+            }
+
+            .footer_text_clickable:hover {
+                color: #2196f3;
+                transition: 0.2s;
+            }
         }
 
-        .big_footer_text {
-            font-family: OverpassMedium;
-            font-size: 20px;
-            font-weight: bold;
-        }
+        @media (min-width: 1000px){
+            .footer_div {
+                display: flex;
+                position: relative;
+                width: 100%;
+                background: #fafafa;
+                margin: 80px 0 0 0;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                justify-content: center;
+            }
 
-        .footer_text, .footer_text_clickable {
-            font-family: OverpassMedium;
-            font-size: 15px;
-        }
+            .contacts_div, .about_div, .authors_div {
+                width: 150px;
+                margin-right: 100px;
+                margin-left: 100px;
+            }
 
-        .footer_text_clickable:hover {
-            color: #2196f3;
-            transition: 0.2s;
+            .big_footer_text {
+                font-family: OverpassMedium;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .footer_text, .footer_text_clickable {
+                margin-top: 20px;
+                font-family: OverpassMedium;
+                font-size: 16px;
+            }
+
+            .footer_text_clickable:hover {
+                color: #2196f3;
+                transition: 0.2s;
+            }
         }
     </style>
 </div>
