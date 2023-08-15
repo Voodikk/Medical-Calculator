@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class LoginController {
 
-    private final AuthService authService;
+    //  Контроллер страницы авторизации
+    //  т. к. авторизация происходит посредством Spring Security
+    //  я закомментировал свой кастомный метод авторизации
 
     @GetMapping
     public String getLogin(Model model,

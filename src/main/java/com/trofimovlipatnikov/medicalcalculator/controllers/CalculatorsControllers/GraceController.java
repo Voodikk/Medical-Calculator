@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("calculators/grace")
 public class GraceController {
+
+    //  Контроллер калькулятора Grace
+
     @GetMapping()
     public String getGrace() {
         return "grace";
@@ -24,6 +27,7 @@ public class GraceController {
     }
     @PostMapping("/result")
     public ResponseEntity<?> sendGraceResult (@RequestBody Grace grace) {
+        //  Метод, вычисляющий результат
         grace.setResult();
         return new ResponseEntity<>(grace.getResult(), HttpStatus.OK);
     }

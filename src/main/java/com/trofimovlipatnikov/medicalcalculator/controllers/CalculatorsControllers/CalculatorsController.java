@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/calculators")
 public class CalculatorsController {
 
+    //  Контроллер страницы со списком калькуляторов
+
     @GetMapping()
     public String getCalculators() {
         return "calculators";

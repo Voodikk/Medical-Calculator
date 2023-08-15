@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 @Table(name = "regions")
 public class Region {
 
+    //  Сущность таблицы регионов
+
     @Id
     @Column(name = "region_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

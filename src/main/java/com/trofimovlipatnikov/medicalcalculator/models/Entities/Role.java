@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 @Table(name = "roles")
 public class Role {
 
+    //  Сущность таблицы ролей
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

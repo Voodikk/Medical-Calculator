@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RegionsService {
 
+    //  Сервис регионов
+
     RegionsRepository regionsRepository;
 
     public Region findByRegionNumber(Integer number) {

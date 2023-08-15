@@ -25,8 +25,9 @@ import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter
 @RequiredArgsConstructor
 public class WebSecurityConfig {
 
-    private final UserDetailsService userDetailsService;
+    //  Конфигурация Spring Security
 
+    private final UserDetailsService userDetailsService;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{

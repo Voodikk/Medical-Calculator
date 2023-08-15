@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class RegistrationController {
 
+    //  Контроллер регистрации
+
+    //  Подключаем сервис аутентификации
     private final AuthService authService;
 
     @GetMapping
@@ -28,6 +31,7 @@ public class RegistrationController {
                           @RequestParam("email") String email,
                           @RequestParam("region") int regionNumber) {
 
+        //  Возвращаем метод добавления пользователя в базу данных (регистрация)
         return authService.addUser(username, password, email, regionNumber);
     }
 }

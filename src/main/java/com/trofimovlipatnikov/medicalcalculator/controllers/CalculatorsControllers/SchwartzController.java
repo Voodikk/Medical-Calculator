@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("calculators/schwartz")
 public class SchwartzController {
 
+    //  Контроллер калькулятора Schwartz
+
     @GetMapping
     public String getSchwartz() {
         return "schwartz";
@@ -26,6 +28,7 @@ public class SchwartzController {
 
     @PostMapping("/result")
     public ResponseEntity<?> sendSchwartzResult(@RequestBody Schwartz schwartz){
+        //  Метод вычисления результата
         schwartz.setResult();
         return new ResponseEntity<>(schwartz.getResult(), HttpStatus.OK);
     }

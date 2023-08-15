@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
+    //  Контроллер страницы Main
+
 
     @GetMapping("/main")
     public String getMain() {

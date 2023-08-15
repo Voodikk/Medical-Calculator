@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class UserService implements UserDetailsService{
 
+    //  Сервис пользователя
+
     private final UserRepository userRepository;
 
 

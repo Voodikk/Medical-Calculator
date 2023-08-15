@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 @Table(name = "users")
 public class User implements UserDetails {
 
+    //  Сущность таблицы пользователей
 
     @Id
     @Column(name = "user_id")

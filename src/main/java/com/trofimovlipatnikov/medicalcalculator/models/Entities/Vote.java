@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 @Table(name = "votes")
 public class Vote {
 
+    //  Сущность таблицы голосов
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

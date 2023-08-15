@@ -13,6 +13,8 @@ import java.nio.charset.StandardCharsets;
 
 public class AuthFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
+    //  Обработка ошибок при авторизации
+
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
         String errorMessage = "Неправильный логин или пароль";

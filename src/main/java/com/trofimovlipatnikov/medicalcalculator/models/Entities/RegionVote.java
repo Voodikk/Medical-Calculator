@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 @Table(name = "votes_avg")
 public class RegionVote {
 
+    //  Сущность таблицы средних значений по регионам
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("calculators/apache")
 public class ApacheController {
+
+    //  Контроллер калькулятора Apache
+
     @GetMapping()
     public String getApache () {
         return "apache";
@@ -20,6 +23,7 @@ public class ApacheController {
     }
     @PostMapping("/result")
     public ResponseEntity<?> sendApacheResult (@RequestBody Apache apache) {
+        //  Методы, высчитывающие и возвращающие результат
         apache.setResult();
         apache.setPercLetal();
         return new ResponseEntity<>(apache, HttpStatus.OK);
