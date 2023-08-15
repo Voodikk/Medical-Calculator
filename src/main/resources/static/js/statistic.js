@@ -10,7 +10,6 @@ $(function() {
         }
     });
 
-
     // $('[data-code]').each(function() {
     //     let id = $(this).attr('data-code');
     //     let title = $(this).attr('data-title');
