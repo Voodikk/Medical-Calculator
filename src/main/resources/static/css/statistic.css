@@ -20,215 +20,857 @@ body {
     background: #EAE6CA;
 }
 
-.parent_div {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 120px 0 0 0;
+@media (min-width: 1020px) {
+    .parent_div {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 120px 0 0 0;
+    }
+
+    .title_div h1 {
+        text-align: center;
+        font-family: OverpassMedium;
+        font-size: 40px;
+    }
+
+    .body_div {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .rf-map,
+    .rf-map *{
+        box-sizing: border-box;
+    }
+    .rf-map {
+        position: relative;
+        max-width: 980px;
+        margin: auto;
+        padding: 60px 60px 100px 60px;
+        background: #fafafa;
+        border-radius: 30px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .rf-map .district {
+        width: 400px;
+        display: none;
+        position: absolute;
+        padding-left: 20px;
+        background: #fafafa;
+        border-radius: 10px;
+        border: 1px solid black;
+        z-index: 10;
+    }
+
+    .text {
+        font-size: 14px;
+        font-family: OverpassMedium;
+    }
+
+    .title_region {
+        font-size: 20px;
+        font-family: OverpassMedium;
+    }
+
+    .rf-map svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.5));
+    }
+    .rf-map path {
+        stroke: #FFFFFF;
+        stroke-width: 1;
+        stroke-linejoin: round;
+    }
+    .rf-map [data-code] {
+        fill: #8f8f8f;
+    }
+    .rf-map [data-code]:hover {
+        filter: brightness(120%);
+        transition: 0.2s;
+    }
+
+    .parent_form_div {
+        width: 700px;
+        background: #fafafa;
+        border-radius: 20px;
+        margin: 40px auto ;
+        padding: 20px;
+    }
+
+    .form_input {
+        margin-left: 50px;
+        width: 600px;
+        padding: 20px;
+    }
+
+    .form_input_label {
+        display: block;
+        margin: 0 0 10px 0;
+        width: 450px;
+        font-size: 20px;
+        font-family: OverpassMedium;
+    }
+
+    .input {
+        font-family: OverpassMedium;
+        display: block;
+        margin-top: 12px;
+        font-size: 18px;
+        padding: 8px;
+        width: 300px;
+        text-align: center;
+        border: 1px solid #333;
+        border-radius: 10px;
+        background: #eeeeee;
+    }
+
+    .input:focus {
+        border-color: #2196f3;
+        outline: 0;
+        box-shadow: 0 0 0 1px #2196f3;
+        transition: 0.4s;
+    }
+
+    .input_label {
+        display: block;
+        margin: 0 0 10px 0;
+        width: 450px;
+        font-size: 20px;
+        font-family: OverpassMedium;
+    }
+
+    .submit_button {
+        text-align: center;
+    }
+
+    .submit_input_div {
+        display: inline-block;
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    .submit_input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 30px;
+        border: 2px solid black;
+        border-radius: 10px;
+        font-family: OverpassMedium;
+        font-size: 20px;
+        margin-right: 2px;
+    }
+
+    .submit_input:hover {
+        cursor: pointer;
+        border: 2px solid #2196f3;
+        color: #2196f3;
+        transform: scale(0.98);
+        transition: 0.4s;
+    }
+
+    .error_div {
+        width: 430px;
+        margin: 0 auto;
+        background: rgba(255, 197, 49, 0.39);
+        padding: 15px;
+        border:2px solid rgb(203, 135, 40);
+        border-radius: 10px;
+    }
+
+    .error_div p {
+        width: 400px;
+        font-size: 14px;
+        font-family: OverpassMedium;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .submit_done_div {
+        width: 700px;
+        background: #fafafa;
+        border-radius: 20px;
+        margin: 40px auto ;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .submit_done_title_text {
+        width: 500px;
+        margin: 30px auto;
+        font-family: OverpassMedium;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .submit_done_text {
+        width: 400px;
+        margin: 70px auto;
+        font-family: OverpassMedium;
+        font-size: 20px;
+    }
+
+    .change_vote_button {
+        background: #fafafa;
+        border: 2px solid black;
+        color: black;
+        border-radius: 10px;
+        margin: 0 auto;
+        font-family: OverpassMedium;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .change_vote_button:hover {
+        cursor: pointer;
+        border: 2px solid #2196f3;
+        color: #2196f3;
+        transform: scale(0.95);
+        transition: 0.2s;
+    }
 }
 
-.title_div h1 {
-    text-align: center;
-    font-family: OverpassMedium;
-    font-size: 40px;
+@media (min-width: 780px) and (max-width: 1020px) {
+    .parent_div {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 120px 0 0 0;
+    }
+
+    .title_div h1 {
+        text-align: center;
+        font-family: OverpassMedium;
+        font-size: 30px;
+    }
+
+    .body_div {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .rf-map,
+    .rf-map *{
+        box-sizing: border-box;
+    }
+    .rf-map {
+        position: relative;
+        max-width: 980px;
+        margin: auto;
+        padding: 40px 40px 80px 40px;
+        background: #fafafa;
+        border-radius: 30px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .rf-map .district {
+        width: 400px;
+        display: none;
+        position: absolute;
+        padding: 20px;
+        background: #fafafa;
+        border-radius: 10px;
+        border: 1px solid black;
+        z-index: 10;
+    }
+
+    .text {
+        font-size: 14px;
+        font-family: OverpassMedium;
+    }
+
+    .title_region {
+        font-size: 20px;
+        font-family: OverpassMedium;
+        margin-bottom: 20px;
+    }
+
+    .rf-map svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.5));
+    }
+    .rf-map path {
+        stroke: #FFFFFF;
+        stroke-width: 1;
+        stroke-linejoin: round;
+    }
+    .rf-map [data-code] {
+        fill: #8f8f8f;
+    }
+    .rf-map [data-code]:hover {
+        filter: brightness(120%);
+        transition: 0.2s;
+    }
+
+    .parent_form_div {
+        width: 700px;
+        background: #fafafa;
+        border-radius: 20px;
+        margin: 40px auto ;
+        padding: 20px;
+    }
+
+    .form_input {
+        margin-left: 50px;
+        width: 600px;
+        padding: 20px;
+    }
+
+    .form_input_label {
+        display: block;
+        margin: 0 0 10px 0;
+        width: 450px;
+        font-size: 20px;
+        font-family: OverpassMedium;
+    }
+
+    .input {
+        font-family: OverpassMedium;
+        display: block;
+        margin-top: 12px;
+        font-size: 18px;
+        padding: 8px;
+        width: 300px;
+        text-align: center;
+        border: 1px solid #333;
+        border-radius: 10px;
+        background: #eeeeee;
+    }
+
+    .input:focus {
+        border-color: #2196f3;
+        outline: 0;
+        box-shadow: 0 0 0 1px #2196f3;
+        transition: 0.4s;
+    }
+
+    .input_label {
+        display: block;
+        margin: 0 0 10px 0;
+        width: 450px;
+        font-size: 20px;
+        font-family: OverpassMedium;
+    }
+
+    .submit_button {
+        text-align: center;
+    }
+
+    .submit_input_div {
+        display: inline-block;
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    .submit_input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 30px;
+        border: 2px solid black;
+        border-radius: 10px;
+        font-family: OverpassMedium;
+        font-size: 20px;
+        margin-right: 2px;
+    }
+
+    .submit_input:hover {
+        cursor: pointer;
+        border: 2px solid #2196f3;
+        color: #2196f3;
+        transform: scale(0.98);
+        transition: 0.4s;
+    }
+
+    .error_div {
+        width: 430px;
+        margin: 0 auto;
+        background: rgba(255, 197, 49, 0.39);
+        padding: 15px;
+        border:2px solid rgb(203, 135, 40);
+        border-radius: 10px;
+    }
+
+    .error_div p {
+        width: 400px;
+        font-size: 14px;
+        font-family: OverpassMedium;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .submit_done_div {
+        width: 700px;
+        background: #fafafa;
+        border-radius: 20px;
+        margin: 40px auto ;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .submit_done_title_text {
+        width: 500px;
+        margin: 30px auto;
+        font-family: OverpassMedium;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .submit_done_text {
+        width: 400px;
+        margin: 70px auto;
+        font-family: OverpassMedium;
+        font-size: 20px;
+    }
+
+    .change_vote_button {
+        background: #fafafa;
+        border: 2px solid black;
+        color: black;
+        border-radius: 10px;
+        margin: 0 auto;
+        font-family: OverpassMedium;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .change_vote_button:hover {
+        cursor: pointer;
+        border: 2px solid #2196f3;
+        color: #2196f3;
+        transform: scale(0.95);
+        transition: 0.2s;
+    }
 }
 
-.body_div {
-    width: 100%;
-    margin: 0 auto;
+@media (min-width: 450px) and (max-width: 780px) {
+    .parent_div {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0 0 0;
+    }
+
+    .title_div h1 {
+        text-align: center;
+        font-family: OverpassMedium;
+        font-size: 20px;
+    }
+
+    .body_div {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .rf-map,
+    .rf-map *{
+        box-sizing: border-box;
+    }
+    .rf-map {
+        position: relative;
+        max-width: 980px;
+        margin: auto;
+        padding: 20px 20px 50px 20px;
+        background: #fafafa;
+        border-radius: 30px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .rf-map .district {
+        width: 200px;
+        display: none;
+        position: absolute;
+        padding: 10px;
+        background: #fafafa;
+        border-radius: 10px;
+        border: 1px solid black;
+        z-index: 10;
+    }
+
+    .text {
+        font-size: 8px;
+        font-family: OverpassMedium;
+    }
+
+    .title_region {
+        font-size: 12px;
+        font-family: OverpassMedium;
+        margin-bottom: 10px;
+    }
+
+    .rf-map svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.5));
+    }
+    .rf-map path {
+        stroke: #FFFFFF;
+        stroke-width: 1;
+        stroke-linejoin: round;
+    }
+    .rf-map [data-code] {
+        fill: #8f8f8f;
+    }
+    .rf-map [data-code]:hover {
+        filter: brightness(120%);
+        transition: 0.2s;
+    }
+
+    .parent_form_div {
+        width: 380px;
+        background: #fafafa;
+        border-radius: 20px;
+        margin: 40px auto ;
+        padding: 20px;
+    }
+
+    .form_input {
+        width: 380px;
+        padding: 20px;
+    }
+
+    .form_input_label {
+        display: block;
+        margin: 0 0 10px 0;
+        width: 250px;
+        font-size: 16px;
+        font-family: OverpassMedium;
+    }
+
+    .input {
+        font-family: OverpassMedium;
+        display: block;
+        margin-top: 12px;
+        font-size: 12px;
+        padding: 8px;
+        width: 250px;
+        text-align: center;
+        border: 1px solid #333;
+        border-radius: 10px;
+        background: #eeeeee;
+    }
+
+    .input:focus {
+        border-color: #2196f3;
+        outline: 0;
+        box-shadow: 0 0 0 1px #2196f3;
+        transition: 0.4s;
+    }
+
+    .input_label {
+        display: block;
+        margin: 0 0 10px 0;
+        width: 250px;
+        font-size: 14px;
+        font-family: OverpassMedium;
+    }
+
+    .submit_button {
+        text-align: center;
+    }
+
+    .submit_input_div {
+        display: inline-block;
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    .submit_input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 30px;
+        border: 2px solid black;
+        border-radius: 10px;
+        font-family: OverpassMedium;
+        font-size: 20px;
+        margin-right: 2px;
+    }
+
+    .submit_input:hover {
+        cursor: pointer;
+        border: 2px solid #2196f3;
+        color: #2196f3;
+        transform: scale(0.98);
+        transition: 0.4s;
+    }
+
+    .error_div {
+        width: 430px;
+        margin: 0 auto;
+        background: rgba(255, 197, 49, 0.39);
+        padding: 15px;
+        border:2px solid rgb(203, 135, 40);
+        border-radius: 10px;
+    }
+
+    .error_div p {
+        width: 400px;
+        font-size: 14px;
+        font-family: OverpassMedium;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .submit_done_div {
+        width: 380px;
+        background: #fafafa;
+        border-radius: 20px;
+        margin: 40px auto ;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .submit_done_title_text {
+        width: 300px;
+        margin: 20px auto;
+        font-family: OverpassMedium;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .submit_done_text {
+        width: 380px;
+        margin: 50px auto;
+        font-family: OverpassMedium;
+        font-size: 20px;
+    }
+
+    .change_vote_button {
+        background: #fafafa;
+        border: 2px solid black;
+        color: black;
+        border-radius: 10px;
+        margin: 0 auto;
+        font-family: OverpassMedium;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .change_vote_button:hover {
+        cursor: pointer;
+        border: 2px solid #2196f3;
+        color: #2196f3;
+        transform: scale(0.95);
+        transition: 0.2s;
+    }
 }
 
-.rf-map,
-.rf-map *{
-    box-sizing: border-box;
-}
-.rf-map {
-    position: relative;
-    max-width: 980px;
-    margin: auto;
-    padding: 60px 60px 100px 60px;
-    background: #fafafa;
-    border-radius: 30px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-}
+@media (max-width: 450px) {
+    .parent_div {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0 0 0;
+    }
+
+    .title_div h1 {
+        text-align: center;
+        font-family: OverpassMedium;
+        font-size: 20px;
+    }
+
+    .body_div {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .rf-map,
+    .rf-map *{
+        box-sizing: border-box;
+    }
+    .rf-map {
+        position: relative;
+        max-width: 980px;
+        margin: auto;
+        padding: 20px 20px 50px 20px;
+        background: #fafafa;
+        border-radius: 30px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
 
 
-.rf-map .district {
-    width: 400px;
-    display: none;
-    position: absolute;
-    padding-left: 20px;
-    background: #fafafa;
-    border-radius: 10px;
-    border: 1px solid black;
-    z-index: 10;
-}
+    .rf-map .district {
+        width: 200px;
+        display: none;
+        position: absolute;
+        padding: 10px;
+        background: #fafafa;
+        border-radius: 10px;
+        border: 1px solid black;
+        z-index: 10;
+    }
 
-.text {
-    font-size: 14px;
-    font-family: OverpassMedium;
-}
+    .text {
+        font-size: 8px;
+        font-family: OverpassMedium;
+    }
 
-.title_region {
-    font-size: 20px;
-    font-family: OverpassMedium;
-}
+    .title_region {
+        font-size: 12px;
+        font-family: OverpassMedium;
+        margin-bottom: 10px;
+    }
 
-.rf-map svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.5));
-}
-.rf-map path {
-    stroke: #FFFFFF;
-    stroke-width: 1;
-    stroke-linejoin: round;
-}
-.rf-map [data-code] {
-    fill: #8f8f8f;
-}
-.rf-map [data-code]:hover {
-    filter: brightness(120%);
-    transition: 0.2s;
-}
+    .rf-map svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.5));
+    }
+    .rf-map path {
+        stroke: #FFFFFF;
+        stroke-width: 1;
+        stroke-linejoin: round;
+    }
+    .rf-map [data-code] {
+        fill: #8f8f8f;
+    }
+    .rf-map [data-code]:hover {
+        filter: brightness(120%);
+        transition: 0.2s;
+    }
 
-.parent_form_div {
-    width: 700px;
-    background: #fafafa;
-    border-radius: 20px;
-    margin: 40px auto ;
-    padding: 20px;
-}
+    .parent_form_div {
+        width: 380px;
+        background: #fafafa;
+        border-radius: 20px;
+        margin: 40px auto ;
+        padding: 20px;
+    }
 
-.form_input {
-    margin-left: 50px;
-    width: 600px;
-    padding: 20px;
-}
+    .form_input {
+        width: 380px;
+        padding: 20px;
+    }
 
-.form_input_label {
-    display: block;
-    margin: 0 0 10px 0;
-    width: 450px;
-    font-size: 20px;
-    font-family: OverpassMedium;
-}
+    .form_input_label {
+        display: block;
+        margin: 0 0 10px 0;
+        width: 250px;
+        font-size: 16px;
+        font-family: OverpassMedium;
+    }
 
-.input {
-    font-family: OverpassMedium;
-    display: block;
-    margin-top: 12px;
-    font-size: 18px;
-    padding: 8px;
-    width: 300px;
-    text-align: center;
-    border: 1px solid #333;
-    border-radius: 10px;
-    background: #eeeeee;
-}
+    .input {
+        font-family: OverpassMedium;
+        display: block;
+        margin-top: 12px;
+        font-size: 12px;
+        padding: 8px;
+        width: 250px;
+        text-align: center;
+        border: 1px solid #333;
+        border-radius: 10px;
+        background: #eeeeee;
+    }
 
-.input:focus {
-    border-color: #2196f3;
-    outline: 0;
-    box-shadow: 0 0 0 1px #2196f3;
-    transition: 0.4s;
-}
+    .input:focus {
+        border-color: #2196f3;
+        outline: 0;
+        box-shadow: 0 0 0 1px #2196f3;
+        transition: 0.4s;
+    }
 
-.input_label {
-    display: block;
-    margin: 0 0 10px 0;
-    width: 450px;
-    font-size: 20px;
-    font-family: OverpassMedium;
-}
+    .input_label {
+        display: block;
+        margin: 0 0 10px 0;
+        width: 250px;
+        font-size: 14px;
+        font-family: OverpassMedium;
+    }
 
-.submit_button {
-    text-align: center;
-}
+    .submit_button {
+        text-align: center;
+    }
 
-.submit_input_div {
-    display: inline-block;
-    margin-top: 35px;
-    text-align: center;
-}
+    .submit_input_div {
+        display: inline-block;
+        margin-top: 35px;
+        text-align: center;
+    }
 
-.submit_input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 30px;
-    border: 2px solid black;
-    border-radius: 10px;
-    font-family: OverpassMedium;
-    font-size: 20px;
-    margin-right: 2px;
-}
+    .submit_input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 30px;
+        border: 2px solid black;
+        border-radius: 10px;
+        font-family: OverpassMedium;
+        font-size: 20px;
+        margin-right: 2px;
+    }
 
-.submit_input:hover {
-    cursor: pointer;
-    border: 2px solid #2196f3;
-    color: #2196f3;
-    transform: scale(0.98);
-    transition: 0.4s;
-}
+    .submit_input:hover {
+        cursor: pointer;
+        border: 2px solid #2196f3;
+        color: #2196f3;
+        transform: scale(0.98);
+        transition: 0.4s;
+    }
 
-.error_div {
-    width: 430px;
-    margin: 0 auto;
-    background: rgba(255, 197, 49, 0.39);
-    padding: 15px;
-    border:2px solid rgb(203, 135, 40);
-    border-radius: 10px;
-}
+    .error_div {
+        width: 200px;
+        margin: 0 auto;
+        background: rgba(255, 197, 49, 0.39);
+        padding: 10px;
+        border:2px solid rgb(203, 135, 40);
+        border-radius: 10px;
+    }
 
-.error_div p {
-    width: 400px;
-    font-size: 14px;
-    font-family: OverpassMedium;
-    margin-right: auto;
-    margin-left: auto;
-}
+    .error_div p {
+        width: 200px;
+        font-size: 10px;
+        font-family: OverpassMedium;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-.submit_done_div {
-    width: 700px;
-    background: #fafafa;
-    border-radius: 20px;
-    margin: 40px auto ;
-    padding: 20px;
-    text-align: center;
-}
+    .submit_done_div {
+        width: 250px;
+        background: #fafafa;
+        border-radius: 20px;
+        margin: 40px auto ;
+        padding: 20px;
+        text-align: center;
+    }
 
-.submit_done_title_text {
-    width: 500px;
-    margin: 30px auto;
-    font-family: OverpassMedium;
-    font-size: 30px;
-    font-weight: bold;
-}
+    .submit_done_title_text {
+        width: 250px;
+        margin: 20px auto;
+        font-family: OverpassMedium;
+        font-size: 20px;
+        font-weight: bold;
+    }
 
-.submit_done_text {
-    width: 400px;
-    margin: 70px auto;
-    font-family: OverpassMedium;
-    font-size: 20px;
-}
+    .submit_done_text {
+        width: 250px;
+        margin: 50px auto;
+        font-family: OverpassMedium;
+        font-size: 20px;
+    }
 
-.change_vote_button {
-    background: #fafafa;
-    border: 2px solid black;
-    color: black;
-    border-radius: 10px;
-    margin: 0 auto;
-    font-family: OverpassMedium;
-    font-size: 20px;
-    padding: 10px;
-}
+    .change_vote_button {
+        background: #fafafa;
+        border: 2px solid black;
+        color: black;
+        border-radius: 10px;
+        margin: 0 auto;
+        font-family: OverpassMedium;
+        font-size: 16px;
+        padding: 10px;
+    }
 
-.change_vote_button:hover {
-    cursor: pointer;
-    border: 2px solid #2196f3;
-    color: #2196f3;
-    transform: scale(0.95);
-    transition: 0.2s;
+    .change_vote_button:hover {
+        cursor: pointer;
+        border: 2px solid #2196f3;
+        color: #2196f3;
+        transform: scale(0.95);
+        transition: 0.2s;
+    }
 }
 
 .value_1 {
@@ -266,13 +908,3 @@ body {
 .value_9 {
     fill: #56c914 !important;
 }
-
-/* Цвета регионов */
-/*.rf-map [data-code="RU-SAR"] {*/
-/*    fill: #116f21;*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*.rf-map [data-code="RU-SAR"]:hover {*/
-/*    fill: #1bad33;*/
-/*}*/

@@ -12,6 +12,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -85,6 +86,11 @@ public class AuthService {
             if(username == null || password == null || email == null || regionNumber == 0) {
                 throw new Exception("Заполните все поля");
             }
+            //  Если такое имя пользователя будет в бд, метод addVote в классе VotesService сломается
+            //  В Spring Security неавторизованный пользователь имеет это имя пользователя
+            if (username.equals("anonymousUser")) {
+                throw new Exception("Введите другое имя пользователя");
+            }
 
             // Если ошибок нет, начинаем процесс сохранения пользователя в базу данных
             else {
@@ -104,7 +110,7 @@ public class AuthService {
                     //  Сохраняем в базу данных
                     userService.save(user);
 
-                    //  Отправляем пользователяна страницу авторизации
+                    //  Отправляем пользователя на страницу авторизации
                     return "redirect:/login";
                 }
                 else {
@@ -117,6 +123,32 @@ public class AuthService {
         catch (Exception exception) {
             //  В случае возникновения какой-либо ошибки, возвращаем пользователя на страницу регистрации с текстом ошибки
             return "redirect:/registration?error=true&errorMessage=" + URLEncoder.encode(exception.getMessage(), StandardCharsets.UTF_8);
+        }
+    }
+
+    public String getProfile(Model model) {
+        try {
+            //  Получаем пользователя из сессии
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String username = authentication.getName();
+            Optional<User> user = userRepository.findByUsername(username);
+
+            //  Даём посмотреть на данные своего профиля только если авторизован
+            if (user.isPresent()) {
+                model.addAttribute("username", user.get().getUsername());
+                model.addAttribute("email", user.get().getEmail());
+                model.addAttribute("region", user.get().getRegion().getRegionNumber());
+
+                return "profile";
+            }
+            //  Если не авторизован, кидаем ошибку
+            else
+                throw new Exception("Сначала войдите в аккаунт");
+        }
+        //  Шлём на страницу авторизации
+        catch (Exception exception) {
+            //
+            return "redirect:/login";
         }
     }
 }

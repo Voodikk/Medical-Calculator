@@ -1,0 +1,22 @@
+@font-face {
+    font-family: OverpassMedium;
+    src: url("../fonts/Overpass-Medium.ttf");
+}
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main_div {
+    background: #EAE6CA;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

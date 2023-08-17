@@ -51,7 +51,7 @@
                 <a href="/statistic"><div class="menu_div"><p class="menu_text">Статистика</p></div></a>
                 <a href="/calculators"><div class="menu_div"><p class="menu_text">Калькуляторы</p></div></a>
                 <div class="menu_div_auth" sec:authorize="isAuthenticated()">
-                    <a href="#"><div class="menu_div"><p class="menu_text">Аккаунт</p></div></a>
+                    <a href="/profile/me"><div class="menu_div"><p class="menu_text">Профиль</p></div></a>
                     <a href="/logout"><div class="menu_div"><p class="menu_text">Выйти</p></div></a>
                 </div>
                 <div class="menu_div_not_auth" sec:authorize="!isAuthenticated()">
