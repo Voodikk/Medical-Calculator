@@ -126,29 +126,10 @@ public class AuthService {
         }
     }
 
-    public String getProfile(Model model) {
-        try {
-            //  Получаем пользователя из сессии
-            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            String username = authentication.getName();
-            Optional<User> user = userRepository.findByUsername(username);
+    public Optional<User> getUserFromSessionByUsername() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
 
-            //  Даём посмотреть на данные своего профиля только если авторизован
-            if (user.isPresent()) {
-                model.addAttribute("username", user.get().getUsername());
-                model.addAttribute("email", user.get().getEmail());
-                model.addAttribute("region", user.get().getRegion().getRegionNumber());
-
-                return "profile";
-            }
-            //  Если не авторизован, кидаем ошибку
-            else
-                throw new Exception("Сначала войдите в аккаунт");
-        }
-        //  Шлём на страницу авторизации
-        catch (Exception exception) {
-            //
-            return "redirect:/login";
-        }
+        return userRepository.findByUsername(username);
     }
 }

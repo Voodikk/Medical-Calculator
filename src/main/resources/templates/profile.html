@@ -2,13 +2,53 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="/css/profile.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script src="/js/profile.js"></script>
     <meta charset="UTF-8">
     <title>Профиль</title>
 </head>
 <body>
-<div th:replace="fragments/header :: header"></div>
+<div class="parent_div">
 
-<div th:replace="fragments/footer :: footer"></div>
+    <div th:replace="fragments/header :: header"></div>
 
+    <div class="main_div">
+        <img class="profile_img" src="/img/user_icon.png"/>
+
+        <form class="profile_form" th:action="@{/profile/me/change_info}" method="post">
+            <div class="inputs">
+                <div class="input_div">
+                    <p class="input_text">Имя пользователя</p>
+                    <input class="change_input" type="text" th:value="${username}" disabled>
+                </div>
+                <div class="input_div">
+                    <p class="input_text">Почта</p>
+                    <input class="change_input" type="email" th:value="${email}" disabled>
+                </div>
+                <div class="input_div">
+                    <p class="input_text">Регион</p>
+                    <input type="text" th:value="${region}" disabled>
+                </div>
+                <div class="input_div">
+                    <p class="input_text">Пароль</p>
+                    <input type="password" th:value="${password}" disabled>
+                </div>
+            </div>
+            <div class="submit_input_div">
+                <input type="submit" class="submit_input" value="Сохранить">
+            </div>
+        </form>
+        <div class="discard_changes_div">
+            <button onclick="location.reload()" class="discard_changes">Отменить</button>
+        </div>
+        <button class="change_profile_button">Изменить</button>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+
+</div>
 </body>
 </html>
