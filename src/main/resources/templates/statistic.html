@@ -15,7 +15,7 @@
 <body>
 
 <div class="main_div">
-  <div th:replace="fragments/header :: header" class="div"></div>
+  <div th:replace="~{fragments/header :: header}"></div>
 
   <div class="parent_div">
 
@@ -798,7 +798,7 @@
 
   </div>
 
-  <div th:replace="fragments/footer :: footer"></div>
+  <div th:replace="~{fragments/footer :: footer}"></div>
 
 </div>
 <script th:inline="javascript">

@@ -1,4 +1,4 @@
-package com.trofimovlipatnikov.medicalcalculator.models;
+package com.trofimovlipatnikov.medicalcalculator.service.handlers;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

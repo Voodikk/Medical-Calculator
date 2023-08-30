@@ -13,7 +13,8 @@
 </head>
 <body>
 <div class="main_div">
-    <div th:replace="fragments/header :: header"></div>
+    <div th:replace="~{fragments/header :: header}"></div>
+
     <div class="parent_div">
         <div class="title_div">
             <h1>Шкала APACHE II</h1>
@@ -162,7 +163,7 @@
             </div>
         </div>
     </div>
-    <div th:replace="fragments/footer :: footer"></div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
 </div>
 
 

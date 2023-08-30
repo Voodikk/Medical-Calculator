@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController {
 
     //  Контроллер страницы авторизации
-    //  т. к. авторизация происходит посредством Spring Security
-    //  я закомментировал свой кастомный метод авторизации
 
     @GetMapping
     public String getLogin(Model model,
@@ -24,10 +22,4 @@ public class LoginController {
         model.addAttribute("errorMessage", errorMessage);
         return "login";
     }
-
-//    @PostMapping("/auth_user")
-//    public String postLogin(@RequestParam("username") String username,
-//                            @RequestParam("password") String password) {
-//        return authService.authUser(username, password);
-//    }
 }

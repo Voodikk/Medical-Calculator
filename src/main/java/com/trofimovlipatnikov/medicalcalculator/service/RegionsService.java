@@ -11,7 +11,7 @@ public class RegionsService {
 
     //  Сервис регионов
 
-    RegionsRepository regionsRepository;
+    private final RegionsRepository regionsRepository;
 
     public Region findByRegionNumber(Integer number) {
         return regionsRepository.findByRegionNumber(number).orElse(null);

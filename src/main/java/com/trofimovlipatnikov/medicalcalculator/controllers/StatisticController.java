@@ -28,18 +28,12 @@ public class StatisticController {
 
 
     @GetMapping
-    public String getStatistic(@RequestParam(value = "error", required = false) boolean error,
-                               @RequestParam(value = "errorMessage", required = false) String errorMessage,
-                               @RequestParam(value = "isSubmit", required = false) boolean isSubmit,
+    public String getStatistic(@RequestParam(value = "isSubmit", required = false) boolean isSubmit,
                                Model model) {
 
         //  Отправляем на фронт наши средние значения по регионам из базы данных
         List<RegionVote> votesList = regionVoteRepository.findAll();
         model.addAttribute("votesList", votesList);
-
-        //  Отправляем возможные ошибки, возникшие в процессе отправки своего голоса, а также текст ошибки
-        model.addAttribute("error", error);
-        model.addAttribute("errorMessage", errorMessage);
 
         //  Если все прошло без ошибок, сообщаем фронту
         //  Чтобы сайт реагировал на действие пользователя
@@ -50,11 +44,11 @@ public class StatisticController {
     }
 
     @PostMapping("/submit_vote")
-    public String vote(HttpServletRequest request, Vote usersVotes) {
+    public String vote(HttpServletRequest request, Vote usersVotes, Model model) {
 
         //  Получаем число, которое написал пользователь в своем голосе и возвращаем метод сервиса голосов,
         //  он в свою очередь сохраняет в базу данных голос пользователя или меняет уже существующий
         int points = Integer.parseInt(request.getParameter("points"));
-        return votesService.addVote(usersVotes, points);
+        return votesService.addVote(usersVotes, points, model);
     }
 }

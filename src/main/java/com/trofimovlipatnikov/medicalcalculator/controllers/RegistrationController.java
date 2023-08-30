@@ -17,11 +17,7 @@ public class RegistrationController {
     private final AuthService authService;
 
     @GetMapping
-    public String getRegistration(@RequestParam(value = "error", required = false) boolean error,
-                                  @RequestParam(value = "errorMessage", required = false) String errorMessage,
-                                  Model model) {
-        model.addAttribute("error", error);
-        model.addAttribute("errorMessage", errorMessage);
+    public String getRegistration(Model model) {
         return "registration";
     }
 
@@ -29,9 +25,10 @@ public class RegistrationController {
     public String addUser(@RequestParam("username") String username,
                           @RequestParam("password") String password,
                           @RequestParam("email") String email,
-                          @RequestParam("region") int regionNumber) {
+                          @RequestParam("region") int regionNumber,
+                          Model model) {
 
         //  Возвращаем метод добавления пользователя в базу данных (регистрация)
-        return authService.addUser(username, password, email, regionNumber);
+        return authService.addUser(username, password, email, regionNumber, model);
     }
 }

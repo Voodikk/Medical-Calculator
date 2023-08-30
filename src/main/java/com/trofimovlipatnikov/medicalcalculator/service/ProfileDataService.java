@@ -22,7 +22,7 @@ public class ProfileDataService {
     public String getProfile(Model model) {
         try {
             //  Получаем пользователя из сессии
-            Optional<User> user = authService.getUserFromSessionByUsername();
+            Optional<User> user = authService.getUserFromSession();
 
             //  Даём посмотреть на данные своего профиля только если авторизован
             if (user.isPresent()) {
@@ -46,7 +46,7 @@ public class ProfileDataService {
     public String changeProfileData(String username, String email) {
         try {
             //  Получаем пользователя из сессии
-            Optional<User> user = authService.getUserFromSessionByUsername();
+            Optional<User> user = authService.getUserFromSession();
 
             // Проверяем авторизирован ли пользователь
             if (user.isPresent()) {

@@ -13,7 +13,7 @@
 <body>
 <div class="parent_div">
 
-    <div th:replace="fragments/header :: header"></div>
+    <div th:replace="~{fragments/header :: header}"></div>
 
     <div class="main_div">
         <img class="profile_img" src="/img/user_icon.png"/>
@@ -47,7 +47,7 @@
         <button class="change_profile_button">Изменить</button>
     </div>
 
-    <div th:replace="fragments/footer :: footer"></div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
 
 </div>
 </body>

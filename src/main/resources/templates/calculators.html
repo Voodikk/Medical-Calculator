@@ -8,7 +8,8 @@
 <body>
 
 <div class="main_div">
-    <div th:replace="fragments/header :: header" class="div"></div>
+    <div th:replace="~{fragments/header :: header}"></div>
+
     <div class="parent_div">
         <ul class="ul_calcs">
             <a href="calculators/apache"><li class="calc_apache">
@@ -25,7 +26,7 @@
             </li></a>
         </ul>
     </div>
-    <div th:replace="fragments/footer :: footer"></div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
 </div>
 
 
