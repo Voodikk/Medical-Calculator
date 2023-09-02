@@ -23,6 +23,18 @@ a {
     margin: 0 auto;
 }
 
+.error_div {
+    background: rgba(255, 197, 49, 0.39);
+    border:2px solid rgb(203, 135, 40);
+    border-radius: 10px;
+}
+
+.error_div p {
+    font-family: OverpassMedium;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .profile_form {
     display: block;
     background: #fafafa;
@@ -125,6 +137,17 @@ a {
         height: 100px;
     }
 
+    .error_div {
+        width: 430px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    .error_div p {
+        width: 400px;
+        font-size: 14px;
+    }
+
     .profile_form {
         margin: 30px auto;
         padding: 20px;
@@ -178,6 +201,17 @@ a {
         height: 100px;
     }
 
+    .error_div {
+        width: 430px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    .error_div p {
+        width: 400px;
+        font-size: 14px;
+    }
+
     .profile_form {
         margin: 30px auto;
         padding: 20px;
@@ -229,6 +263,17 @@ a {
     .profile_img {
         width: 80px;
         height: 80px;
+    }
+
+    .error_div {
+        width: 310px;
+        margin: 0 auto;
+        padding: 5px;
+    }
+
+    .error_div p {
+        width: 300px;
+        font-size: 12px;
     }
 
     .profile_form {

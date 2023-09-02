@@ -18,6 +18,10 @@
     <div class="main_div">
         <img class="profile_img" src="/img/user_icon.png"/>
 
+        <div th:if="${error}" class="error_div">
+            <p th:text="${errorMessage}"></p>
+        </div>
+
         <form class="profile_form" th:action="@{/profile/me/change_info}" method="post">
             <div class="inputs">
                 <div class="input_div">

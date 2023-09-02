@@ -24,8 +24,9 @@ public class ProfileController {
 
     @PostMapping("/me/change_info")
     public String changeProfileData(@RequestParam("username") String username,
-                                    @RequestParam("email") String email
+                                    @RequestParam("email") String email,
+                                    Model model
     ) {
-        return profileDataService.changeProfileData(username, email);
+        return profileDataService.changeProfileData(model, username, email);
     }
 }

@@ -2,6 +2,7 @@ package com.trofimovlipatnikov.medicalcalculator.service;
 
 import com.trofimovlipatnikov.medicalcalculator.models.Entities.User;
 import com.trofimovlipatnikov.medicalcalculator.repositories.UserRepository;
+import com.trofimovlipatnikov.medicalcalculator.service.handlers.ActionAfterMethodHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,6 +19,8 @@ public class ProfileDataService {
 
     private final AuthService authService;
 
+    private final ActionAfterMethodHandler actionAfterMethodHandler;
+
     // Получаем данные пользователя
     public String getProfile(Model model) {
         try {
@@ -30,20 +33,19 @@ public class ProfileDataService {
                 model.addAttribute("email", user.get().getEmail());
                 model.addAttribute("region", user.get().getRegion().getRegionNumber());
 
-                return "profile";
+                return actionAfterMethodHandler.actionAfterSuccess("profile");
             }
             //  Если не авторизован, кидаем ошибку
             else
-                throw new Exception("Сначала войдите в аккаунт");
+                return actionAfterMethodHandler.actionAfterFail(model, "Сначала войдите в аккаунт", "redirect:/login");
         }
-        //  Шлём на страницу авторизации
+        //  Обработка ошибок со стороны сервера
         catch (Exception exception) {
-            //
-            return "redirect:/login";
+            return actionAfterMethodHandler.actionAfterFail(model, "Упс, возникла какая-то ошибка, попробуйте позже", "redirect:/main");
         }
     }
 
-    public String changeProfileData(String username, String email) {
+    public String changeProfileData(Model model, String username, String email) {
         try {
             //  Получаем пользователя из сессии
             Optional<User> user = authService.getUserFromSession();
@@ -55,27 +57,27 @@ public class ProfileDataService {
                 Optional<User> userByEmail = userRepository.findByEmail(email);
 
                 if (userByUsername.isPresent() && userByUsername != user) {
-                    throw new Exception("Пользователь с таким именем уже есть");
+                    return actionAfterMethodHandler.actionAfterFail(model, "Это имя пользователя занято", "redirect:/profile");
                 }
                 else {
                     user.get().setUsername(username);
                 }
                 if (userRepository.findByEmail(email).isPresent() && userByEmail != user) {
-                    throw new Exception("Пользователь с такой почтой уже есть");
+                    return actionAfterMethodHandler.actionAfterFail(model, "Пользователь с такой почтой уже есть", "redirect:/profile");
                 }
                 else {
                     user.get().setEmail(email);
                 }
 
-                return "redirect:/profile?isChange=true";
+                return actionAfterMethodHandler.actionAfterSuccess(model, "redirect:/profile");
             }
             else {
-                throw  new Exception();
+                return actionAfterMethodHandler.actionAfterFail(model, "Сначала войдите в аккаунт", "redirect:/login");
             }
         }
         // Обработка ошибок
         catch (Exception exception) {
-            return "redirect:/profile?error=true";
+            return actionAfterMethodHandler.actionAfterFail(model, "Упс, возникла какая-то ошибка, попробуйте позже", "redirect:/main");
         }
     }
 }
